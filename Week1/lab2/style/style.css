@@ -1,0 +1,41 @@
+body {
+  margin: auto;
+  margin-top: 12px;
+  width: 80%;
+  font-family: calibri;
+}
+
+#PageHeader {
+  border: 1px solid black;
+  padding: 12px;
+}
+
+#SiteLogo {
+  width: 40%;
+}
+
+#nav {
+  margin-top: 12px;
+}
+
+#nav-tabs {
+  background-color: #333;
+  overflow: hidden;
+  list-style-type: none;
+  margin: 0;
+  padding: 12px;
+}
+
+#nav-tabs li {
+  float: left;
+}
+
+#nav-tabs li a {
+  text-align: center;
+  padding-right: 14px;
+  text-decoration: none;
+  transition: 0.3s;
+  padding: 16px 14px;
+  font-size: 20px;
+  color: white;
+}
