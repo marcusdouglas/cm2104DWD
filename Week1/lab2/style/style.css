@@ -11,7 +11,11 @@ body {
 }
 
 #SiteLogo {
-  width: 40%;
+  width: 20%;
+}
+
+#SideTitle {
+  display: inline;
 }
 
 #nav {
@@ -38,4 +42,25 @@ body {
   padding: 16px 14px;
   font-size: 20px;
   color: white;
+}
+
+#PageContent {
+  border: 1px solid black;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+#ContentImage {
+  width: 100%;
+}
+
+.BlogPost {
+  border: 1px soild black;
+  padding: 12px;
+  width: 50%;
+}
+
+.BlogPostContent {
+  border: 1px solid black;
+  padding: 12px;
 }
