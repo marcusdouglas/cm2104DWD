@@ -3,10 +3,13 @@ body {
   margin-top: 12px;
   width: 80%;
   font-family: calibri;
+  /*
   background-image: url(../images/foodImage1.png);
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: #84e184;
+  */
+  /*background-color: #84e184;*/
+  background-color: white;
 }
 
 #PageHeader {
@@ -30,6 +33,7 @@ body {
   list-style-type: none;
   margin: 0;
   padding: 12px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #nav-tabs li {
@@ -50,13 +54,17 @@ body {
   background-color: white;
   border-radius: 6px;
   margin-top: 12px;
+  margin-left: 25%;
+  margin-right: 25%;
   padding: 12px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #PageFooter {
   background-color: #333;
   margin-top: 12px;
   border-radius: 6px 6px 0 0;
-  padding: 8px;
+  padding: 6px;
   color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
