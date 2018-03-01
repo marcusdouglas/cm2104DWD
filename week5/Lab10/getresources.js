@@ -2,7 +2,7 @@ $(document).ready(function() {
 
 $('retrieve-resources').click(function() {
 
-  var displayResources = $('display-resources');
+  var displayResources = $('retrieve-resources');
   displayResources.text('Loading data from JSON source...');
 
   $.ajax ({
