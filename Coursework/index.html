@@ -81,7 +81,14 @@
 
     <div id = "activeCard" class = "card">
       <h2 class = "paraTitle">Restaurant Name</h2>
-      <img src = "images/foodImage3.jpeg" id = "cardImage">
+      <div class = "imageContainer">
+        <img src = "images/foodImage3.jpeg" class = "cardImage">
+        <img src = "images/foodImage4.jpeg" class = "cardImage">
+        <img src = "images/foodImage5.jpeg" class = "cardImage">
+
+        <button id = "leftButton" class = "btn" onclick = "plusDivs(-1)">&#10094;</button>
+        <button id = "rightButton" class = "btn" onclick = "plusDivs(1)">&#10095;</button>
+      </div>
       <p>Example Text
       </p>
 
