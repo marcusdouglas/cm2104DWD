@@ -60,9 +60,9 @@
         text-align: left;
     }
 
-    ul.nav-tabs li a {
+    /*ul.nav-tabs li a {
         font-size: 17px;
-    }
+    }*/
 
     .nav-tabs.responsive {
       padding-top: 0;
@@ -73,7 +73,7 @@
     }
 
     #descriptionText {
-      padding-top: 20px;
+      padding-top: 35px;
     }
 
     #fullDescription {
@@ -166,7 +166,7 @@ body {
 }
 
 .nav-tabs {
-  border-radius: 6px;
+  /*border-radius: 6px;*/
   background-color: #559E54;
   overflow: hidden;
   list-style-type: none;
