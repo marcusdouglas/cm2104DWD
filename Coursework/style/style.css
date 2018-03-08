@@ -1,46 +1,186 @@
+/*------------------Smartphones-------------------*/
+@media only screen and (max-width: 500px) {
+  .card {
+    width: 80%;
+  }
+}
+
+/*This code creates a navigation bar for smaller device/window sizes.*/
+@media only screen and (min-width:700px) {
+  #login {
+    float: right;
+  }
+
+  #PageHeader {
+    background: url(../images/foodImage8.jpeg) no-repeat;
+    background-size: 100%;
+    height: 450px;
+    margin-bottom: 0;
+  }
+
+  #headerImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #collapseDescription {
+    display: none;
+  }
+}
+
+/*This code creates a navigation bar for smaller device/window sizes.*/
+@media only screen and (max-width:700px) {
+    ul.nav-tabs li:not(:first-child) {
+        display: none;
+    }
+
+    ul.nav-tabs li.icon {
+        float: right;
+        display: inline-block;
+    }
+
+    ul.nav-tabs.responsive {
+        position: relative;
+    }
+
+    ul.nav-tabs.responsive li.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    ul.nav-tabs.responsive li {
+        float: none;
+        display: inline;
+    }
+
+    ul.nav-tabs.responsive li a {
+        display: block;
+        text-align: left;
+    }
+
+    ul.nav-tabs li a {
+        font-size: 17px;
+    }
+
+    .nav-tabs.responsive {
+      padding-top: 0;
+    }
+
+    #headerImage {
+      display: none;
+    }
+
+    #descriptionText {
+      padding-top: 20px;
+    }
+
+    #fullDescription {
+      display: none;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+
+  .nav-tabs {
+    padding: 12px;
+  }
+
+  #distance {
+    display: block;
+    margin-top: 12px;
+  }
+
+  .searchBox {
+    width: 100%;
+    height: 30px;
+    border-radius: 6px;
+  }
+
+  .card {
+    width:80%;
+  }
+}
+
+/*------------------Desktops and laptops----------------*/
+@media only screen and (min-width: 1000px) {
+  #login {
+    float: right;
+  }
+
+  .card {
+    width: 40%;
+  }
+
+  .nav-tabs {
+    padding: 12px;
+  }
+
+  #distance {
+    float: right;
+  }
+
+  .searchBox {
+    width: 40%;
+    height: 30px;
+    border-radius: 6px;
+  }
+}
+
+/*------------------All Devices----------------*/
 body {
   margin: auto;
-  margin-top: 12px;
-  width: 80%;
   font-family: calibri;
   /*
-  background-image: url(../images/foodImage1.png);
+  background-image: url(../images/foodImage3.jpeg);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100%;
   */
   /*background-color: #84e184;*/
-  background-color: white;
-}
-
-#PageHeader {
-  height: 300px;
-  border: 1px solid black;
-}
-
-#headerImage {
-  width: 100%;
-  height: 100%;
+  /*
+  background: url(../images/foodImage8.jpeg) no-repeat fixed;
+  background-size: 100vw;
+  background-color: #559E54;*/
 }
 
 #nav {
-  padding-top: 8px;
+  margin: auto;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 100px;
+  padding: 0;
+  transition: width, 1.0s;
+  transition-timing-function: ease-in-out;
+  overflow: visible;
 }
 
-#nav-tabs {
+#nav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#nav a.active {
+  background-color: #B83214;
+  color: white;
+}
+
+.nav-tabs {
   border-radius: 6px;
-  background-color: #333;
+  background-color: #559E54;
   overflow: hidden;
   list-style-type: none;
   margin: 0;
-  padding: 12px;
+  padding-right: 0;
+  padding-left: 0;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-#nav-tabs li {
+.nav-tabs li {
   float: left;
 }
 
-#nav-tabs li a {
+.nav-tabs li a {
   text-align: center;
   padding-right: 14px;
   text-decoration: none;
@@ -50,20 +190,152 @@ body {
   color: white;
 }
 
+.icon {
+  display: none;
+}
+
+.sticky {
+  margin-top: 48px;
+}
+
 #MainContent {
+  /*background-color: #b3ffb3;*/
+  background-color: #D4F7D4;
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+
+.collapseInfo {
+  display: none;
+  visibility: hidden;
+}
+
+.collapseLabel {
+  font-weight: bold;
+  display: block;
+  padding: 0.5em;
+  text-align: center;
+  border-bottom: 1px solid #CCC;
+  color: #FD3A0F;
+}
+
+.collapseLabel:hover {
+  color: #666;
+  cursor: pointer;
+}
+
+.collapseLabel::before {
+  font-family: Consolas, monaco, monospace;
+  font-weight: bold;
+  font-size: 15px;
+  content: "+";
+  vertical-align: middle;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 3px;
+  background: radial-gradient(ellipse at center, #CCC 50%, transparent 50%);
+}
+
+.expand {
+  height: 0px;
+  overflow: hidden;
+  transition: height 0.5s;
+}
+
+#toggle:checked ~ .expand {
+  height: 130px;
+}
+
+#toggle:checked ~ .collapseLabel::before {
+  content: "-";
+}
+
+#descriptionText {
+  margin: auto;
+  width: 90%;
+  text-align: center;
+}
+
+#descriptionTitle {
+  font-size: 22px;
+}
+
+.paraTitle {
+  color: #FD3A0F;
+}
+
+.text {
+  background-color: red;
+}
+
+#searchForm {
+  width:80%;
+  margin: auto;
+  margin-top: 12px;
+}
+
+.card {
   background-color: white;
   border-radius: 6px;
-  margin-top: 12px;
-  margin-left: 25%;
-  margin-right: 25%;
+  margin: auto;
+  margin-top: 40px;
   padding: 12px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+#cardImage {
+  width: 100%;
+  height: 100%;
+}
+
+#seeMore:checked ~ .expand {
+  height: 130px;
+}
+
+#seeMore:checked ~ .collapseLabel::before {
+  content: "-";
+}
+
+#dislikeButton {
+  /*background-color: #ff3333;*/
+  background: url(../images/crossIcon.png) no-repeat;
+  background-size: 110px;
+  background-position: center;
+}
+
+#likeButton {
+  float: right;
+  /*background-color: #4CAF50;*/
+  background: url(../images/tickIcon.png) no-repeat;
+  background-size: 115px;
+  background-position: center;
+}
+
+.button {
+    width: 50px;
+    height: 50px;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 50%;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+.button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
 #PageFooter {
-  background-color: #333;
-  margin-top: 12px;
-  border-radius: 6px 6px 0 0;
+  background-color: #160704;
+  text-align: center;
   padding: 6px;
   color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
