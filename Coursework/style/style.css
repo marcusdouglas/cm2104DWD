@@ -60,9 +60,9 @@
         text-align: left;
     }
 
-    /*ul.nav-tabs li a {
+    ul.nav-tabs li a {
         font-size: 17px;
-    }*/
+    }
 
     .nav-tabs.responsive {
       padding-top: 0;
@@ -166,8 +166,9 @@ body {
 }
 
 .nav-tabs {
-  /*border-radius: 6px;*/
-  background-color: #559E54;
+  border-radius: 6px;
+  /*background-color: #559E54;*/
+  background-color: #333;
   overflow: hidden;
   list-style-type: none;
   margin: 0;
