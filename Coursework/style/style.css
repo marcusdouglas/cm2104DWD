@@ -162,7 +162,7 @@
     }
 
     ul.nav-tabs li a {
-        font-size: 17px;
+        font-size: 20px;
     }
 
     .nav-tabs.responsive {
@@ -219,7 +219,7 @@
 /* ------------------All Devices------------------- */
 body {
   margin: auto;
-  font-family: Verdana, Geneva, sans-serif;
+  font-family: Calibri, Verdana, Geneva, sans-serif;
 }
 
 #nav {
@@ -366,18 +366,12 @@ body {
 }
 
 .cardImage {
-  width: 100%;/*
-  max-height: 300px;
-  min-height: 300px;*/
+  width: 100%;
 }
 
 .imageContainer {
     position: relative;
-    width: 100%;/*
-    min-width: 100%;
-    max-width: 100%;
-    min-height: 300px;
-    max-height: 300px;*/
+    width: 100%;
     border: 2px solid black;
 }
 
