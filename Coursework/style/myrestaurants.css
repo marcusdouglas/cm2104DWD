@@ -1,0 +1,112 @@
+/* ------------------Desktop-------------------- */
+@media only screen and (min-width:1200px) {
+  .textContainer {
+    width: 70%;
+    padding-right: 36px;
+    float: right;
+  }
+
+  .savedRestaurant {
+    width: 70%;
+  }
+
+  .sideImgContainer {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* ------------------Screens < 1200px-------------------- */
+@media only screen and (max-width:1200px) {
+  .textContainer {
+    width: 100%;
+  }
+
+  .savedRestaurant {
+    width: 70%;
+  }
+
+  .sideImgContainer {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* ------------------Screens < 700px-------------------- */
+@media only screen and (max-width:700px) {
+  #MainContent {
+    padding-top: 80px
+  }
+}
+
+/* ------------------Screens < 500px-------------------- */
+@media only screen and (max-width:500px) {
+.savedRestaurant {
+    width: 80%;
+  }
+
+  .sideImgContainer {
+    width: 180px;
+    height: 180px;
+  }
+
+  .close {
+    right: 6px;
+  }
+}
+
+#pageTitle {
+  text-align: center;
+}
+
+#heading {
+  font-size: 40px;
+}
+
+.savedRestaurant {
+  background-color: white;
+  /*width: 70%;*/
+  min-height: 200px;
+  margin: auto;
+  margin-top: 40px;
+  padding: 12px;
+  border-radius: 6px;
+  overflow: auto;
+  position: relative;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.sideImgContainer {
+  display: inline-block;
+  float: left;
+  border: 2px solid grey;
+}
+
+.sideImg {
+  width: 100%;
+  height: 100%;
+}
+
+.textContainer {
+  display: inline-block;
+}
+
+.info {
+  padding: 0;
+  clear: left;
+  text-align: justify;
+}
+
+.optionButton {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  float: right;
+}
+
+.optionButton:hover {
+  background-color: RoyalBlue;
+}

@@ -3,7 +3,7 @@
 
 <head>
   <meta charset = "utf-8" name = "viewport" content = "width=device-width, initial-scale=1">
-  <!-- Place site logo here -->
+  <!--Place site logo here-->
   <link rel="icon" href="images/logoIcon.png" type="image/gif" sizes="16x16">
   <title>Blender</title>
 
@@ -12,9 +12,10 @@
 
   <script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script src = "scripts/script.js"></script>
-  <script src = "scripts/homeScript.js"></script>
+  <script src = "scripts/myRestaurantsScript.js"></script>
 
   <link rel = "stylesheet" type = "text/css" href = "style/style.css">
+  <link rel = "stylesheet" type = "text/css" href = "style/myrestaurants.css">
 </head>
 
 <body>
@@ -24,8 +25,8 @@
     <img src = "images/logo.png" id = "headerImage"/>
     <nav id = "nav">
       <ul class = "nav-tabs" id = "collapseNav">
-        <li><a class = "active" href = "#">Home</a></li>
-        <li><a class = "tabs" href = "myrestaurants.html">My Restaurants</a></li>
+        <li><a class = "tabs" href = "index.html">Home</a></li>
+        <li><a class = "active" href = "#">My Restaurants</a></li>
         <li id = "login" onclick = "document.getElementById('loginForm').style.display = 'block'">
           <a class = "tabs" href = "#">Login</a></li>
         <li class = "icon">
@@ -66,73 +67,69 @@
 
   <!-- The Main Content section -->
   <section id = "MainContent">
+    <div id = "myRestaurantsContainer">
 
-    <div id = "descriptionText">
+      <div id = "pageTitle">
+        <h1 id = "heading" class = "paraTitle">My Restaurants</h1>
+      </div>
 
-      <div id = "collapseDescription">
-        <input id = "toggle" class = "test collapseInfo" type = "checkbox">
-        <label id = "descriptionTitle" class = "collapseLabel" for = "toggle">What Our App Does!</label>
+      <div class = "savedRestaurant">
 
-        <div class = "expand">
-          <p>Think Tinder but for finding restaurants! Simply input the town/city in which
+        <span class = "close" onclick = "removeSavedRestaurant()">&times;</span>
+
+        <div class = "sideImgContainer">
+          <img class = "sideImg" src = "images/foodImage3.jpeg">
+        </div>
+
+        <div class = "textContainer">
+          <h2 class = "paraTitle">Restaurant Name</h2>
+          <p class = "info">Think Tinder but for finding restaurants! Simply input the town/city in which
               you wish to find a restaurant and the radial distance you want to search within.
               Then we will find a selection of restaurants in that area for you to look
               through! Create an account with us and you can save the restaurant to find
-              later in the "My Restaurants" section!
-          </p>
+              later in the "My Restaurants" section!</p>
         </div>
       </div>
 
-      <div id = "fullDescription">
-        <h2 class = "paraTitle">What our app does!</h2>
+    </div>
 
-        <p>Think Tinder but for finding restaurants! Simply input the town/city in which
+    <div class = "savedRestaurant">
+
+      <span class = "close" onclick = "removeSavedRestaurant()">&times;</span>
+
+      <div class = "sideImgContainer">
+        <img class = "sideImg" src = "images/foodImage4.jpeg">
+      </div>
+
+      <div class = "textContainer">
+        <h2 class = "paraTitle">Restaurant Name</h2>
+        <p class = "info">Think Tinder but for finding restaurants! Simply input the town/city in which
             you wish to find a restaurant and the radial distance you want to search within.
             Then we will find a selection of restaurants in that area for you to look
             through! Create an account with us and you can save the restaurant to find
-            later in the "My Restaurants" section!
-        </p>
+            later in the "My Restaurants" section!</p>
       </div>
-
-      <h3 class = "paraTitle">Enter the location you wish to seach in!</h3>
 
     </div>
 
-    <form id = "searchForm">
-      <input type = "text" id = "location" class = "searchBox" placeholder = "Location">
-      <input type = "text" id = "distance" class = "searchBox" placeholder = "Distance(Miles)">
-    </form>
+    <div class = "savedRestaurant">
 
-    <div id = "activeCard" class = "card">
-      <h2 class = "paraTitle">Restaurant Name</h2>
-      <div class = "imageContainer">
-        <img src = "images/foodImage3.jpeg" class = "cardImage">
-        <img src = "images/foodImage4.jpeg" class = "cardImage">
-        <img src = "images/foodImage5.jpeg" class = "cardImage">
+      <span class = "close" onclick = "removeSavedRestaurant()">&times;</span>
 
-        <button id = "leftButton" class = "btn" onclick = "plusDivs(-1)">&#10094;</button>
-        <button id = "rightButton" class = "btn" onclick = "plusDivs(1)">&#10095;</button>
+      <div class = "sideImgContainer">
+        <img class = "sideImg" src = "images/foodImage5.jpeg">
       </div>
-      <p>Example Text
-      </p>
 
-      <input id = "seeMore" class = "collapseInfo" type = "checkbox">
-      <label class = "collapseLabel" for = "seeMore">See more...</label>
-
-      <div class = "expand">
-        <p>Think Tinder but for finding restaurants! Simply input the town/city in which
+      <div class = "textContainer">
+        <h2 class = "paraTitle">Restaurant Name</h2>
+        <p class = "info">Think Tinder but for finding restaurants! Simply input the town/city in which
             you wish to find a restaurant and the radial distance you want to search within.
             Then we will find a selection of restaurants in that area for you to look
             through! Create an account with us and you can save the restaurant to find
-            later in the "My Restaurants" section!
-        </p>
+            later in the "My Restaurants" section!</p>
       </div>
 
-      <form id = "scrollForm">
-        <button id = "dislikeButton" class = "button" type = "button"></button>
-        <button id = "likeButton" class = "button" type = "button"></button>
-      </form>
-  </div>
+    </div>
   </section>
 
   <!-- The Page Footer area -->
