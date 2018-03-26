@@ -97,6 +97,23 @@ tr:nth-child(even) {
     background-color: #dddddd;
 }
 
+#inputP {
+  display: inline-block;
+  font-size: 20px;
+}
+
+#emailInput {
+  display: inline-block;
+  height: 36px;
+  width: 300px;
+  margin-left: 20px;
+  border-radius: 4px;
+}
+
+#emailArea {
+  text-align: center;
+}
+
 #PageFooter {
   background-color: #333;
   text-align: center;
