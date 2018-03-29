@@ -8,21 +8,7 @@
 
 <body>
 
-  <!-- Page Header -->
-  <header id = "PageHeader">
-    <img src = "images/logo.png" id = "headerImage"/>
-    <nav id = "nav">
-      <ul class = "nav-tabs" id = "collapseNav">
-        <li><a class = "active" href = "/">Home</a></li>
-        <li><a class = "tabs" href = "/myrestaurants">My Restaurants</a></li>
-        <li id = "login" onclick = "document.getElementById('loginForm').style.display = 'block'">
-          <a class = "tabs" href = "#">Login</a></li>
-        <li class = "icon">
-          <a href = "javascript:void(0);" style = "font-size: 17px;" onclick = "navCollapse()">☰</a>
-        </li>
-      </ul>
-    </nav>
-  </header>
+  <% include ../partials/header.ejs %>
 
   <!-- Login section which stays hidden till in use -->
   <div id = "loginForm" class = "modal">
