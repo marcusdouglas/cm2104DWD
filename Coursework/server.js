@@ -22,6 +22,7 @@ app.get("/", function(req, res) {
 // about page
 app.get("/myrestaurants", function(req, res) {
   res.render("pages/myrestaurants");
+  $("#myrestaurantsTab").addClass("active");
 });
 
 app.listen(8080);
