@@ -22,7 +22,7 @@ app.get("/", function(req, res) {
 // about page
 app.get("/myrestaurants", function(req, res) {
   res.render("pages/myrestaurants", {
-    page_name: 'about';
+    page_name: 'about'
   });
 });
 
