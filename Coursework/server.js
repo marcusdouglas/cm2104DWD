@@ -21,9 +21,7 @@ app.get("/", function(req, res) {
 
 // about page
 app.get("/myrestaurants", function(req, res) {
-  res.render("pages/myrestaurants", {
-    $("#myrestaurantsTab").removeClass("tabs").addClass("active");
-  });
+  res.render("pages/myrestaurants");
 });
 
 app.listen(8080);
