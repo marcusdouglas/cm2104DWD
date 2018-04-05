@@ -28,8 +28,8 @@ $(function() {
 
   function printJSON(jsondata) {
     // Prints the json to the screen
-    var normal = JSON.stringify(jsondata);
-    $("#resultsbox").append("<p>" + normal + "</p>");
+    var pretty = JSON.stringify(jsondata, null, 4);
+    $("#resultsbox").append("<pre>" + pretty + "</pre>");
   }
 
   /*
