@@ -1,3 +1,13 @@
+@media only screen and (min-width:700px) {
+  #profContainer {
+    width: 20%;
+  }
+
+  textarea {
+    width: 50%;
+  }
+}
+
 /* ------------------Css for the Collapsed Navigation Bar------------------- */
 @media only screen and (max-width:700px) {
     ul.nav-tabs li:not(:first-child) {
@@ -36,6 +46,14 @@
 
     .nav-tabs.responsive {
       padding-top: 0;
+    }
+
+    #profContainer {
+      width: 100%;
+    }
+
+    textarea {
+      width: 100%;
     }
   }
 
@@ -101,7 +119,6 @@ body {
 }
 
 #profContainer {
-  width: 20%;
   height: auto;
   padding: 0;
   float: left;
