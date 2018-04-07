@@ -1,5 +1,5 @@
 const MongoClient = require("mongodb").MongoClient;
-const url = "mongodb://localhost:27017/star_wars_quotes";
+const url = "mongodb://localhost:27017/swainson_review";
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
