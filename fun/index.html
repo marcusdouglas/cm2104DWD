@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset = "utf-8" name = "viewport" content = "width=device-width, initial-scale=1">
+  <!-- Place site logo here -->
+  <link rel="icon" href="" type="image/gif" sizes="16x16">
+  <link rel = "stylesheet" href = "style.css" type = "text/css">
+  <title>Swainson</title>
+
+  <script src = "http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src = "script.js"></script>
+</head>
+
+<body>
+  <header>
+    <nav id = "nav">
+      <ul class = "nav-tabs" id = "collapseNav">
+        <li><a id = "indexTab" class = "active" href = "#">Home</a></li>
+        <li id = "login" onclick = "document.getElementById('loginForm').style.display = 'block'">
+          <a class = "tabs" href = "#">Login</a></li>
+        <li class = "icon">
+          <a href = "javascript:void(0);" style = "font-size: 17px;" onclick = "navCollapse()">☰</a>
+        </li>
+      </ul>
+    </nav>
+</header>
+
+<section>
+  <div id = "MainContent">
+    <div id = "topContainer">
+      <div id = "profContainer">
+        <img id = "prof" src = "images/prof.jpg">
+      </div>
+
+      <div id = "info">
+        <h2>Swainson - The tale of a SpangleFish</h2>
+        <p>This is the beloved Ruaraidh Swainson of whom has reached the grand
+        old age of 20 years. In honour of his age this website has been created
+      for us to share our favourite wholesome memories of the wee shit.</p>
+      </div>
+    </div>
+
+    <div id = "reviewArea">
+      <h2>Leave a Review</h2>
+    </div>
+
+    <form>
+      <textarea rows="8" cols="100"></textarea>
+      <input type = "submit">
+    </form>
+  </div>
+
+  <footer id = "PageFooter">
+    <p>Swainson the Communist</p>
+  </footer>
+</body>
+</html>

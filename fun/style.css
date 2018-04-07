@@ -1,0 +1,136 @@
+/* ------------------Css for the Collapsed Navigation Bar------------------- */
+@media only screen and (max-width:700px) {
+    ul.nav-tabs li:not(:first-child) {
+        display: none;
+    }
+
+    ul.nav-tabs li.icon {
+        float: right;
+        display: inline-block;
+    }
+
+    ul.nav-tabs.responsive {
+        position: relative;
+        padding-bottom: 0;
+    }
+
+    ul.nav-tabs.responsive li.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    ul.nav-tabs.responsive li {
+        float: none;
+        display: inline;
+    }
+
+    ul.nav-tabs.responsive li a {
+        display: block;
+        text-align: left;
+    }
+
+    ul.nav-tabs li a {
+        font-size: 20px;
+    }
+
+    .nav-tabs.responsive {
+      padding-top: 0;
+    }
+  }
+
+body {
+  margin: auto;
+  font-family: Calibri, Verdana, Geneva, sans-serif;
+}
+
+#nav {
+  margin: auto;
+  padding: 0;
+  transition: width, 1.0s;
+  transition-timing-function: ease-in-out;
+  overflow: visible;
+}
+
+#nav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#nav a.active {
+  background-color: #333;
+  color: white;
+}
+
+.nav-tabs {
+  /*background-color: #559E54;*/
+  background-color: cornflowerblue;
+  overflow: hidden;
+  list-style-type: none;
+  margin: 0;
+  padding: 12px;
+  padding-right: 0;
+  padding-left: 0;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.nav-tabs li {
+  float: left;
+}
+
+.nav-tabs li a {
+  text-align: center;
+  padding-right: 14px;
+  text-decoration: none;
+  transition: 0.3s;
+  padding: 16px 14px;
+  font-size: 20px;
+  color: white;
+}
+
+.icon {
+  display: none;
+}
+
+#MainContent {
+  padding: 12px;
+}
+
+#topContainer {
+  border: 1px solid black;
+  height: 300px;
+}
+
+#profContainer {
+  width: 20%;
+  height: auto;
+  padding: 0;
+  float: left;
+}
+
+#prof {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: 2px solid grey;
+}
+
+#info {
+  width: 75%;
+  float: left;
+  padding-left: 12px;
+  overflow:hidden;
+}
+
+#reviewArea {
+  margin-top: 30px;
+}
+
+#PageFooter {
+  background-color: cornflowerblue;
+  height: 150px;
+  text-align: center;
+  color: white;
+  padding: 50px;
+}
