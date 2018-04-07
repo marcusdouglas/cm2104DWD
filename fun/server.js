@@ -36,3 +36,10 @@ app.post('/review', function (req, res) {
     res.redirect('/')
   });
 });
+
+app.post("/delete", function(req, res) {
+  db.collection("review").deleteOne(req.body, function(err, result) {
+    if (err) throw error;
+    res.redirect("/");
+  });
+});
