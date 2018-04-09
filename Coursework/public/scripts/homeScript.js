@@ -61,6 +61,7 @@ $(function() {
 //---------------------Creates a new card---------------------
   $("#MainContent").on("click", ".button", function() {
     var name = "placeholder";
+    var photos = "palceholder";
     createCard(name, photos);
   });
 });
