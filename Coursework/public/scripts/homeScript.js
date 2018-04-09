@@ -2,7 +2,9 @@ $(function() {
 
   //---------------------Gets API Data---------------------
 
-  $("#searchForm").submit(function() {
+  $("#searchForm").submit(function(e) {
+
+    e.preventDefault();
 
     var loc = $("#location").val();
     var rad = $("distance").val();
