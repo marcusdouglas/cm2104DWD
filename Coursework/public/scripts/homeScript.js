@@ -33,6 +33,7 @@ $(function() {
 
     var searchUrl = "https://developers.zomato.com/api/v2.1/search?"
       + "entity_id=" + entityId + "&entity_type=" + entityType;
+      console.log(searchUrl);
 
     $.ajax ({
       url: searchUrl,
