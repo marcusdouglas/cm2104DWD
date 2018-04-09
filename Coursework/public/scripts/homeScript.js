@@ -60,17 +60,20 @@ $(function() {
 //---------------------Creates a new card---------------------
   $("#MainContent").on("click", ".button", function() {
 
-    // Remove current card with fade out and create new one
-    $("#activeCard").fadeOut(500, function() {
-      $("#activeCard").remove();
-
-      formatCard();
-      $("#activeCard").addClass("card");
-    });
-
-    return false;
-  });
+    createCard();
 });
+
+function createCard {
+  // Remove current card with fade out and create new one
+  $("#activeCard").fadeOut(500, function() {
+    $("#activeCard").remove();
+
+    formatCard();
+    $("#activeCard").addClass("card");
+  });
+
+  return false;
+}
 
 // Formats the new card
 function formatCard (name) {
