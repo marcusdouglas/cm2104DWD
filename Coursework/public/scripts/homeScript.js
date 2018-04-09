@@ -10,6 +10,8 @@ $(function() {
     var rad = $("distance").val();
 
     var locationUrl = "https://developers.zomato.com/api/v2.1/locations?query=" + loc;
+    var entityId = "";
+    var entityType = "";
 
     $.ajax ({
       url: locationUrl,
@@ -22,10 +24,10 @@ $(function() {
         var res = JSON.parse(JSON.stringify(result));
 
         console.log(res.location_suggestions[0].entity_id);
-        var entityId = res.location_suggestions[0].entity_id;
+        entityId = res.location_suggestions[0].entity_id;
 
         console.log(res.location_suggestions[0].entity_type);
-        var entityType = res.location_suggestions[0].entity_type;
+        entityType = res.location_suggestions[0].entity_type;
       }
     });
 
