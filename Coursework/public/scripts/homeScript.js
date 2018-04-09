@@ -25,10 +25,10 @@ $(function() {
         var res = JSON.parse(JSON.stringify(result));
 
         console.log(res.location_suggestions[0].entity_id);
-        entityId = res.location_suggestions[0].entity_id;
+        this.entityId = res.location_suggestions[0].entity_id;
 
         console.log(res.location_suggestions[0].entity_type);
-        entityType = res.location_suggestions[0].entity_type;
+        this.entityType = res.location_suggestions[0].entity_type;
       }
     });
 
