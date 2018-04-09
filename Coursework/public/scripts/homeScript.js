@@ -4,6 +4,7 @@ $(function() {
 
   $("#searchForm").submit(function(e) {
 
+    // Stops the page jumping to the top on click
     e.preventDefault();
 
     var loc = $("#location").val();
@@ -31,9 +32,8 @@ $(function() {
       }
     });
 
-    var searchUrl = "https://developers.zomato.com/api/v2.1/search?"
-      + "entity_id=" + entityId + "&entity_type=" + entityType;
-      console.log(searchUrl);
+    var searchUrl = "https://developers.zomato.com/api/v2.1/search?entity_id=" + entityId + "&entity_type=" + entityType;
+    console.log(searchUrl);
 
     $.ajax ({
       url: searchUrl,
