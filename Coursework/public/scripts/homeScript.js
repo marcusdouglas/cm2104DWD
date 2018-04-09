@@ -48,6 +48,9 @@ $(function() {
           var res = JSON.parse(JSON.stringify(result));
 
           console.log(res.restaurants[0].restaurant.name);
+          var name = res.restaurants[0].restaurant.name;
+
+          formatCard(name);
         }
       });
     }
@@ -70,8 +73,8 @@ $(function() {
 });
 
 // Formats the new card
-function formatCard () {
-  $("#MainContent").append("<div id = 'activeCard'>" + "<h2 class = 'paraTitle'>Restaurant Name</h2>"
+function formatCard (name) {
+  $("#MainContent").append("<div id = 'activeCard'>" + "<h2 class = 'paraTitle'>" + name + "</h2>"
   + "<div class = 'imageContainer'><img class = 'cardImage' src = 'images/foodImage3.jpeg'/>"
   + "<img class = 'cardImage' src = 'images/foodImage4.jpeg'/><img class = 'cardImage' src = 'images/foodImage5.jpeg'/>"
   + "<button id = 'leftButton' class = 'btn' onclick = 'plusDivs(-1)''>&#10094;</button>"
