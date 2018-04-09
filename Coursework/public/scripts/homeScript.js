@@ -61,7 +61,7 @@ $(function() {
 //---------------------Creates a new card---------------------
   $("#MainContent").on("click", ".button", function() {
     var name = "placeholder";
-    var photos = "palceholder";
+    var photos = "palce";
     createCard(name, photos);
   });
 });
@@ -80,10 +80,10 @@ function createCard(name, photos) {
 
 // Formats the new card
 function formatCard (name, photos) {
-  var image = '<img class="imageContainer"/>').attr('src', photos);
+  //var image = $('<img class="imageContainer"/>').attr('src', photos);
 
   $("#MainContent").append("<div id = 'activeCard'>" + "<h2 class = 'paraTitle'>" + name + "</h2>"
-  + image
+  + photos
   + "<img class = 'cardImage' src = 'images/foodImage4.jpeg'/><img class = 'cardImage' src = 'images/foodImage5.jpeg'/>"
   + "<button id = 'leftButton' class = 'btn' onclick = 'plusDivs(-1)''>&#10094;</button>"
   + "<button id = 'rightButton' class = 'btn' onclick = 'plusDivs(1)''>&#10095;</button></div>"
