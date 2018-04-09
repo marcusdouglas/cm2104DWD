@@ -1,6 +1,3 @@
-var entityId;
-var entityType;
-
 $(function() {
 
   //---------------------Gets API Data---------------------
@@ -26,27 +23,32 @@ $(function() {
         var res = JSON.parse(JSON.stringify(result));
 
         console.log(res.location_suggestions[0].entity_id);
-        entityId = res.location_suggestions[0].entity_id;
+        var entityId = res.location_suggestions[0].entity_id;
 
         console.log(res.location_suggestions[0].entity_type);
-        entityType = res.location_suggestions[0].entity_type;
+        var entityType = res.location_suggestions[0].entity_type;
+
+        performSearch(entityId, entityType);
       }
     });
 
-    var searchUrl = "https://developers.zomato.com/api/v2.1/search?entity_id=" + entityId + "&entity_type=" + entityType;
-    console.log(searchUrl);
+    function performSearch(entityId, entityType) {
+      var searchUrl = "https://developers.zomato.com/api/v2.1/search?entity_id=" + entityId + "&entity_type=" + entityType;
+      console.log(searchUrl);
 
-    $.ajax ({
-      url: searchUrl,
-      type: "GET",
-      headers: {"user-key": "3c672f5af7519d65f72ed90953badca5"},
-      dataType: "json",
-      success: function(result) {
-        // deal with data here
-        console.log(result);
-        var res = JSON.parse(JSON.stringify(result));
-      }
-    });
+      $.ajax ({
+        url: searchUrl,
+        type: "GET",
+        headers: {"user-key": "3c672f5af7519d65f72ed90953badca5"},
+        dataType: "json",
+        success: function(result) {
+          // deal with data here
+          console.log(result);
+          var res = JSON.parse(JSON.stringify(result));
+        }
+      });
+    }
+
   });
 
 //---------------------Creates a new card---------------------
