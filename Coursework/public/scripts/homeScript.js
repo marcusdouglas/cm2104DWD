@@ -50,7 +50,7 @@ $(function() {
           console.log(res.restaurants[0].restaurant.name);
           var name = res.restaurants[0].restaurant.name;
 
-          createCard(name);
+          formatCard(name);
         }
       });
     }
@@ -59,21 +59,18 @@ $(function() {
 
 //---------------------Creates a new card---------------------
   $("#MainContent").on("click", ".button", function() {
-    var name = "placeholder";
-    createCard(name);
-});
 
-function createCard(name) {
-  // Remove current card with fade out and create new one
-  $("#activeCard").fadeOut(500, function() {
-    $("#activeCard").remove();
+    // Remove current card with fade out and create new one
+    $("#activeCard").fadeOut(500, function() {
+      $("#activeCard").remove();
 
-    formatCard(name);
-    $("#activeCard").addClass("card");
+      formatCard();
+      $("#activeCard").addClass("card");
+    });
+
+    return false;
   });
-
-  return false;
-}
+});
 
 // Formats the new card
 function formatCard (name) {
