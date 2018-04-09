@@ -80,7 +80,7 @@ function createCard(name, photos) {
 
 // Formats the new card
 function formatCard (name, photos) {
-  var image = $('<img class="imageContainer"/>').attr('src', photos);
+  var image = $('<img class="imageContainer"/>').attr('src', photos));
 
   $("#MainContent").append("<div id = 'activeCard'>" + "<h2 class = 'paraTitle'>" + name + "</h2>"
   + image
