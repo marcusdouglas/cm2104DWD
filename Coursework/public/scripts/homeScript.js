@@ -49,8 +49,9 @@ $(function() {
 
           console.log(res.restaurants[0].restaurant.name);
           var name = res.restaurants[0].restaurant.name;
+          var photos = res.restaurants[0].restaurant.photos_url;
 
-          createCard(name);
+          createCard(name, photos);
         }
       });
     }
@@ -60,16 +61,16 @@ $(function() {
 //---------------------Creates a new card---------------------
   $("#MainContent").on("click", ".button", function() {
     var name = "placeholder";
-    createCard(name);
+    createCard(name, photos);
   });
 });
 
-function createCard(name) {
+function createCard(name, photos) {
   // Remove current card with fade out and create new one
   $("#activeCard").fadeOut(500, function() {
     $("#activeCard").remove();
 
-    formatCard(name);
+    formatCard(name, photos);
     $("#activeCard").addClass("card");
   });
 
@@ -77,9 +78,11 @@ function createCard(name) {
 }
 
 // Formats the new card
-function formatCard (name) {
+function formatCard (name, photos) {
+  var image = $('<img class="imageContainer"/>').attr('src', photos);
+
   $("#MainContent").append("<div id = 'activeCard'>" + "<h2 class = 'paraTitle'>" + name + "</h2>"
-  + "<div class = 'imageContainer'><img class = 'cardImage' src = 'images/foodImage3.jpeg'/>"
+  + image
   + "<img class = 'cardImage' src = 'images/foodImage4.jpeg'/><img class = 'cardImage' src = 'images/foodImage5.jpeg'/>"
   + "<button id = 'leftButton' class = 'btn' onclick = 'plusDivs(-1)''>&#10094;</button>"
   + "<button id = 'rightButton' class = 'btn' onclick = 'plusDivs(1)''>&#10095;</button></div>"
