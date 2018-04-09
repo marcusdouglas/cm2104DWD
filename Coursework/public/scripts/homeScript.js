@@ -22,10 +22,10 @@ $(function() {
         console.log(result);
         var res = JSON.parse(JSON.stringify(result));
 
-        console.log(res.location_suggestions[0].entity_id);
+        //console.log(res.location_suggestions[0].entity_id);
         var entityId = res.location_suggestions[0].entity_id;
 
-        console.log(res.location_suggestions[0].entity_type);
+        //console.log(res.location_suggestions[0].entity_type);
         var entityType = res.location_suggestions[0].entity_type;
 
         performSearch(entityId, entityType);
@@ -33,8 +33,9 @@ $(function() {
     });
 
     function performSearch(entityId, entityType) {
+
       var searchUrl = "https://developers.zomato.com/api/v2.1/search?entity_id=" + entityId + "&entity_type=" + entityType;
-      console.log(searchUrl);
+      //console.log(searchUrl);
 
       $.ajax ({
         url: searchUrl,
@@ -45,6 +46,8 @@ $(function() {
           // deal with data here
           console.log(result);
           var res = JSON.parse(JSON.stringify(result));
+
+          console.log(res.restaurants[0].restaurant.name);
         }
       });
     }
