@@ -50,7 +50,7 @@ $(function() {
           console.log(res.restaurants[0].restaurant.name);
           var name = res.restaurants[0].restaurant.name;
 
-          formatCard(name);
+          createCard(name);
         }
       });
     }
@@ -59,16 +59,16 @@ $(function() {
 
 //---------------------Creates a new card---------------------
   $("#MainContent").on("click", ".button", function() {
-
-    createCard();
+    var name = "placeholder";
+    createCard(name);
 });
 
-function createCard {
+function createCard(name) {
   // Remove current card with fade out and create new one
   $("#activeCard").fadeOut(500, function() {
     $("#activeCard").remove();
 
-    formatCard();
+    formatCard(name);
     $("#activeCard").addClass("card");
   });
 
