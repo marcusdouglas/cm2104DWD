@@ -83,8 +83,8 @@ function formatCard (name, thumbnail) {
   //var image = $('<img class="imageContainer"/>').attr('src', photos);
 
   $("#MainContent").append("<div id = 'activeCard'>" + "<h2 class = 'paraTitle'>" + name + "</h2>"
-  + "<div class = 'imageContainer'><img class = 'cardImage' src = 'images/foodImage3.jpeg'/>"
-  + "<img class = 'cardImage' src = " + "'" + thumbnail + "'" + "/><img class = 'cardImage' src = 'images/foodImage5.jpeg'/>"
+  + "<div class = 'imageContainer'><img class = 'cardImage' src = " + "'" + thumbnail + "'" + "/>"
+  + "<img class = 'cardImage' src = 'images/foodImage4.jpeg'/><img class = 'cardImage' src = 'images/foodImage5.jpeg'/>"
   + "<button id = 'leftButton' class = 'btn' onclick = 'plusDivs(-1)''>&#10094;</button>"
   + "<button id = 'rightButton' class = 'btn' onclick = 'plusDivs(1)''>&#10095;</button></div>"
   + "<p>Example Text</p><input id = 'seeMore' class = 'collapseInfo' type = 'checkbox'>"
