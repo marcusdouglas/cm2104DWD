@@ -362,7 +362,14 @@ body {
   margin: auto;
   padding: 12px;
   font-size: 20px;
+  width: 100px;
+  margin-top: 50px;
+  margin-left: 10%;
+  margin-right: 10%;
+  color: white;
   font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
 }
 
 .card {
