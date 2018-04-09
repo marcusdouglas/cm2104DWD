@@ -9,10 +9,10 @@ $(function() {
     var loc = $("#location").val();
     var rad = $("distance").val();
 
-    var url = "https://developers.zomato.com/api/v2.1/locations?query=" + loc;
+    var locationUrl = "https://developers.zomato.com/api/v2.1/locations?query=" + loc;
 
     $.ajax ({
-      url: url,
+      url: locationUrl,
       type: "GET",
       headers: {"user-key": "3c672f5af7519d65f72ed90953badca5"},
       dataType: "json",
@@ -20,7 +20,27 @@ $(function() {
         // deal with data here
         console.log(result);
         var res = JSON.parse(JSON.stringify(result));
-        console.log(res.location_suggestions[0].city_id);
+
+        console.log(res.location_suggestions[0].entity_id);
+        var entityId = res.location_suggestions[0].entity_id;
+
+        console.log(res.location_suggestions[0].entity_type);
+        var entityType = res.location_suggestions[0].entity_type;
+      }
+    });
+
+    var searchUrl = "https://developers.zomato.com/api/v2.1/search?"
+      + "entity_id=" + entityId + "&entity_type=" + entityType;
+
+    $.ajax ({
+      url: searchUrl,
+      type: "GET",
+      headers: {"user-key": "3c672f5af7519d65f72ed90953badca5"},
+      dataType: "json",
+      success: function(result) {
+        // deal with data here
+        console.log(result);
+        var res = JSON.parse(JSON.stringify(result));
       }
     });
   });
