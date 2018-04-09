@@ -1,8 +1,6 @@
 $(function() {
 
   //---------------------Gets API Data---------------------
-  var entityId = "";
-  var entityType = "";
 
   $("#searchForm").submit(function(e) {
 
@@ -13,6 +11,8 @@ $(function() {
     var rad = $("distance").val();
 
     var locationUrl = "https://developers.zomato.com/api/v2.1/locations?query=" + loc;
+    var entityId = "";
+    var entityType = "";
 
     $.ajax ({
       url: locationUrl,
