@@ -16,12 +16,14 @@ app.use(express.static(__dirname + '/public'));
 
 // index page
 app.get("/", function(req, res) {
-  res.render("pages/index",{pageName:index});
+  //res.render("pages/index",{pageName:index});
+  res.render("pages/index");
 });
 
 // about page
 app.get("/myrestaurants", function(req, res) {
-  res.render("pages/myrestaurants", {pageName:myrestaurants});
+  //res.render("pages/myrestaurants", {pageName:myrestaurants});
+  res.render("pages/myrestaurants");
 });
 
 app.listen(8080);
