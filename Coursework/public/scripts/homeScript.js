@@ -1,11 +1,16 @@
 $(function() {
 
   //---------------------Gets API Data---------------------
-/*
-  $("#retrieve-resources").click(function() {
+
+  $("#search").click(function() {
+
+    var loc = $("#location").val();
+    var rad = $("distance").val();
+
+    var url = "https://developers.zomato.com/api/v2.1/locations?query=" + loc;
 
     $.ajax ({
-      url: "https://developers.zomato.com/api/v2.1/locations?query=Aberdeen%2C%20Scotland",
+      url: url,
       type: "GET",
       headers: {"user-key": "3c672f5af7519d65f72ed90953badca5"},
       dataType: "json",
@@ -17,7 +22,7 @@ $(function() {
       }
     });
   });
-*/
+
 //---------------------Creates a new card---------------------
   $("#MainContent").on("click", ".button", function() {
 
