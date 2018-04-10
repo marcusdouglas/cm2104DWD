@@ -130,7 +130,7 @@ function getRating(userRating, voteCount) {
 }
 
 function getAverageCost(averageCost) {
-  var restaurantAverageCost = "<b>Average Cost:</b> ";
+  var restaurantAverageCost = "<br><b>Average Cost:</b> ";
   var poundCount = 0;
 
   for (var i = 0; i < averageCost; i++) {
