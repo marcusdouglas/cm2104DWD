@@ -85,7 +85,7 @@ function createCard(name, thumbnail, userRating, voteCount, foodType) {
 function formatCard (name, thumbnail, userRating, voteCount, foodType) {
 
   var restaurantName = "<div id = 'activeCard'><h2 class = 'paraTitle'>" + name + "</h2>";
-  var restaurantFood = "<br>Cuisine/s: " + foodType + "</p>";
+  var restaurantFood = "<br><b>Cuisine/s:</b> " + foodType + "</p>";
 
   $("#MainContent").append(restaurantName
   + "<div class = 'imageContainer'><img class = 'cardImage' src = " + "'" + thumbnail + "'" + "/>"
@@ -107,7 +107,7 @@ function formatCard (name, thumbnail, userRating, voteCount, foodType) {
 
 // Uses API data to create a star rating
 function getRating(userRating, voteCount) {
-  var restaurantRating = "<span class = 'heading'>User Rating: </span>";
+  var restaurantRating = "<span class = 'heading'><b>Star Rating:</b> </span>";
   var roundedRating = Math.round(userRating);
   var starCount = 0;
 
