@@ -408,8 +408,8 @@ body {
     transition: 0.3s;
 }
 
-.fa {
-    font-size: 12px;
+.star {
+    font-size: 16px;
 }
 
 .starChecked {
