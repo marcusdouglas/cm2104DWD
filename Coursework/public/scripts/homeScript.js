@@ -68,7 +68,7 @@ $(function() {
 //---------------------Creates a new card---------------------
   $("#MainContent").on("click", ".button", function() {
     index++;
-    getLocation();
+    createCard();
 
     //createCard(name, thumbnail, userRating, voteCount, foodType, averageCost);
   });
@@ -92,10 +92,16 @@ function createCard(restaurantArray) {
     formatCard(name, thumbnail, userRating, voteCount, foodType, averageCost);
     $("#activeCard").addClass("card");
 
-    index++;
+    //index++;
   });
 
   return false;
+}
+
+function localArray(restaurantsArray) {
+  var theArray = restaurantsArray;
+  console.log("This One" + restaurantsArray);
+  return restaurantsArray;
 }
 
 /*
@@ -209,6 +215,7 @@ function performSearch(entityId, entityType) {
 
       //createCard(name, thumbnail, userRating, voteCount, foodType, averageCost);
       createCard(restaurantsArray);
+      localArray(restaurantsArray);
       //console.log(restaurantsArray);
       //return restaurantsArray;
     }
