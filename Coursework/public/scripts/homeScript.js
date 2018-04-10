@@ -142,4 +142,6 @@ function getAverageCost(averageCost) {
     restaurantAverageCost += "<span class='fas fa-dollar-sign dollarOff'></span>";
     poundCount++;
   }
+
+  return restaurantAverageCost;
 }
