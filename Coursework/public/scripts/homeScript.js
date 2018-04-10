@@ -67,7 +67,7 @@ $(function() {
 
 //---------------------Creates a new card---------------------
   $("#MainContent").on("click", ".button", function() {
-
+    getLocation();
 
     createCard(name, thumbnail, userRating, voteCount, foodType, averageCost);
   });
