@@ -80,12 +80,12 @@ function createCard() {
   // Remove current card with fade out and create new one
   $("#activeCard").fadeOut(500, function() {
 
-    var name = restaurantArray[index].name;
-    var thumbnail = restaurantArray[index].thumbnail;
-    var userRating = restaurantArray[index].userRating;
-    var voteCount = restaurantArray[index].voteCount;
-    var foodType = restaurantArray[index].foodType;
-    var averageCost = restaurantArray[index].averageCost;
+    var name = restaurantsArray[index].name;
+    var thumbnail = restaurantsArray[index].thumbnail;
+    var userRating = restaurantsArray[index].userRating;
+    var voteCount = restaurantsArray[index].voteCount;
+    var foodType = restaurantsArray[index].foodType;
+    var averageCost = restaurantsArray[index].averageCost;
 
     $("#activeCard").remove();
 
