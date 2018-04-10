@@ -53,8 +53,9 @@ $(function() {
           var userRating = res.restaurants[0].restaurant.user_rating.aggregate_rating;
           var voteCount = res.restaurants[0].restaurant.user_rating.votes;
           var foodType = res.restaurants[0].restaurant.cuisines;
+          var averageCost = res.restaurants[0].restaurant.price_range;
 
-          createCard(name, thumbnail, userRating, voteCount, foodType);
+          createCard(name, thumbnail, userRating, voteCount, foodType, averageCost);
         }
       });
     }
@@ -65,16 +66,16 @@ $(function() {
   $("#MainContent").on("click", ".button", function() {
     var name = "placeholder";
     var thumbnail = "placeholderimage";
-    createCard(name, thumbnail, userRating, voteCount, foodType);
+    createCard(name, thumbnail, userRating, voteCount, foodType, averageCost);
   });
 });
 
-function createCard(name, thumbnail, userRating, voteCount, foodType) {
+function createCard(name, thumbnail, userRating, voteCount, foodType, averageCost) {
   // Remove current card with fade out and create new one
   $("#activeCard").fadeOut(500, function() {
     $("#activeCard").remove();
 
-    formatCard(name, thumbnail, userRating, voteCount, foodType);
+    formatCard(name, thumbnail, userRating, voteCount, foodType, averageCost);
     $("#activeCard").addClass("card");
   });
 
@@ -82,7 +83,7 @@ function createCard(name, thumbnail, userRating, voteCount, foodType) {
 }
 
 // Formats the new card
-function formatCard (name, thumbnail, userRating, voteCount, foodType) {
+function formatCard (name, thumbnail, userRating, voteCount, foodType, averageCost) {
 
   var restaurantName = "<div id = 'activeCard'><h2 class = 'paraTitle'>" + name + "</h2>";
   var restaurantFood = "<br><b>Cuisine/s:</b> " + foodType + "</p>";
@@ -121,8 +122,23 @@ function getRating(userRating, voteCount) {
     starCount ++;
   }
 
-  restaurantRating += "<p>This restaurant has been rated "
+  restaurantRating += "<p><b>User Rating:</b> This restaurant has been rated "
   + userRating + " out of 5 stars based on " + voteCount + " reviews.";
 
   return restaurantRating;
+}
+
+function getAverageCost(averageCost) {
+  var restaurantAverageCost = "<b>Average Cost:</b> ";
+  var poundCount = 0;
+
+  for (var i = 0; i < averageCost; i++) {
+    restaurantRating += "£";
+    poundCount++;
+  }
+
+  for (var i = poundCount; i < 4; i++) {
+    restaurantRating += "£";
+    poundCount++;
+  }
 }
