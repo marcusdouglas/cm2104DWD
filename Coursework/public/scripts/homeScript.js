@@ -180,7 +180,8 @@ function performSearch(entityId, entityType) {
           foodType: foodType, averageCost: averageCost};
         //console.log(restaurant);
         restaurantsArray[i] = restaurant;
-        console.log(restaurantsArray);
+        var rest = JSON.parse(JSON.stringify(restaurantsArray));
+        console.log(rest);
       }
 
       createCard(name, thumbnail, userRating, voteCount, foodType, averageCost);
