@@ -134,12 +134,12 @@ function getAverageCost(averageCost) {
   var poundCount = 0;
 
   for (var i = 0; i < averageCost; i++) {
-    restaurantAverageCost += "<span class='fas fa-dollar-sign dollarOn'></span>";
+    restaurantAverageCost += "<span class='fa fa-dollar dollarOn'></span>";
     poundCount++;
   }
 
   for (var i = poundCount; i < 4; i++) {
-    restaurantAverageCost += "<span class='fas fa-dollar-sign dollarOff'></span>";
+    restaurantAverageCost += "<span class='fa fa-dollar dollarOff'></span>";
     poundCount++;
   }
 
