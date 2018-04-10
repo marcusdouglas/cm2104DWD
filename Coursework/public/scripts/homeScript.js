@@ -109,7 +109,7 @@ function formatCard (name, thumbnail, userRating, voteCount, foodType, averageCo
 
 // Uses API data to create a star rating
 function getRating(userRating, voteCount) {
-  var restaurantRating = "<span class = 'heading'><b>Star Rating:</b> </span>";
+  var restaurantRating = "<span class = 'starText'><b>Star Rating:</b> </span>";
   var roundedRating = Math.round(userRating);
   var starCount = 0;
 
