@@ -31,7 +31,7 @@ $(function() {
         performSearch(entityId, entityType);
       }
     });
-
+/*
     function performSearch(entityId, entityType) {
 
       var searchUrl = "https://developers.zomato.com/api/v2.1/search?entity_id=" + entityId + "&entity_type=" + entityType;
@@ -58,14 +58,14 @@ $(function() {
           createCard(name, thumbnail, userRating, voteCount, foodType, averageCost);
         }
       });
-    }
+    }*/
 
   });
 
 //---------------------Creates a new card---------------------
   $("#MainContent").on("click", ".button", function() {
-    var name = "placeholder";
-    var thumbnail = "placeholderimage";
+
+
     createCard(name, thumbnail, userRating, voteCount, foodType, averageCost);
   });
 });
@@ -107,6 +107,34 @@ function formatCard (name, thumbnail, userRating, voteCount, foodType, averageCo
   $("#activeCard").hide().fadeIn("500");
 }
 
+function performSearch(entityId, entityType) {
+
+  var searchUrl = "https://developers.zomato.com/api/v2.1/search?entity_id=" + entityId + "&entity_type=" + entityType;
+  //console.log(searchUrl);
+
+  $.ajax ({
+    url: searchUrl,
+    type: "GET",
+    headers: {"user-key": "3c672f5af7519d65f72ed90953badca5"},
+    dataType: "json",
+    success: function(result) {
+      // deal with data here
+      console.log(result);
+      var res = JSON.parse(JSON.stringify(result));
+
+      //console.log(res.restaurants[0].restaurant.name);
+      var name = res.restaurants[0].restaurant.name;
+      var thumbnail = res.restaurants[0].restaurant.thumb;
+      var userRating = res.restaurants[0].restaurant.user_rating.aggregate_rating;
+      var voteCount = res.restaurants[0].restaurant.user_rating.votes;
+      var foodType = res.restaurants[0].restaurant.cuisines;
+      var averageCost = res.restaurants[0].restaurant.price_range;
+
+      createCard(name, thumbnail, userRating, voteCount, foodType, averageCost);
+    }
+  });
+} 
+
 // Uses API data to create a star rating
 function getRating(userRating, voteCount) {
   var restaurantRating = "<span class = 'starText'><b>Star Rating:</b> </span>";
@@ -129,6 +157,7 @@ function getRating(userRating, voteCount) {
   return restaurantRating;
 }
 
+// Uses API data to create a rating for the average cost at the restaurant
 function getAverageCost(averageCost) {
   var restaurantAverageCost = "<br><b>Average Cost:</b> ";
   var poundCount = 0;
