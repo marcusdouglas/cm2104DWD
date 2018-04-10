@@ -81,7 +81,7 @@ function createCard(name, thumbnail) {
 // Formats the new card
 function formatCard (name, thumbnail) {
   //var image = $('<img class="imageContainer"/>').attr('src', photos);
-  var restautantName = "<div id = 'activeCard'>" + "<h2 class = 'paraTitle'>" + name + "</h2>";
+  var restautantName = "<div id = 'activeCard'><h2 class = 'paraTitle'>" + name + "</h2>";
   var restaurantRating = "<span class = 'heading'>User Rating: </span>"
   + "<span class = 'fa fa-star starChecked'></span>"
   + "<span class = 'fa fa-star starChecked'></span>"
