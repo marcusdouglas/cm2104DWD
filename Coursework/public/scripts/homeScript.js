@@ -139,7 +139,7 @@ function getAverageCost(averageCost) {
   }
 
   for (var i = poundCount; i < 4; i++) {
-    restaurantRating += "<span class='fas fa-dollar-sign dollarOff'></span>";
+    restaurantAverageCost += "<span class='fas fa-dollar-sign dollarOff'></span>";
     poundCount++;
   }
 }
