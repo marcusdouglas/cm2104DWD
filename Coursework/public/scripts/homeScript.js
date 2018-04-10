@@ -50,7 +50,8 @@ $(function() {
           //console.log(res.restaurants[0].restaurant.name);
           var name = res.restaurants[0].restaurant.name;
           var thumbnail = res.restaurants[0].restaurant.thumb;
-          var userRating = res.restaurants[0].user_rating[0];
+          var userRating = Math.round(res.restaurants[0].restaurant.user_rating.aggregate_rating);
+          console.log(userRating);
 
           createCard(name, thumbnail, userRating);
         }
