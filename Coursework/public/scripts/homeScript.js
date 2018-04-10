@@ -113,6 +113,9 @@ function performSearch(entityId, entityType) {
       console.log(result);
       var res = JSON.parse(JSON.stringify(result));
 
+      restaurantsArray.length = 0;
+      console.log("empty" + restaurantsArray);
+
       for (var i = 0; i < res.restaurants.length; i++) {
         var name = res.restaurants[i].restaurant.name;
         var thumbnail = res.restaurants[i].restaurant.thumb;
@@ -128,7 +131,7 @@ function performSearch(entityId, entityType) {
 
         restaurantsArray[i] = restaurant;
       }
-
+console.log("new" + restaurantsArray);
       createCard();
     }
   });
