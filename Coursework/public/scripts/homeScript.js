@@ -183,9 +183,9 @@ function performSearch(entityId, entityType) {
       }
 
       createCard(name, thumbnail, userRating, voteCount, foodType, averageCost);
+      console.log(restaurantsArray);
+      return restaurantsArray;
     }
-    console.log(restaurantsArray);
-    return restaurantsArray;
   });
 }
 
