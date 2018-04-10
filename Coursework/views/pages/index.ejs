@@ -80,6 +80,7 @@
     </form>
 
     <div id = "activeCard" class = "card">
+      <h2 class = "paraTitle">Restaurant Name</h2>
       <div class = "imageContainer">
         <img src = "images/foodImage3.jpeg" class = "cardImage">
         <img src = "images/foodImage4.jpeg" class = "cardImage">
@@ -88,9 +89,14 @@
         <button id = "leftButton" class = "btn" onclick = "plusDivs(-1)">&#10094;</button>
         <button id = "rightButton" class = "btn" onclick = "plusDivs(1)">&#10095;</button>
       </div>
-      <h2 class = "paraTitle">Restaurant Name</h2>
-      <p>Example Text
-      </p>
+      <span class="heading">User Rating</span>
+      <span class="fa fa-star starChecked"></span>
+      <span class="fa fa-star starChecked"></span>
+      <span class="fa fa-star starChecked"></span>
+      <span class="fa fa-star starChecked"></span>
+      <span class="fa fa-star"></span>
+      <p>4.1 average based on 254 reviews.</p>
+      <hr style="border:3px solid #f1f1f1">
 
       <input id = "seeMore" class = "collapseInfo" type = "checkbox">
       <label class = "collapseLabel" for = "seeMore">See more...</label>

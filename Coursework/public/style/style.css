@@ -408,6 +408,10 @@ body {
     transition: 0.3s;
 }
 
+.starChecked {
+    color: orange;
+}
+
 #seeMore:checked ~ .expand {
   height: 130px;
 }
