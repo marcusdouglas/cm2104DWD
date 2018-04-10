@@ -52,8 +52,9 @@ $(function() {
           var thumbnail = res.restaurants[0].restaurant.thumb;
           var userRating = res.restaurants[0].restaurant.user_rating.aggregate_rating;
           var voteCount = res.restaurants[0].restaurant.user_rating.votes;
+          var foodType = res.restaurants[0].restaurant.cuisines;
 
-          createCard(name, thumbnail, userRating, voteCount);
+          createCard(name, thumbnail, userRating, voteCount, foodType);
         }
       });
     }
@@ -64,16 +65,16 @@ $(function() {
   $("#MainContent").on("click", ".button", function() {
     var name = "placeholder";
     var thumbnail = "placeholderimage";
-    createCard(name, thumbnail, userRating, voteCount);
+    createCard(name, thumbnail, userRating, voteCount, foodType);
   });
 });
 
-function createCard(name, thumbnail, userRating, voteCount) {
+function createCard(name, thumbnail, userRating, voteCount, foodType) {
   // Remove current card with fade out and create new one
   $("#activeCard").fadeOut(500, function() {
     $("#activeCard").remove();
 
-    formatCard(name, thumbnail, userRating, voteCount);
+    formatCard(name, thumbnail, userRating, voteCount, foodType);
     $("#activeCard").addClass("card");
   });
 
@@ -81,9 +82,10 @@ function createCard(name, thumbnail, userRating, voteCount) {
 }
 
 // Formats the new card
-function formatCard (name, thumbnail, userRating, voteCount) {
+function formatCard (name, thumbnail, userRating, voteCount, foodType) {
 
   var restaurantName = "<div id = 'activeCard'><h2 class = 'paraTitle'>" + name + "</h2>";
+  var restaurantFood = "<br>Cuisine/s: " + foodType + "</p>";
 
   $("#MainContent").append(restaurantName
   + "<div class = 'imageContainer'><img class = 'cardImage' src = " + "'" + thumbnail + "'" + "/>"
@@ -91,6 +93,7 @@ function formatCard (name, thumbnail, userRating, voteCount) {
   + "<button id = 'leftButton' class = 'btn' onclick = 'plusDivs(-1)''>&#10094;</button>"
   + "<button id = 'rightButton' class = 'btn' onclick = 'plusDivs(1)''>&#10095;</button></div>"
   + getRating(userRating, voteCount)
+  + restaurantFood
   + "<input id = 'seeMore' class = 'collapseInfo' type = 'checkbox'>"
   + "<label class = 'collapseLabel' for = 'seeMore'>See more...</label><div class = 'expand'>"
   + "<p>This is new text<br><br>In here we will incude extra information that we can obtain from the API."
@@ -119,8 +122,7 @@ function getRating(userRating, voteCount) {
   }
 
   restaurantRating += "<p>This restaurant has been rated "
-  + userRating + " out of 5 stars based on " + voteCount + " reviews."
-  + "<hr style='border:2px solid #f1f1f1'>";
+  + userRating + " out of 5 stars based on " + voteCount + " reviews.";
 
   return restaurantRating;
 }
