@@ -66,7 +66,9 @@ $(function() {
   });
 
 //---------------------Creates a new card---------------------
+var index = 0;
   $("#MainContent").on("click", ".button", function() {
+    index++;
     getLocation();
 
     //createCard(name, thumbnail, userRating, voteCount, foodType, averageCost);
@@ -154,12 +156,12 @@ function performSearch(entityId, entityType) {
       var res = JSON.parse(JSON.stringify(result));
 
       //console.log(res.restaurants[0].restaurant.name);
-      var name = res.restaurants[0].restaurant.name;
-      var thumbnail = res.restaurants[0].restaurant.thumb;
-      var userRating = res.restaurants[0].restaurant.user_rating.aggregate_rating;
-      var voteCount = res.restaurants[0].restaurant.user_rating.votes;
-      var foodType = res.restaurants[0].restaurant.cuisines;
-      var averageCost = res.restaurants[0].restaurant.price_range;
+      var name = res.restaurants[index].restaurant.name;
+      var thumbnail = res.restaurants[index].restaurant.thumb;
+      var userRating = res.restaurants[index].restaurant.user_rating.aggregate_rating;
+      var voteCount = res.restaurants[index].restaurant.user_rating.votes;
+      var foodType = res.restaurants[index].restaurant.cuisines;
+      var averageCost = res.restaurants[index].restaurant.price_range;
 
       createCard(name, thumbnail, userRating, voteCount, foodType, averageCost);
     }
