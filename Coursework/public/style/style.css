@@ -408,6 +408,10 @@ body {
     transition: 0.3s;
 }
 
+.fa {
+    font-size: 25px;
+}
+
 .starChecked {
     color: orange;
 }
