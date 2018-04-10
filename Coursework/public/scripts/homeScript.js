@@ -83,8 +83,6 @@ function createCard(name, thumbnail, userRating, voteCount) {
 // Formats the new card
 function formatCard (name, thumbnail, userRating, voteCount) {
 
-  getRating(userRating, voteCount);
-
   var restaurantName = "<div id = 'activeCard'><h2 class = 'paraTitle'>" + name + "</h2>";
 
   $("#MainContent").append(restaurantName
@@ -92,7 +90,7 @@ function formatCard (name, thumbnail, userRating, voteCount) {
   + "<img class = 'cardImage' src = 'images/foodImage4.jpeg'/><img class = 'cardImage' src = 'images/foodImage5.jpeg'/>"
   + "<button id = 'leftButton' class = 'btn' onclick = 'plusDivs(-1)''>&#10094;</button>"
   + "<button id = 'rightButton' class = 'btn' onclick = 'plusDivs(1)''>&#10095;</button></div>"
-  + restaurantRating
+  + getRating(userRating, voteCount);
   + "<input id = 'seeMore' class = 'collapseInfo' type = 'checkbox'>"
   + "<label class = 'collapseLabel' for = 'seeMore'>See more...</label><div class = 'expand'>"
   + "<p>This is new text<br><br>In here we will incude extra information that we can obtain from the API."
@@ -123,4 +121,6 @@ function getRating(userRating, voteCount) {
   restaurantRating += "<p>This restaurant has been rated "
   + userRating + " out of 5 stars based on " + voteCount + " reviews."
   + "<hr style='border:2px solid #f1f1f1'>";
+
+  return restaurantRating;
 }
