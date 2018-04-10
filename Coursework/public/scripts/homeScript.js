@@ -75,6 +75,7 @@ $(function() {
 });
 
 var index = 0;
+var array = [];
 
 function createCard(restaurantArray) {
   // Remove current card with fade out and create new one
@@ -215,7 +216,8 @@ function performSearch(entityId, entityType) {
 
       //createCard(name, thumbnail, userRating, voteCount, foodType, averageCost);
       createCard(restaurantsArray);
-      localArray(restaurantsArray);
+      array.concat(restaurantsArray);
+      console.log(array);
       //console.log(restaurantsArray);
       //return restaurantsArray;
     }
