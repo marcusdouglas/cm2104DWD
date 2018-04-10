@@ -90,12 +90,12 @@ function formatCard (name, thumbnail) {
   + "<span class = 'fa fa-star'></span>"
   + "<p>4.1 average based on 254 reviews.</p>" + "<hr style='border:2px solid #f1f1f1'>";
 
-  $("#MainContent").append(restaurantName
-  + "<div class = 'imageContainer'><img class = 'cardImage' src = " + "'" + thumbnail + "'" + "/>"
+  $("#MainContent").append(restaurantName);
+  $("#MainContent").append("<div class = 'imageContainer'><img class = 'cardImage' src = " + "'" + thumbnail + "'" + "/>"
   + "<img class = 'cardImage' src = 'images/foodImage4.jpeg'/><img class = 'cardImage' src = 'images/foodImage5.jpeg'/>"
   + "<button id = 'leftButton' class = 'btn' onclick = 'plusDivs(-1)''>&#10094;</button>"
   + "<button id = 'rightButton' class = 'btn' onclick = 'plusDivs(1)''>&#10095;</button></div>"
-  + restaurantRating
+  //+ restaurantRating
   + "<input id = 'seeMore' class = 'collapseInfo' type = 'checkbox'>"
   + "<label class = 'collapseLabel' for = 'seeMore'>See more...</label><div class = 'expand'>"
   + "<p>This is new text<br><br>In here we will incude extra information that we can obtain from the API."
