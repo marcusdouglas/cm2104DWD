@@ -85,12 +85,12 @@ function formatCard (name, thumbnail, userRating) {
   var restaurantRating = "<span class = 'heading'>User Rating: </span>";
   var starCount = 0;
 
-  for (int i = 0; i < userRating; i++) {
+  for (var i = 0; i < userRating; i++) {
     restaurantRating += "<span class = 'fa fa-star starChecked'></span>";
     starCount++;
   }
 
-  for (int i = starCount; i < 5; i++) {
+  for (var i = starCount; i < 5; i++) {
     restaurantRating += "<span class = 'fa fa-star'></span>";
     starCount ++;
   }
