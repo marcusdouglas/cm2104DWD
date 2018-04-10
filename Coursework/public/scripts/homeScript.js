@@ -47,6 +47,9 @@ $(function() {
           console.log(result);
           var res = JSON.parse(JSON.stringify(result));
 
+          var restaurantsArray = res.restaurants;
+          console.log("New: " + restaurantsArray.name);
+
           console.log(res.restaurants[0].restaurant.name);
           var name = res.restaurants[0].restaurant.name;
           var thumbnail = res.restaurants[0].restaurant.thumb;
@@ -61,7 +64,7 @@ $(function() {
 //---------------------Creates a new card---------------------
   $("#MainContent").on("click", ".button", function() {
     var name = "placeholder";
-    var thumbnail = "palce";
+    var thumbnail = "placeholderimage";
     createCard(name, thumbnail);
   });
 });
