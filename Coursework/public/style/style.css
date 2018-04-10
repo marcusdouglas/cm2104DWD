@@ -425,10 +425,10 @@ body {
 .starText {
     font-size: 20px;
     margin-top: 12px;
-    margin-right: 25px;
+    margin-right: 16px;
 }
 
-.fas .fa-dollar-sign {
+.fa .fa-dollar-sign {
   font-size: 20px;
 }
 
