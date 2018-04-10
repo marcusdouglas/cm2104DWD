@@ -75,9 +75,8 @@ $(function() {
 });
 
 var index = 0;
-var array = [];
 
-function createCard(restaurantArray) {
+function createCard() {
   // Remove current card with fade out and create new one
   $("#activeCard").fadeOut(500, function() {
 
@@ -97,12 +96,6 @@ function createCard(restaurantArray) {
   });
 
   return false;
-}
-
-function localArray(restaurantsArray) {
-  var theArray = restaurantsArray;
-  console.log("This One" + restaurantsArray);
-  return restaurantsArray;
 }
 
 /*
@@ -173,6 +166,8 @@ function getLocation() {
   });
 }
 
+var restaurantsArray = [];
+
 function performSearch(entityId, entityType) {
 
   var searchUrl = "https://developers.zomato.com/api/v2.1/search?entity_id=" + entityId + "&entity_type=" + entityType;
@@ -197,7 +192,7 @@ function performSearch(entityId, entityType) {
       var averageCost = res.restaurants[index].restaurant.price_range;
 */
 
-      var restaurantsArray = [];
+      //var restaurantsArray = [];
 
       for (var i = 0; i < res.restaurants.length; i++) {
         var name = res.restaurants[i].restaurant.name;
@@ -215,9 +210,7 @@ function performSearch(entityId, entityType) {
       }
 
       //createCard(name, thumbnail, userRating, voteCount, foodType, averageCost);
-      createCard(restaurantsArray);
-      array.concat(restaurantsArray);
-      console.log(array);
+      createCard();
       //console.log(restaurantsArray);
       //return restaurantsArray;
     }
