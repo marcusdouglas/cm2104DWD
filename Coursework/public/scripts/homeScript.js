@@ -3,6 +3,8 @@ $(function() {
   //---------------------Gets API Data---------------------
 
   $("#searchForm").submit(function(e) {
+    // Stops the page jumping to the top on click
+    e.preventDefault();
     getLocation();
 /*
     // Stops the page jumping to the top on click
@@ -109,8 +111,6 @@ function formatCard (name, thumbnail, userRating, voteCount, foodType, averageCo
 }
 
 function getLocation() {
-  // Stops the page jumping to the top on click
-  e.preventDefault();
 
   var loc = $("#location").val();
   var rad = $("distance").val();
