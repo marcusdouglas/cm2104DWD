@@ -175,7 +175,9 @@ function performSearch(entityId, entityType) {
         var foodType = res.restaurants[i].restaurant.cuisines;
         var averageCost = res.restaurants[i].restaurant.price_range;
 
-        var restaurant = {name: name};
+        var restaurant = {name: name, thumbnail: thumbnail,
+          userRating: userRating, voteCount: voteCount,
+          foodType: foodType, averageCost: averageCost};
         console.log(restaurant);
       }
 
