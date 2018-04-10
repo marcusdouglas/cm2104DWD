@@ -47,11 +47,12 @@ $(function() {
           console.log(result);
           var res = JSON.parse(JSON.stringify(result));
 
-          console.log(res.restaurants[0].restaurant.name);
+          //console.log(res.restaurants[0].restaurant.name);
           var name = res.restaurants[0].restaurant.name;
           var thumbnail = res.restaurants[0].restaurant.thumb;
+          var userRating = res.restaurants[0].user_rating.aggregate_rating;
 
-          createCard(name, thumbnail);
+          createCard(name, thumbnail, userRating);
         }
       });
     }
@@ -62,16 +63,16 @@ $(function() {
   $("#MainContent").on("click", ".button", function() {
     var name = "placeholder";
     var thumbnail = "placeholderimage";
-    createCard(name, thumbnail);
+    createCard(name, thumbnail, userRating);
   });
 });
 
-function createCard(name, thumbnail) {
+function createCard(name, thumbnail, userRating) {
   // Remove current card with fade out and create new one
   $("#activeCard").fadeOut(500, function() {
     $("#activeCard").remove();
 
-    formatCard(name, thumbnail);
+    formatCard(name, thumbnail, userRating);
     $("#activeCard").addClass("card");
   });
 
@@ -79,16 +80,32 @@ function createCard(name, thumbnail) {
 }
 
 // Formats the new card
-function formatCard (name, thumbnail) {
-  //var image = $('<img class="imageContainer"/>').attr('src', photos);
+function formatCard (name, thumbnail, userRating) {
+
+  var restaurantRating = "<span class = 'heading'>User Rating: </span>";
+  var starCount = 0;
+
+  for (int i = 0; i < userRating; i++) {
+    restaurantRating += "<span class = 'fa fa-star starChecked'></span>";
+    starCount++;
+  }
+
+  for (int i = starCount; i < 5; i++) {
+    restaurantRating += "<span class = 'fa fa-star'></span>";
+    starCount ++;
+  }
+
+  restaurantRating += "<p>4.1 average based on 254 reviews.</p>" + "<hr style='border:2px solid #f1f1f1'>";
+
   var restaurantName = "<div id = 'activeCard'><h2 class = 'paraTitle'>" + name + "</h2>";
+  /*
   var restaurantRating = "<span class = 'heading'>User Rating: </span>"
   + "<span class = 'fa fa-star starChecked'></span>"
   + "<span class = 'fa fa-star starChecked'></span>"
   + "<span class = 'fa fa-star starChecked'></span>"
   + "<span class = 'fa fa-star starChecked'></span>"
   + "<span class = 'fa fa-star'></span>"
-  + "<p>4.1 average based on 254 reviews.</p>" + "<hr style='border:2px solid #f1f1f1'>";
+  + "<p>4.1 average based on 254 reviews.</p>" + "<hr style='border:2px solid #f1f1f1'>";*/
 
   $("#MainContent").append(restaurantName
   + "<div class = 'imageContainer'><img class = 'cardImage' src = " + "'" + thumbnail + "'" + "/>"
