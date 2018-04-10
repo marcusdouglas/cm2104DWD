@@ -69,7 +69,7 @@ $(function() {
   $("#MainContent").on("click", ".button", function() {
     getLocation();
 
-    createCard(name, thumbnail, userRating, voteCount, foodType, averageCost);
+    //createCard(name, thumbnail, userRating, voteCount, foodType, averageCost);
   });
 });
 
