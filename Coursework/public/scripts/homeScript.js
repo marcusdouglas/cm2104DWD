@@ -85,7 +85,9 @@ function createCard(name, thumbnail, userRating, voteCount, foodType, averageCos
 
   return false;
 }
+
 var index = 0;
+
 // Formats the new card
 function formatCard (name, thumbnail, userRating, voteCount, foodType, averageCost) {
 
@@ -153,7 +155,7 @@ function performSearch(entityId, entityType) {
       // deal with data here
       console.log(result);
       var res = JSON.parse(JSON.stringify(result));
-
+/*
       //console.log(res.restaurants[0].restaurant.name);
       var name = res.restaurants[index].restaurant.name;
       var thumbnail = res.restaurants[index].restaurant.thumb;
@@ -161,6 +163,21 @@ function performSearch(entityId, entityType) {
       var voteCount = res.restaurants[index].restaurant.user_rating.votes;
       var foodType = res.restaurants[index].restaurant.cuisines;
       var averageCost = res.restaurants[index].restaurant.price_range;
+*/
+
+      var restaurantsArray = [];
+
+      for (var i = 0; i < res.restaurants.length; i++) {
+        var name = res.restaurants[i].restaurant.name;
+        var thumbnail = res.restaurants[i].restaurant.thumb;
+        var userRating = res.restaurants[i].restaurant.user_rating.aggregate_rating;
+        var voteCount = res.restaurants[i].restaurant.user_rating.votes;
+        var foodType = res.restaurants[i].restaurant.cuisines;
+        var averageCost = res.restaurants[i].restaurant.price_range;
+
+        var restaurant = {name: name};
+        console.log(restaurant);
+      }
 
       createCard(name, thumbnail, userRating, voteCount, foodType, averageCost);
     }
