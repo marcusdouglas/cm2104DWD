@@ -74,6 +74,27 @@ $(function() {
   });
 });
 
+function createCard(restaurantArray) {
+  // Remove current card with fade out and create new one
+  $("#activeCard").fadeOut(500, function() {
+
+    var name = restaurantArray[0].name;
+    var thumbnail = restaurantArray[1].thumbnail;
+    var userRating = restaurantArray[2].userRating;
+    var voteCount = restaurantArray[3].voteCount;
+    var foodType = restaurantArray[4].foodType;
+    var averageCost = restaurantArray[5].averageCost;
+
+    $("#activeCard").remove();
+
+    formatCard(name, thumbnail, userRating, voteCount, foodType, averageCost);
+    $("#activeCard").addClass("card");
+  });
+
+  return false;
+}
+
+/*
 function createCard(name, thumbnail, userRating, voteCount, foodType, averageCost) {
   // Remove current card with fade out and create new one
   $("#activeCard").fadeOut(500, function() {
@@ -84,7 +105,7 @@ function createCard(name, thumbnail, userRating, voteCount, foodType, averageCos
   });
 
   return false;
-}
+}*/
 
 var index = 0;
 
@@ -182,9 +203,10 @@ function performSearch(entityId, entityType) {
         restaurantsArray[i] = restaurant;
       }
 
-      createCard(name, thumbnail, userRating, voteCount, foodType, averageCost);
-      console.log(restaurantsArray);
-      return restaurantsArray;
+      //createCard(name, thumbnail, userRating, voteCount, foodType, averageCost);
+      createCard(restaurantsArray);
+      //console.log(restaurantsArray);
+      //return restaurantsArray;
     }
   });
 }
