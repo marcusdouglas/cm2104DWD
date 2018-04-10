@@ -50,10 +50,10 @@ $(function() {
           //console.log(res.restaurants[0].restaurant.name);
           var name = res.restaurants[0].restaurant.name;
           var thumbnail = res.restaurants[0].restaurant.thumb;
-          var userRating = Math.round(res.restaurants[0].restaurant.user_rating.aggregate_rating);
-          console.log(userRating);
+          var userRating = res.restaurants[0].restaurant.user_rating.aggregate_rating;
+          var voteCount = res.restaurants[0].restaurant.user_rating.votes;
 
-          createCard(name, thumbnail, userRating);
+          createCard(name, thumbnail, userRating, voteCount);
         }
       });
     }
@@ -64,16 +64,16 @@ $(function() {
   $("#MainContent").on("click", ".button", function() {
     var name = "placeholder";
     var thumbnail = "placeholderimage";
-    createCard(name, thumbnail, userRating);
+    createCard(name, thumbnail, userRating, voteCount);
   });
 });
 
-function createCard(name, thumbnail, userRating) {
+function createCard(name, thumbnail, userRating, voteCount) {
   // Remove current card with fade out and create new one
   $("#activeCard").fadeOut(500, function() {
     $("#activeCard").remove();
 
-    formatCard(name, thumbnail, userRating);
+    formatCard(name, thumbnail, userRating, voteCount);
     $("#activeCard").addClass("card");
   });
 
@@ -81,12 +81,13 @@ function createCard(name, thumbnail, userRating) {
 }
 
 // Formats the new card
-function formatCard (name, thumbnail, userRating) {
+function formatCard (name, thumbnail, userRating, voteCount) {
 
   var restaurantRating = "<span class = 'heading'>User Rating: </span>";
+  var roundedRating = Math.round(userRating);
   var starCount = 0;
 
-  for (var i = 0; i < userRating; i++) {
+  for (var i = 0; i < roundedRating; i++) {
     restaurantRating += "<span class = 'fa fa-star starChecked'></span>";
     starCount++;
   }
@@ -96,17 +97,11 @@ function formatCard (name, thumbnail, userRating) {
     starCount ++;
   }
 
-  restaurantRating += "<p>4.1 average based on 254 reviews.</p>" + "<hr style='border:2px solid #f1f1f1'>";
+  restaurantRating += "<p>This restaurant has been rated "
+  + userRating + " out of 5 stars based on " + voteCount + " reviews."
+  + "<hr style='border:2px solid #f1f1f1'>";
 
   var restaurantName = "<div id = 'activeCard'><h2 class = 'paraTitle'>" + name + "</h2>";
-  /*
-  var restaurantRating = "<span class = 'heading'>User Rating: </span>"
-  + "<span class = 'fa fa-star starChecked'></span>"
-  + "<span class = 'fa fa-star starChecked'></span>"
-  + "<span class = 'fa fa-star starChecked'></span>"
-  + "<span class = 'fa fa-star starChecked'></span>"
-  + "<span class = 'fa fa-star'></span>"
-  + "<p>4.1 average based on 254 reviews.</p>" + "<hr style='border:2px solid #f1f1f1'>";*/
 
   $("#MainContent").append(restaurantName
   + "<div class = 'imageContainer'><img class = 'cardImage' src = " + "'" + thumbnail + "'" + "/>"
