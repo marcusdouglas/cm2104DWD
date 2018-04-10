@@ -83,23 +83,7 @@ function createCard(name, thumbnail, userRating, voteCount) {
 // Formats the new card
 function formatCard (name, thumbnail, userRating, voteCount) {
 
-  var restaurantRating = "<span class = 'heading'>User Rating: </span>";
-  var roundedRating = Math.round(userRating);
-  var starCount = 0;
-
-  for (var i = 0; i < roundedRating; i++) {
-    restaurantRating += "<span class = 'fa fa-star starChecked'></span>";
-    starCount++;
-  }
-
-  for (var i = starCount; i < 5; i++) {
-    restaurantRating += "<span class = 'fa fa-star'></span>";
-    starCount ++;
-  }
-
-  restaurantRating += "<p>This restaurant has been rated "
-  + userRating + " out of 5 stars based on " + voteCount + " reviews."
-  + "<hr style='border:2px solid #f1f1f1'>";
+  getRating(userRating, voteCount);
 
   var restaurantName = "<div id = 'activeCard'><h2 class = 'paraTitle'>" + name + "</h2>";
 
@@ -118,4 +102,25 @@ function formatCard (name, thumbnail, userRating, voteCount) {
   // Makes sure only the first card image is displayed
   showDivs(slideIndex);
   $("#activeCard").hide().fadeIn("500");
+}
+
+// Uses API data to create a star rating
+function getRating(userRating, voteCount) {
+  var restaurantRating = "<span class = 'heading'>User Rating: </span>";
+  var roundedRating = Math.round(userRating);
+  var starCount = 0;
+
+  for (var i = 0; i < roundedRating; i++) {
+    restaurantRating += "<span class = 'fa fa-star starChecked'></span>";
+    starCount++;
+  }
+
+  for (var i = starCount; i < 5; i++) {
+    restaurantRating += "<span class = 'fa fa-star'></span>";
+    starCount ++;
+  }
+
+  restaurantRating += "<p>This restaurant has been rated "
+  + userRating + " out of 5 stars based on " + voteCount + " reviews."
+  + "<hr style='border:2px solid #f1f1f1'>";
 }
