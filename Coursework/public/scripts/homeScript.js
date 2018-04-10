@@ -6,74 +6,16 @@ $(function() {
     // Stops the page jumping to the top on click
     e.preventDefault();
     getLocation();
-/*
-    // Stops the page jumping to the top on click
-    e.preventDefault();
-
-    var loc = $("#location").val();
-    var rad = $("distance").val();
-
-    var locationUrl = "https://developers.zomato.com/api/v2.1/locations?query=" + loc;
-
-    $.ajax ({
-      url: locationUrl,
-      type: "GET",
-      headers: {"user-key": "3c672f5af7519d65f72ed90953badca5"},
-      dataType: "json",
-      success: function(result) {
-        // deal with data here
-        console.log(result);
-        var res = JSON.parse(JSON.stringify(result));
-
-        //console.log(res.location_suggestions[0].entity_id);
-        var entityId = res.location_suggestions[0].entity_id;
-
-        //console.log(res.location_suggestions[0].entity_type);
-        var entityType = res.location_suggestions[0].entity_type;
-
-        performSearch(entityId, entityType);
-      }
-    });*/
-/*
-    function performSearch(entityId, entityType) {
-
-      var searchUrl = "https://developers.zomato.com/api/v2.1/search?entity_id=" + entityId + "&entity_type=" + entityType;
-      //console.log(searchUrl);
-
-      $.ajax ({
-        url: searchUrl,
-        type: "GET",
-        headers: {"user-key": "3c672f5af7519d65f72ed90953badca5"},
-        dataType: "json",
-        success: function(result) {
-          // deal with data here
-          console.log(result);
-          var res = JSON.parse(JSON.stringify(result));
-
-          //console.log(res.restaurants[0].restaurant.name);
-          var name = res.restaurants[0].restaurant.name;
-          var thumbnail = res.restaurants[0].restaurant.thumb;
-          var userRating = res.restaurants[0].restaurant.user_rating.aggregate_rating;
-          var voteCount = res.restaurants[0].restaurant.user_rating.votes;
-          var foodType = res.restaurants[0].restaurant.cuisines;
-          var averageCost = res.restaurants[0].restaurant.price_range;
-
-          createCard(name, thumbnail, userRating, voteCount, foodType, averageCost);
-        }
-      });
-    }*/
-
   });
 
 //---------------------Creates a new card---------------------
   $("#MainContent").on("click", ".button", function() {
-    index++;
     createCard();
-
-    //createCard(name, thumbnail, userRating, voteCount, foodType, averageCost);
+    index++;
   });
 });
 
+var restaurantsArray = [];
 var index = 0;
 
 function createCard() {
@@ -91,27 +33,10 @@ function createCard() {
 
     formatCard(name, thumbnail, userRating, voteCount, foodType, averageCost);
     $("#activeCard").addClass("card");
-
-    //index++;
   });
 
   return false;
 }
-
-/*
-function createCard(name, thumbnail, userRating, voteCount, foodType, averageCost) {
-  // Remove current card with fade out and create new one
-  $("#activeCard").fadeOut(500, function() {
-    $("#activeCard").remove();
-
-    formatCard(name, thumbnail, userRating, voteCount, foodType, averageCost);
-    $("#activeCard").addClass("card");
-  });
-
-  return false;
-}*/
-
-//var index = 0;
 
 // Formats the new card
 function formatCard (name, thumbnail, userRating, voteCount, foodType, averageCost) {
@@ -138,6 +63,10 @@ function formatCard (name, thumbnail, userRating, voteCount, foodType, averageCo
   $("#activeCard").hide().fadeIn("500");
 }
 
+
+//------------------ Start of API getting code -------------------
+
+// This function gets the appropriate ID's to get results from the performSearch function
 function getLocation() {
 
   var loc = $("#location").val();
@@ -166,8 +95,9 @@ function getLocation() {
   });
 }
 
-var restaurantsArray = [];
-
+// This function creates an array of the data to be used locally
+// for faster loading. It will also create the first card when the Go button
+// is pressed
 function performSearch(entityId, entityType) {
 
   var searchUrl = "https://developers.zomato.com/api/v2.1/search?entity_id=" + entityId + "&entity_type=" + entityType;
@@ -182,17 +112,6 @@ function performSearch(entityId, entityType) {
       // deal with data here
       console.log(result);
       var res = JSON.parse(JSON.stringify(result));
-/*
-      //console.log(res.restaurants[0].restaurant.name);
-      var name = res.restaurants[index].restaurant.name;
-      var thumbnail = res.restaurants[index].restaurant.thumb;
-      var userRating = res.restaurants[index].restaurant.user_rating.aggregate_rating;
-      var voteCount = res.restaurants[index].restaurant.user_rating.votes;
-      var foodType = res.restaurants[index].restaurant.cuisines;
-      var averageCost = res.restaurants[index].restaurant.price_range;
-*/
-
-      //var restaurantsArray = [];
 
       for (var i = 0; i < res.restaurants.length; i++) {
         var name = res.restaurants[i].restaurant.name;
@@ -206,13 +125,11 @@ function performSearch(entityId, entityType) {
           userRating: userRating, voteCount: voteCount,
           foodType: foodType, averageCost: averageCost};
         //console.log(restaurant);
+
         restaurantsArray[i] = restaurant;
       }
 
-      //createCard(name, thumbnail, userRating, voteCount, foodType, averageCost);
       createCard();
-      //console.log(restaurantsArray);
-      //return restaurantsArray;
     }
   });
 }
@@ -238,6 +155,8 @@ function getRating(userRating, voteCount) {
 
   return restaurantRating;
 }
+
+//--------------------- End of API getting code ----------------------
 
 // Uses API data to create a rating for the average cost at the restaurant
 function getAverageCost(averageCost) {
