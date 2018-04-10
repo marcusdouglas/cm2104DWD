@@ -178,7 +178,9 @@ function performSearch(entityId, entityType) {
         var restaurant = {name: name, thumbnail: thumbnail,
           userRating: userRating, voteCount: voteCount,
           foodType: foodType, averageCost: averageCost};
-        console.log(restaurant);
+        //console.log(restaurant);
+        restaurantsArray[i] = restaurant;
+        console.log(restaurantsArray);
       }
 
       createCard(name, thumbnail, userRating, voteCount, foodType, averageCost);
