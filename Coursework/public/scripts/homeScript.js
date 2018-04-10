@@ -86,7 +86,7 @@ function createCard(name, thumbnail, userRating, voteCount, foodType, averageCos
 function formatCard (name, thumbnail, userRating, voteCount, foodType, averageCost) {
 
   var restaurantName = "<div id = 'activeCard'><h2 class = 'paraTitle'>" + name + "</h2>";
-  var restaurantFood = "<br><b>Cuisine/s:</b> " + foodType + "</p>";
+  var restaurantFood = "<br><b>Cuisine/s:</b> " + foodType;
 
   $("#MainContent").append(restaurantName
   + "<div class = 'imageContainer'><img class = 'cardImage' src = " + "'" + thumbnail + "'" + "/>"
@@ -95,7 +95,8 @@ function formatCard (name, thumbnail, userRating, voteCount, foodType, averageCo
   + "<button id = 'rightButton' class = 'btn' onclick = 'plusDivs(1)''>&#10095;</button></div>"
   + getRating(userRating, voteCount)
   + restaurantFood
-  + "<input id = 'seeMore' class = 'collapseInfo' type = 'checkbox'>"
+  + getAverageCost(averageCost)
+  + "</p><input id = 'seeMore' class = 'collapseInfo' type = 'checkbox'>"
   + "<label class = 'collapseLabel' for = 'seeMore'>See more...</label><div class = 'expand'>"
   + "<p>This is new text<br><br>In here we will incude extra information that we can obtain from the API."
   + " This may include Google maps to show the location and reviews.</p></div><form id = 'scrollForm'><button id = 'dislikeButton' class = 'button' type = 'button'>"
@@ -133,12 +134,12 @@ function getAverageCost(averageCost) {
   var poundCount = 0;
 
   for (var i = 0; i < averageCost; i++) {
-    restaurantRating += "£";
+    restaurantRating += "<span class='fas fa-dollar-sign dollarOn'></span>";
     poundCount++;
   }
 
   for (var i = poundCount; i < 4; i++) {
-    restaurantRating += "£";
+    restaurantRating += "<span class='fas fa-dollar-sign dollarOff'></span>";
     poundCount++;
   }
 }

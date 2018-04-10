@@ -423,8 +423,16 @@ body {
     color: orange;
 }
 
-.dollarBold {
-  
+.fas .fa-dollar-sign {
+  font-size: 20px;
+}
+
+.dollarOn {
+  color: cornflowerblue;
+}
+
+.dollarOff {
+  color: lightBlue;
 }
 
 #seeMore:checked ~ .expand {
