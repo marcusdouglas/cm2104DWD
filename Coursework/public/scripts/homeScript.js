@@ -47,9 +47,6 @@ $(function() {
           console.log(result);
           var res = JSON.parse(JSON.stringify(result));
 
-          var restaurantsArray = res.restaurants.slice();
-          console.log("New: " + restaurantsArray);
-
           console.log(res.restaurants[0].restaurant.name);
           var name = res.restaurants[0].restaurant.name;
           var thumbnail = res.restaurants[0].restaurant.thumb;
