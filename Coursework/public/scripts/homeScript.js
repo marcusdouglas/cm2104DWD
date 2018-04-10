@@ -3,7 +3,8 @@ $(function() {
   //---------------------Gets API Data---------------------
 
   $("#searchForm").submit(function(e) {
-
+    getLocation();
+/*
     // Stops the page jumping to the top on click
     e.preventDefault();
 
@@ -30,7 +31,7 @@ $(function() {
 
         performSearch(entityId, entityType);
       }
-    });
+    });*/
 /*
     function performSearch(entityId, entityType) {
 
@@ -107,6 +108,36 @@ function formatCard (name, thumbnail, userRating, voteCount, foodType, averageCo
   $("#activeCard").hide().fadeIn("500");
 }
 
+function getLocation() {
+  // Stops the page jumping to the top on click
+  e.preventDefault();
+
+  var loc = $("#location").val();
+  var rad = $("distance").val();
+
+  var locationUrl = "https://developers.zomato.com/api/v2.1/locations?query=" + loc;
+
+  $.ajax ({
+    url: locationUrl,
+    type: "GET",
+    headers: {"user-key": "3c672f5af7519d65f72ed90953badca5"},
+    dataType: "json",
+    success: function(result) {
+      // deal with data here
+      console.log(result);
+      var res = JSON.parse(JSON.stringify(result));
+
+      //console.log(res.location_suggestions[0].entity_id);
+      var entityId = res.location_suggestions[0].entity_id;
+
+      //console.log(res.location_suggestions[0].entity_type);
+      var entityType = res.location_suggestions[0].entity_type;
+
+      performSearch(entityId, entityType);
+    }
+  });
+}
+
 function performSearch(entityId, entityType) {
 
   var searchUrl = "https://developers.zomato.com/api/v2.1/search?entity_id=" + entityId + "&entity_type=" + entityType;
@@ -133,7 +164,7 @@ function performSearch(entityId, entityType) {
       createCard(name, thumbnail, userRating, voteCount, foodType, averageCost);
     }
   });
-} 
+}
 
 // Uses API data to create a star rating
 function getRating(userRating, voteCount) {
