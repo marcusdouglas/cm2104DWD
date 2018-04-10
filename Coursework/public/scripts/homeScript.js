@@ -66,7 +66,6 @@ $(function() {
   });
 
 //---------------------Creates a new card---------------------
-var index = 0;
   $("#MainContent").on("click", ".button", function() {
     index++;
     getLocation();
@@ -86,7 +85,7 @@ function createCard(name, thumbnail, userRating, voteCount, foodType, averageCos
 
   return false;
 }
-
+var index = 0;
 // Formats the new card
 function formatCard (name, thumbnail, userRating, voteCount, foodType, averageCost) {
 
