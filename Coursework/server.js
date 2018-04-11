@@ -34,7 +34,7 @@ app.use(express.static(__dirname + '/public'));*/
 //});
 
 // index page
-app.get("/index", function(req, res) {
+app.get("/all", function(req, res) {
   //res.render("pages/index",{pageName:index});
   res.render("pages/index");
 });
