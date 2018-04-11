@@ -44,6 +44,24 @@ app.get("/", function(req, res) {
 app.get("/myrestaurants", function(req, res) {
   //res.render("pages/myrestaurants", {pageName:myrestaurants});
   res.render("pages/myrestaurants");
+
+  db.collection('card').find().toArray(function(err, result) {
+    if (err) throw err;
+    var output = "<div class = 'savedRestaurant'>"
+      + "<span class = 'close' onclick = 'removeSavedRestaurant()'>&times;</span>";
+
+    for (var i = 0; i < result.length; i++) {
+      var name = result[i].name;
+      var imageUrl = result[i].image;
+      var text = result[i].text;
+
+      output += "<div class = 'sideImgContainer'>";
+      output += "<img class = 'sideImg' src = " + imageUrl + "></div>";
+      output += "<div class = 'textContainer'><h2 class = 'paraTitle'>" + name + ",/h2>";
+      output += "<p class = 'info'>" + text + "</p></div></div>"
+    }
+    res.send(output);
+  });
 });
 
 // This works
