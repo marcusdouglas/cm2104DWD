@@ -44,7 +44,7 @@ app.get("/", function(req, res) {
 app.get("/myrestaurants", function(req, res) {
   //res.render("pages/myrestaurants", {pageName:myrestaurants});
   res.render("pages/myrestaurants");
-
+/*
   db.collection('card').find().toArray(function(err, result) {
     if (err) throw err;
     var output = "<div class = 'savedRestaurant'>"
@@ -61,7 +61,7 @@ app.get("/myrestaurants", function(req, res) {
       output += "<p class = 'info'>" + text + "</p></div></div>"
     }
     res.send(output);
-  });
+  });*/
 });
 
 // This works
