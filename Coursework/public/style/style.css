@@ -13,7 +13,7 @@
   }
 
   #distance {
-    /*float: right;*/
+    float: right;
   }
 
   .searchBox {
@@ -369,7 +369,9 @@ body {
 .searchBox {
   border: 1px solid transparent;
   background-color: white;
-
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-top: 10px;
   font-size: 16px;
   border-radius: 6px;
   height: 30px;
