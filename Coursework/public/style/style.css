@@ -359,7 +359,7 @@ body {
 }
 
 #searchForm {
-  width:80%;
+  width: 80%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 30px;
@@ -375,6 +375,7 @@ body {
   height: 30px;
   margin-left:auto;
   margin-right: auto;
+  display: block;
 }
 
 #search {
