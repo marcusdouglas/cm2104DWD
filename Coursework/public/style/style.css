@@ -60,6 +60,7 @@
 
   #distance {
     display: block;
+    clear: right;
     margin-top: 12px;
   }
 
