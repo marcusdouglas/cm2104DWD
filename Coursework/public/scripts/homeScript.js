@@ -45,10 +45,10 @@ function formatCard (name, thumbnail, userRating, voteCount, foodType, averageCo
   var restaurantFood = "<br><b>Cuisine/s:</b> " + foodType;
 
   $("#MainContent").append(restaurantName
-  + "<div class = 'imageContainer'><img class = 'cardImage' src = " + "'" + thumbnail + "'" + "/>"
-  + "<img class = 'cardImage' src = 'images/foodImage4.jpeg'/><img class = 'cardImage' src = 'images/foodImage5.jpeg'/>"
-  + "<button id = 'leftButton' class = 'btn' onclick = 'plusDivs(-1)''>&#10094;</button>"
-  + "<button id = 'rightButton' class = 'btn' onclick = 'plusDivs(1)''>&#10095;</button></div>"
+  + "<div class = 'imageContainer'><img class = 'cardImage' src = " + "'" + thumbnail + "'" + ">"
+  + "<img class = 'cardImage' src = 'images/foodImage4.jpeg'><img class = 'cardImage' src = 'images/foodImage5.jpeg'>"
+  + "<button id = 'leftButton' class = 'btn' onclick = 'plusDivs(-1)'>&#10094;</button>"
+  + "<button id = 'rightButton' class = 'btn' onclick = 'plusDivs(1)'>&#10095;</button></div>"
   + getRating(userRating, voteCount)
   + restaurantFood
   + getAverageCost(averageCost)
