@@ -377,6 +377,7 @@ body {
   height: 30px;
   margin-left:auto;
   margin-right: auto;
+  box-sizing: border-box;
 }
 
 #search {
