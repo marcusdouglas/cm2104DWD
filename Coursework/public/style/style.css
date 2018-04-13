@@ -364,7 +364,8 @@ body {
 
 #searchForm {
   width:80%;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 30px;
 }
 
