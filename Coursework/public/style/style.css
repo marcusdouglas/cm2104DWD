@@ -59,7 +59,7 @@
   }
 
   #distance {
-    display: block;
+    /*display: block;*/
     float: none;
     margin-top: 12px;
   }
