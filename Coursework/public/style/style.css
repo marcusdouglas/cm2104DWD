@@ -423,6 +423,7 @@ body {
 .fa-star {
     font-size: 20px;
     margin-top: 12px;
+    margin-right: 8px;
 }
 
 .starChecked {
