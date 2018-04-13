@@ -364,6 +364,7 @@ body {
   margin-right: auto;
   margin-top: 30px;
   border: 1px solid black;
+  box-sizing: border-box;
 }
 
 .searchBox {
@@ -377,7 +378,6 @@ body {
   height: 30px;
   margin-left:auto;
   margin-right: auto;
-  box-sizing: border-box;
 }
 
 #search {
