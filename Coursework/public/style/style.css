@@ -62,7 +62,7 @@
   }
 
   .searchBox {
-    width: 100%;
+    width: 100% - 12px;
   }
 
   #search {
@@ -377,8 +377,6 @@ body {
   height: 30px;
   margin-left:auto;
   margin-right: auto;
-  min-width: 100%;
-    max-width: 100%;
 }
 
 #search {
