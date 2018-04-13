@@ -64,7 +64,7 @@
 
   .searchBox {
     width: 100%;
-    display: block;
+    display: inline-block;
   }
 
   #search {
