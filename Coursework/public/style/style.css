@@ -57,8 +57,7 @@
   }
 
   #distance {
-    /*display: block;*/
-    float: none;
+    display: block;
     margin-top: 12px;
   }
 
@@ -363,7 +362,6 @@ body {
   width:80%;
   margin-left: auto;
   margin-right: auto;
-  text-align: center;
   margin-top: 30px;
   border: 1px solid black;
 }
