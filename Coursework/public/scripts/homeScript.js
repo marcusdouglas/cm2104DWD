@@ -144,12 +144,12 @@ function getRating(userRating, voteCount) {
   var starCount = 0;
 
   for (var i = 0; i < roundedRating; i++) {
-    restaurantRating += "<span style = 'margin-right: 5px' class = 'fa fa-star starChecked'></span>";
+    restaurantRating += "<span style = 'margin-right: 4px' class = 'fa fa-star starChecked'></span>";
     starCount++;
   }
 
   for (var i = starCount; i < 5; i++) {
-    restaurantRating += "<span style = 'margin-right: 5px' class = 'fa fa-star'></span>";
+    restaurantRating += "<span style = 'margin-right: 4px' class = 'fa fa-star'></span>";
     starCount ++;
   }
 
