@@ -1,8 +1,4 @@
-const MongoClient = require("mongodb").MongoClient;
-const url = "mongodb://localhost:27017/saved_cards";
-const express = require("express");
-const bodyParser = require("body-parser");
-const app = express();
+var url = "mongodb://localhost:27017/saved_cards";
 
 function removeSavedRestaurant() {
 
