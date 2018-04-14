@@ -473,6 +473,11 @@ body {
   content: "-";
 }
 
+#map {
+  width: 100%;
+  height: 200px;
+}
+
 #dislikeButton {
   /*background-color: #ff3333;*/
   background: url(../images/crossIcon.png) no-repeat;
