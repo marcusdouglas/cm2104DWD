@@ -134,8 +134,8 @@ function performSearch(entityId, entityType) {
         var foodType = res.restaurants[i].restaurant.cuisines;
         var averageCost = res.restaurants[i].restaurant.price_range;
         var siteUrl = res.restaurants[i].restaurant.url;
-        var latitude = res.restaurants[i].location.latitude.url;
-        var longitude = res.restaurants[i].location.longitude.url;
+        var latitude = res.restaurants[i].location.latitude;
+        var longitude = res.restaurants[i].location.longitude;
 
         var restaurant = {name: name, thumbnail: thumbnail,
           userRating: userRating, voteCount: voteCount,
