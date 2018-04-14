@@ -29,11 +29,13 @@ function createCard() {
     var foodType = restaurantsArray[index].foodType;
     var averageCost = restaurantsArray[index].averageCost;
     var siteUrl = restaurantsArray[index].siteUrl;
+    var latitude = restaurantsArray[index].latitude;
+    var longitude = restaurantsArray[index].longitude;
 
     $("#activeCard").remove();
 
     formatCard(name, thumbnail, userRating, voteCount, foodType, averageCost,
-      siteUrl);
+      siteUrl, latitude, longitude);
 
     $("#activeCard").addClass("card");
   });
@@ -42,7 +44,8 @@ function createCard() {
 }
 
 // Formats the new card
-function formatCard (name, thumbnail, userRating, voteCount, foodType, averageCost, siteUrl) {
+function formatCard (name, thumbnail, userRating, voteCount, foodType,
+  averageCost, siteUrl, latitude, longitude) {
 
   var restaurantName = "<div id = 'activeCard'><h2 class = 'paraTitle'>" + name + "</h2>";
   var restaurantFood = "<br><b>Cuisine/s:</b> " + foodType;
@@ -63,7 +66,7 @@ function formatCard (name, thumbnail, userRating, voteCount, foodType, averageCo
   + "<button id = 'likeButton' class = 'button' type = 'button'></button></button></form></div>");
 
   // Calls the function to create the google map
-  createMap();
+  createMap(latitude, longitude);
 
   // Makes sure only the first card image is displayed
   showDivs(slideIndex);
@@ -131,10 +134,13 @@ function performSearch(entityId, entityType) {
         var foodType = res.restaurants[i].restaurant.cuisines;
         var averageCost = res.restaurants[i].restaurant.price_range;
         var siteUrl = res.restaurants[i].restaurant.url;
+        var latitude = res.restaurants[i].location.latitude.url;
+        var longitude = res.restaurants[i].location.longitude.url;
 
         var restaurant = {name: name, thumbnail: thumbnail,
           userRating: userRating, voteCount: voteCount,
-          foodType: foodType, averageCost: averageCost, siteUrl: siteUrl};
+          foodType: foodType, averageCost: averageCost, siteUrl: siteUrl,
+          latitude: latitude, longitude: longitude};
         //console.log(restaurant);
 
         restaurantsArray[i] = restaurant;
@@ -188,8 +194,8 @@ function getAverageCost(averageCost) {
 }
 
 // Creates the google map and sets the location
-function createMap() {
-  var myCenter = new google.maps.LatLng(51.508742,-0.120850);
+function createMap(latitude, longitude) {
+  var myCenter = new google.maps.LatLng(latitude, longitude);
   var mapCanvas = document.getElementById("map");
   var mapOptions = {center: myCenter, zoom: 5};
   var map = new google.maps.Map(mapCanvas, mapOptions);
