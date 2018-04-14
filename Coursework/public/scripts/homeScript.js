@@ -56,10 +56,9 @@ function formatCard (name, thumbnail, userRating, voteCount, foodType, averageCo
   + restaurantFood
   + getAverageCost(averageCost)
   + "</p><input id = 'seeMore' class = 'collapseInfo' type = 'checkbox'>"
-  + "<h4>" + siteUrl + "</h4>"
   + "<label class = 'collapseLabel' for = 'seeMore'>See more...</label><div class = 'expand'>"
-  + "<p>This is new text<br><br>In here we will incude extra information that we can obtain from the API."
-  + " This may include Google maps to show the location and reviews.</p></div><form id = 'scrollForm'><button id = 'dislikeButton' class = 'button' type = 'button'>"
+  + "<h4>Site Url: </h4>" + siteUrl
+  + "</div><form id = 'scrollForm'><button id = 'dislikeButton' class = 'button' type = 'button'>"
   + "<button id = 'likeButton' class = 'button' type = 'button'></button></button></form></div>");
 
   // Makes sure only the first card image is displayed
