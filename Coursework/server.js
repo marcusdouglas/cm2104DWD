@@ -57,6 +57,7 @@ app.get("/myrestaurants", function(req, res) {
       var restaurant = {name: name, imageUrl: imageUrl, text: text};
       restaurants[i] = restaurant;
     }
+    console.log(restaurants);
     res.render("pages/myrestaurants", {
       restaurants: restaurants
     });
