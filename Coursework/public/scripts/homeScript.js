@@ -197,7 +197,7 @@ function getAverageCost(averageCost) {
 function createMap(latitude, longitude) {
   var myCenter = new google.maps.LatLng(latitude, longitude);
   var mapCanvas = document.getElementById("map");
-  var mapOptions = {center: myCenter, zoom: 10};
+  var mapOptions = {center: myCenter, zoom: 16};
   var map = new google.maps.Map(mapCanvas, mapOptions);
   var marker = new google.maps.Marker({position:myCenter});
   marker.setMap(map);
