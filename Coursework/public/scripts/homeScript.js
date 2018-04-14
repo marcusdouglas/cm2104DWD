@@ -28,10 +28,13 @@ function createCard() {
     var voteCount = restaurantsArray[index].voteCount;
     var foodType = restaurantsArray[index].foodType;
     var averageCost = restaurantsArray[index].averageCost;
+    var siteUrl = restaurantsArray[index].siteUrl;
 
     $("#activeCard").remove();
 
-    formatCard(name, thumbnail, userRating, voteCount, foodType, averageCost);
+    formatCard(name, thumbnail, userRating, voteCount, foodType, averageCost,
+      siteUrl);
+
     $("#activeCard").addClass("card");
   });
 
@@ -39,7 +42,7 @@ function createCard() {
 }
 
 // Formats the new card
-function formatCard (name, thumbnail, userRating, voteCount, foodType, averageCost) {
+function formatCard (name, thumbnail, userRating, voteCount, foodType, averageCost, siteUrl) {
 
   var restaurantName = "<div id = 'activeCard'><h2 class = 'paraTitle'>" + name + "</h2>";
   var restaurantFood = "<br><b>Cuisine/s:</b> " + foodType;
@@ -53,6 +56,7 @@ function formatCard (name, thumbnail, userRating, voteCount, foodType, averageCo
   + restaurantFood
   + getAverageCost(averageCost)
   + "</p><input id = 'seeMore' class = 'collapseInfo' type = 'checkbox'>"
+  + "<h4>" + siteUrl + "</h4>"
   + "<label class = 'collapseLabel' for = 'seeMore'>See more...</label><div class = 'expand'>"
   + "<p>This is new text<br><br>In here we will incude extra information that we can obtain from the API."
   + " This may include Google maps to show the location and reviews.</p></div><form id = 'scrollForm'><button id = 'dislikeButton' class = 'button' type = 'button'>"
@@ -123,10 +127,11 @@ function performSearch(entityId, entityType) {
         var voteCount = res.restaurants[i].restaurant.user_rating.votes;
         var foodType = res.restaurants[i].restaurant.cuisines;
         var averageCost = res.restaurants[i].restaurant.price_range;
+        var siteUrl = res.restaurants[i].restaurant.url;
 
         var restaurant = {name: name, thumbnail: thumbnail,
           userRating: userRating, voteCount: voteCount,
-          foodType: foodType, averageCost: averageCost};
+          foodType: foodType, averageCost: averageCost, siteUrl: siteUrl};
         //console.log(restaurant);
 
         restaurantsArray[i] = restaurant;
@@ -179,6 +184,7 @@ function getAverageCost(averageCost) {
   return restaurantAverageCost;
 }
 
+// Sets the location of the restaurant on google maps
 function myMap() {
   var myCenter = new google.maps.LatLng(51.508742,-0.120850);
   var mapCanvas = document.getElementById("map");
