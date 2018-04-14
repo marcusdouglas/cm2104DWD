@@ -332,7 +332,7 @@ body {
 }
 
 #toggle:checked ~ .expand {
-  height: 130px;
+  height: 300px;
 }
 
 #toggle:checked ~ .collapseLabel::before {
