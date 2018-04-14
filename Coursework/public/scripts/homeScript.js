@@ -62,9 +62,7 @@ function formatCard (name, thumbnail, userRating, voteCount, foodType, averageCo
   + "</div><form id = 'scrollForm'><button id = 'dislikeButton' class = 'button' type = 'button'>"
   + "<button id = 'likeButton' class = 'button' type = 'button'></button></button></form></div>");
 
-  // Calls the function to create the google map
-  createMap();
-
+  myMap();
   // Makes sure only the first card image is displayed
   showDivs(slideIndex);
   $("#activeCard").hide().fadeIn("500");
@@ -187,10 +185,10 @@ function getAverageCost(averageCost) {
   return restaurantAverageCost;
 }
 
-// Creates the google map and sets the location
-function createMap() {
+// Sets the location of the restaurant on google maps
+function myMap() {
   var myCenter = new google.maps.LatLng(51.508742,-0.120850);
-  var mapCanvas = $("#map");
+  var mapCanvas = document.getElementById("map");
   var mapOptions = {center: myCenter, zoom: 5};
   var map = new google.maps.Map(mapCanvas, mapOptions);
   var marker = new google.maps.Marker({position:myCenter});
