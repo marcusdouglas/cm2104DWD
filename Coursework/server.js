@@ -61,7 +61,7 @@ app.post("/delete", function(req, res) {
   //db.collection("card").deleteOne(req.body, function(err, result) {
     //if (err) throw error;
     //res.redirect("/");
-  });
+  //});
 });
 
 // This works
