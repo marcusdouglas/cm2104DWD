@@ -25,6 +25,7 @@
   }
 
   .cardImage {
+    max-width: 200px;
     max-height: 300px;
     min-height: 300px;
   }
