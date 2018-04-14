@@ -57,7 +57,7 @@ function formatCard (name, thumbnail, userRating, voteCount, foodType, averageCo
   + getAverageCost(averageCost)
   + "</p><input id = 'seeMore' class = 'collapseInfo' type = 'checkbox'>"
   + "<label class = 'collapseLabel' for = 'seeMore'>See more...</label><div class = 'expand'>"
-  + "<h4>Site Url: </h4>" + siteUrl
+  + "<p><b>Site Url: <b>" + siteUrl + "</p>"
   + "</div><form id = 'scrollForm'><button id = 'dislikeButton' class = 'button' type = 'button'>"
   + "<button id = 'likeButton' class = 'button' type = 'button'></button></button></form></div>");
 
