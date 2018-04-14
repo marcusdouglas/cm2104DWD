@@ -28,12 +28,12 @@
           <div class = "savedRestaurant">
             <span class = "close" onclick = "removeSavedRestaurant()">&times;</span>
             <div class = "sideImgContainer">
-              <img class = "sideImg" src = "<%= restaurant.restaurant.imageUrl %>">
+              <img class = "sideImg" src = "<%= restaurant.imageUrl %>">
             </div>
 
             <div class = "textContainer">
-              <h2 class = "paraTitle"><%= restaurant.restaurant.name %></h2>
-              <p class = "info"><%= restaurant.restaurant.text %></p>
+              <h2 class = "paraTitle"><%= restaurant.name %></h2>
+              <p class = "info"><%= restaurant.text %></p>
             </div>
           </div>
         <% }); %>

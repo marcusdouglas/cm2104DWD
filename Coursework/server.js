@@ -55,13 +55,11 @@ app.get("/myrestaurants", function(req, res) {
       var text = result[i].text;
 
       var restaurant = {name: name, imageUrl: imageUrl, text: text};
-      console.log(restaurant);
       restaurants[i] = restaurant;
     }
     res.render("pages/myrestaurants", {
       restaurants: restaurants
     });
-    console.log(restaurants);
   });
 /*
   db.collection('card').find().toArray(function(err, result) {
