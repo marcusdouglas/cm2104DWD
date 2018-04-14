@@ -44,7 +44,7 @@ app.get("/", function(req, res) {
 app.get("/myrestaurants", function(req, res) {
   //res.render("pages/myrestaurants", {pageName:myrestaurants});
   //res.render("pages/myrestaurants");
-/*
+
   db.collection('card').find().toArray(function(err, result) {
     if (err) throw err;
     var restaurants = [];
@@ -58,11 +58,10 @@ app.get("/myrestaurants", function(req, res) {
       restaurants[i] = restaurant;
     }
     res.render("pages/myrestaurants", {
-      drinks: drinks,
-      tagline: tagline
+      restaurants: restaurants
     });
-  });*/
-
+  });
+/*
   db.collection('card').find().toArray(function(err, result) {
     if (err) throw err;
     var output = "<div class = 'savedRestaurant'>"
@@ -79,8 +78,7 @@ app.get("/myrestaurants", function(req, res) {
       output += "<p class = 'info'>" + text + "</p></div></div>"
     }
     res.send(output);
-    res.render("pages/myrestaurants");
-  });
+  });*/
 });
 
 // This works

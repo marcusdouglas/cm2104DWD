@@ -24,6 +24,20 @@
         <h1 id = "heading" class = "paraTitle">My Restaurants</h1>
       </div>
 
+        <% restaurants.forEach(function(restaurant) { %>
+          <div class = "savedRestaurant">
+            <span class = "close" onclick = "removeSavedRestaurant()">&times;</span>
+            <div class = "sideImgContainer">
+              <img class = "sideImg" src = "<%= restaurant.restaurant.imageUrl %>">
+            </div>
+
+            <div class = "textContainer">
+              <h2 class = "paraTitle"><%= restaurant.restaurant.name %></h2>
+              <p class = "info"><%= restaurant.restaurant.text %></p>
+            </div>
+          </div>
+        <% }); %>
+
       <div class = "savedRestaurant">
 
         <span class = "close" onclick = "removeSavedRestaurant()">&times;</span>
