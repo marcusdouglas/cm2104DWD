@@ -62,6 +62,7 @@ function formatCard (name, thumbnail, userRating, voteCount, foodType, averageCo
   + "</div><form id = 'scrollForm'><button id = 'dislikeButton' class = 'button' type = 'button'>"
   + "<button id = 'likeButton' class = 'button' type = 'button'></button></button></form></div>");
 
+  myMap();
   // Makes sure only the first card image is displayed
   showDivs(slideIndex);
   $("#activeCard").hide().fadeIn("500");
