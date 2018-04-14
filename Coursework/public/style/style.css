@@ -332,7 +332,7 @@ body {
 }
 
 #toggle:checked ~ .expand {
-  height: 300px;
+  height: 130px;
 }
 
 #toggle:checked ~ .collapseLabel::before {
@@ -462,7 +462,7 @@ body {
 }
 
 #seeMore:checked ~ .expand {
-  height: 130px;
+  height: 300px;
 }
 
 #seeMore:checked ~ .collapseLabel::before {
