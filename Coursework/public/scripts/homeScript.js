@@ -37,6 +37,9 @@ function createCard() {
     formatCard(name, thumbnail, userRating, voteCount, foodType, averageCost,
       siteUrl, latitude, longitude);
 
+    // Calls the function to create the google map
+    createMap(latitude, longitude);
+
     $("#activeCard").addClass("card");
   });
 
@@ -64,9 +67,6 @@ function formatCard (name, thumbnail, userRating, voteCount, foodType,
   + "<div id = 'map'></div>"
   + "</div><form id = 'scrollForm'><button id = 'dislikeButton' class = 'button' type = 'button'>"
   + "<button id = 'likeButton' class = 'button' type = 'button'></button></button></form></div>");
-
-  // Calls the function to create the google map
-  createMap(latitude, longitude);
 
   // Makes sure only the first card image is displayed
   showDivs(slideIndex);
