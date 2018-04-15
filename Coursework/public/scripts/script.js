@@ -86,7 +86,6 @@ function displayLogin() {
 // Will make the signup form visible
 function displaySignup() {
   $("#signupForm").css({display: "block"});
-  $("#loginForm").css({display: "none"});
 }
 
 // Will remove login form elements visibility
