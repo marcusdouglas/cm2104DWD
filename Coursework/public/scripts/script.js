@@ -78,7 +78,20 @@ function responsiveNav() {
   }
 }
 
+function displayLogin() {
+  $("#loginForm").css({display: "block"});
+}
+
+function displaySignup() {
+  $("#signupForm").css({display: "block"});
+}
+
 // Will remove login form elements visibility
 function loginDisplayNone() {
   $("#loginForm").css({display: "none"});
+}
+
+// Will remove signup form elements visibility
+function signupDisplayNone() {
+  $("#signupForm").css({display: "none"});
 }
