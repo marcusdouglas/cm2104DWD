@@ -17,7 +17,7 @@ $(function() {
 
 function saveCard() {
 
-  var test = $("#rName");
+  var test = $("#rName").text("Test");
   console.log("Actual Display: " + name);
 
   var name = "Name";
