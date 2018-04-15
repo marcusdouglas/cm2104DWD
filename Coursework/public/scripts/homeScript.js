@@ -10,6 +10,9 @@ $(function() {
 
 //---------------------Creates a new card---------------------
   $("#MainContent").on("click", ".button", function() {
+
+    console.log(this);
+
     createCard();
     index++;
   });

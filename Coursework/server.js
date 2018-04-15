@@ -56,12 +56,19 @@ app.get("/myrestaurants", function(req, res) {
   });
 });
 
+app.post('/card', function (req, res) {
+  db.collection('card').save(req.body, function(err, result) {
+    if (err) throw err;
+    console.log(req.body);
+  });
+});
+
 app.post("/delete", function(req, res) {
-  console.log(req.body);
+  //console.log(req.body);
+
   var name = req.body.name;
   db.collection("card").deleteOne(req.body, function(err, result) {
     if (err) throw error;
-    //res.redirect("/");
   });
 });
 
