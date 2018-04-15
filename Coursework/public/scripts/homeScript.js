@@ -22,7 +22,6 @@ function saveCard() {
   var text = "Some Text";
 
   console.log(name);
-  saveCard();
 
   $.ajax({
        method: "POST",
