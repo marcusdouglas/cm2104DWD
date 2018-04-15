@@ -9,7 +9,7 @@ $(function() {
   });
 
 //---------------------Creates a new card---------------------
-  $("#MainContent").on("click", ".button", function() {
+  $("#MainContent").on("click", "#dislikeButton", function() {
     createCard();
     index++;
   });
@@ -29,7 +29,7 @@ function saveCard() {
        url: "/card",
        data: {"name": name, "image": image, "text": text},
        success: function(result) {
-         //console.log(result);
+         console.log(result);
        }
     });
 }
