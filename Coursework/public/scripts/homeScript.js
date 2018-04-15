@@ -11,9 +11,18 @@ $(function() {
 //---------------------Creates a new card---------------------
   $("#MainContent").on("click", ".button", function() {
 
-    $("#activeCard").function({
-      console.log(this);
-    });
+    var name = $("#rName");
+    var image = $("#rImage");
+    var text = $("#rText");
+
+    $.ajax({
+         method: "POST",
+         url: "/card",
+         data: {"name": name, "imageUrl": image, "text": text},
+         success: function(result) {
+           //console.log(result);
+         }
+      });
 
     createCard();
     index++;
