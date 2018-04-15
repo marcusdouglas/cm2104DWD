@@ -19,10 +19,8 @@ function removeSavedRestaurant() {
          url: "/delete",
          data: {"name": name},
          success: function(result) {
-            if(/* check if it is ok */) {
-                location.reload();
-            }
+           console.log(result);
          }
-      })
+      });
   });
 }
