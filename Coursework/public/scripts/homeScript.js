@@ -11,7 +11,9 @@ $(function() {
 //---------------------Creates a new card---------------------
   $("#MainContent").on("click", ".button", function() {
 
-    //$("#activeCard");
+    $("#activeCard").function({
+      console.log(this);
+    });
 
     createCard();
     index++;
