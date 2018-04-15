@@ -25,7 +25,7 @@
       </div>
 
         <% restaurants.forEach(function(restaurant) { %>
-          <div class = "savedRestaurant">
+          <div id = "<%= restaurant.name %>" class = "savedRestaurant">
             <span class = "close" onclick = "removeSavedRestaurant()">&times;</span>
             <div class = "sideImgContainer">
               <img class = "sideImg" src = "<%= restaurant.imageUrl %>">
