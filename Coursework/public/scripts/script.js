@@ -78,10 +78,12 @@ function responsiveNav() {
   }
 }
 
+// Will make the login form visible
 function displayLogin() {
   $("#loginForm").css({display: "block"});
 }
 
+// Will make the signup form visible
 function displaySignup() {
   $("#signupForm").css({display: "block"});
 }
