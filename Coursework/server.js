@@ -38,7 +38,7 @@ app.get("/myrestaurants", function(req, res) {
   //res.render("pages/myrestaurants", {pageName:myrestaurants});
   var collection = new Mongo.Collection("saved_cards");
 
-  console.log(collection.rawCollection().db.options.url)
+  console.log(collection.rawCollection().db.options.url);
 
   db.collection('card').find().toArray(function(err, result) {
     if (err) throw err;
