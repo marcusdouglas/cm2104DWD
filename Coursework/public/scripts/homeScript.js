@@ -26,7 +26,7 @@ function saveCard() {
   //var image = "images/foodImage4.jpeg";
   //var text = "Some Text";
 
-  console.log(name);
+  //console.log(name);
 
   $.ajax({
        method: "POST",
