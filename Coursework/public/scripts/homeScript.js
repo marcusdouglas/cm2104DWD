@@ -9,21 +9,21 @@ $(function() {
   });
 
 //---------------------Creates a new card---------------------
-  $("#MainContent").on("click", "#likeButton", function() {
-
-    var name = $("#rName");
-    var image = $("#rImage");
-    var text = $("#rText");
-
-    console.log(name);
-    saveCard();
-
+  $("#MainContent").on("click", ".button", function() {
     createCard();
     index++;
   });
 });
 
 function saveCard() {
+
+  var name = "Name";
+  var image = "images/foodImage4.jpeg";
+  var text = "Some Text";
+
+  console.log(name);
+  saveCard();
+
   $.ajax({
        method: "POST",
        url: "/card",
