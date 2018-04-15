@@ -11,10 +11,6 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "ejs");
 
-var collection = new Mongo.Collection("saved_cards");
-
-console.log(collection.rawCollection().db.options.url)
-
 var db;
 
 MongoClient.connect(url, function(err, database) {
