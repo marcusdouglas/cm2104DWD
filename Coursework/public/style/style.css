@@ -770,6 +770,8 @@ span.psw {
     padding-top: 50px;
 }
 
+* {box-sizing: border-box}
+
 /* Modal Content/Box */
 .signupModal-content {
     background-color: #fefefe;
