@@ -19,7 +19,6 @@ function removeSavedRestaurant() {
          url: "/delete",
          data: {"name": name},
          success: function(result) {
-           location.reload();
            console.log(result);
          }
       });

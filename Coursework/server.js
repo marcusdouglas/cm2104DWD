@@ -58,10 +58,11 @@ app.get("/myrestaurants", function(req, res) {
 
 app.post("/delete", function(req, res) {
   console.log(req.body);
-  //db.collection("card").deleteOne(req.body, function(err, result) {
-    //if (err) throw error;
+  var name = req.body.name;
+  db.collection("card").deleteOne(req.body, function(err, result) {
+    if (err) throw error;
     //res.redirect("/");
-  //});
+  });
 });
 
 // This works
