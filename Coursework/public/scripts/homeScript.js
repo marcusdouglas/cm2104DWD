@@ -17,12 +17,14 @@ $(function() {
 
 function saveCard() {
 
-  var test = $("#rName").text();
-  console.log("Actual Display: " + test);
+  //var test = $("#rName").text();
+  //console.log("Actual Display: " + test);
 
-  var name = "Name";
-  var image = "images/foodImage4.jpeg";
-  var text = "Some Text";
+  var name = $("#rName").text();
+  var image = $("#rImage").attr(src);
+  var text = $("#rText").text();
+  //var image = "images/foodImage4.jpeg";
+  //var text = "Some Text";
 
   console.log(name);
 
