@@ -15,19 +15,24 @@ $(function() {
     var image = $("#rImage");
     var text = $("#rText");
 
-    $.ajax({
-         method: "POST",
-         url: "/card",
-         data: {"name": name, "imageUrl": image, "text": text},
-         success: function(result) {
-           //console.log(result);
-         }
-      });
+    console.log(name);
+    saveCard();
 
     createCard();
     index++;
   });
 });
+
+function saveCard() {
+  $.ajax({
+       method: "POST",
+       url: "/card",
+       data: {"name": name, "imageUrl": image, "text": text},
+       success: function(result) {
+         //console.log(result);
+       }
+    });
+}
 
 var restaurantsArray = [];
 var index = 0;
