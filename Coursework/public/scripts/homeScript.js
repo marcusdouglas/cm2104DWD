@@ -17,8 +17,8 @@ $(function() {
 
 function saveCard() {
 
-  var test = $("#rName").text("Test");
-  console.log("Actual Display: " + name);
+  var test = $("#rName").text();
+  console.log("Actual Display: " + test);
 
   var name = "Name";
   var image = "images/foodImage4.jpeg";
