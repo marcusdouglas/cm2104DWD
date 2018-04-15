@@ -8,12 +8,13 @@ function removeSavedRestaurant() {
 
   $("#MainContent").on("click", ".savedRestaurant", function() {
 
-    var name = $(this).attr(id);
+    //var name = $(this).attr(id);
+    console.log(this);
 
     $(this).fadeOut(500, function() {
       $(this).remove();
     });
-
+/*
     $.ajax({
          method: "POST",
          url: "/delete",
@@ -21,6 +22,6 @@ function removeSavedRestaurant() {
          success: function(result) {
            console.log(result);
          }
-      });
+      });*/
   });
 }
