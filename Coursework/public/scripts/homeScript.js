@@ -27,7 +27,7 @@ function saveCard() {
   $.ajax({
        method: "POST",
        url: "/card",
-       data: {"name": name, "imageUrl": image, "text": text},
+       data: {"name": name, "image": image, "text": text},
        success: function(result) {
          //console.log(result);
        }
