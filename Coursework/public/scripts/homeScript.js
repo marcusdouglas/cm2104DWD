@@ -9,7 +9,7 @@ $(function() {
   });
 
 //---------------------Creates a new card---------------------
-  $("#MainContent").on("click", "#dislikeButton", function() {
+  $("#MainContent").on("click", ".button", function() {
     createCard();
     index++;
   });
@@ -28,7 +28,7 @@ function saveCard() {
        url: "/card",
        data: {"name": name, "image": image, "text": text},
        success: function(result) {
-         console.log(result);
+         //console.log(result);
        }
     });
 }
@@ -68,11 +68,11 @@ function createCard() {
 function formatCard (name, thumbnail, userRating, voteCount, foodType,
   averageCost, siteUrl, latitude, longitude) {
 
-  var restaurantName = "<div id = 'activeCard'><h2 class = 'paraTitle'>" + name + "</h2>";
+  var restaurantName = "<div id = 'activeCard'><h2 id = 'rName' class = 'paraTitle'>" + name + "</h2>";
   var restaurantFood = "<br><b>Cuisine/s:</b> " + foodType;
 
   $("#MainContent").append(restaurantName
-  + "<div class = 'imageContainer'><img class = 'cardImage' src = " + "'" + thumbnail + "'" + ">"
+  + "<div class = 'imageContainer'><img id = 'rImage' class = 'cardImage' src = " + "'" + thumbnail + "'" + ">"
   + "<img class = 'cardImage' src = 'images/foodImage4.jpeg'><img class = 'cardImage' src = 'images/foodImage5.jpeg'>"
   + "<button id = 'leftButton' class = 'btn' onclick = 'plusDivs(-1)'>&#10094;</button>"
   + "<button id = 'rightButton' class = 'btn' onclick = 'plusDivs(1)'>&#10095;</button></div>"
@@ -84,7 +84,8 @@ function formatCard (name, thumbnail, userRating, voteCount, foodType,
   + "<p><b>Site Url: </b>" + siteUrl + "</p><h3>Location</h3>"
   + "<div id = 'map'></div>"
   + "</div><form id = 'scrollForm'><button id = 'dislikeButton' class = 'button' type = 'button'>"
-  + "<button id = 'likeButton' class = 'button' type = 'button'></button></button></form></div>");
+  + "<button id = 'likeButton' class = 'button' type = 'button' onclick = 'savedCard'></button>"
+  + "</button></form></div>");
 
   // Makes sure only the first card image is displayed
   showDivs(slideIndex);
@@ -185,7 +186,7 @@ function getRating(userRating, voteCount) {
     starCount ++;
   }
 
-  restaurantRating += "<p><b>User Rating:</b> This restaurant has been rated "
+  restaurantRating += "<p id = 'rText'><b>User Rating:</b> This restaurant has been rated "
   + userRating + " out of 5 stars based on " + voteCount + " reviews.";
 
   return restaurantRating;
