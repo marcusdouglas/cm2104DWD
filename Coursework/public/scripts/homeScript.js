@@ -9,7 +9,7 @@ $(function() {
   });
 
 //---------------------Creates a new card---------------------
-  $("#MainContent").on("click", ".button", function() {
+  $("#MainContent").on("click", "#likeButton", function() {
 
     var name = $("#rName");
     var image = $("#rImage");
