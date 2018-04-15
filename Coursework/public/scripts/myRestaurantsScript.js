@@ -1,6 +1,6 @@
 function removeSavedRestaurant() {
 
-  var collection = new Mongo.Collection("saved_cards");
+  var collection = new Mongo.Collection("card");
 
   console.log(collection.rawCollection().db.options.url);
   /*
