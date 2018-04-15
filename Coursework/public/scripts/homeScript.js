@@ -7,6 +7,27 @@ $(function() {
     e.preventDefault();
     getLocation();
   });
+/*
+//---------------------Creates a new card---------------------
+  $("#MainContent").on("click", ".button", function() {
+
+    var name = $("#rName");
+    var image = $("#rImage");
+    var text = $("#rText");
+
+    $.ajax({
+         method: "POST",
+         url: "/card",
+         data: {"name": name, "imageUrl": image, "text": text},
+         success: function(result) {
+           //console.log(result);
+         }
+      });
+
+    createCard();
+    index++;
+  });*/
+});
 
 //---------------------Creates a new card---------------------
   $("#MainContent").on("click", ".button", function() {
@@ -27,7 +48,6 @@ $(function() {
     createCard();
     index++;
   });
-});
 
 var restaurantsArray = [];
 var index = 0;
