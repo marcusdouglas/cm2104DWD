@@ -808,6 +808,7 @@ span.psw {
     display: table;
 }
 
+/* Fits modal-content for smaller screens */
 @media screen and (max-width: 700px) {
   .signupModal-content {
     width: 95%;
