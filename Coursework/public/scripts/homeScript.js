@@ -22,7 +22,7 @@ function saveCard() {
 
   var name = $("#rName").text();
   var image = $("#rImage").attr("src");
-  var text = $("#rText").html();
+  var text = $("#rText").text();
   //var image = "images/foodImage4.jpeg";
   //var text = "Some Text";
 
