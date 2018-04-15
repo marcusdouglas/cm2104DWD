@@ -84,7 +84,7 @@ function formatCard (name, thumbnail, userRating, voteCount, foodType,
   + "<p><b>Site Url: </b>" + siteUrl + "</p><h3>Location</h3>"
   + "<div id = 'map'></div>"
   + "</div><form id = 'scrollForm'><button id = 'dislikeButton' class = 'button' type = 'button'>"
-  + "<button id = 'likeButton' class = 'button' type = 'button' onclick = 'savedCard()'></button>"
+  + "<button id = 'likeButton' class = 'button' type = 'button' onclick = 'saveCard()'></button>"
   + "</button></form></div>");
 
   // Makes sure only the first card image is displayed
