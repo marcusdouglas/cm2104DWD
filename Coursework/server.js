@@ -30,7 +30,7 @@ const app = express();
 app.use(session({ secret: 'example' }));
 
 app.use(bodyParser.urlencoded({
-  extended: true;
+  extended: true
 }));
 // set the view engine to ejs
 app.set('view engine', 'ejs');
