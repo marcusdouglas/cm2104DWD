@@ -104,7 +104,7 @@ app.post("/delete", function(req, res) {
 app.post('/adduser', function(req, res) {
 
   //once created we just run the data string against the database and all our new data will be saved/
-  db.collection('people').save(req.body, function(err, result) {
+  db.collection('users').save(req.body, function(err, result) {
     if (err) throw err;
     console.log('saved to database');
     //when complete redirect to the index
