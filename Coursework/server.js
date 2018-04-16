@@ -4,25 +4,12 @@
 const MongoClient = require("mongodb").MongoClient;
 const url = "mongodb://localhost:27017/saved_cards";
 const express = require("express");
-const session = require("express-session"); //npm install express-session
 const bodyParser = require("body-parser");
 const app = express();
 
-/*
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "ejs");
-
-var db;*/
-
-//this tells express we are using sesssions. These are variables that only belong to one user of the site at a time.
-app.use(session({ secret: 'example' }));
-
-app.use(bodyParser.urlencoded({
-  extended: true
-}))
-// set the view engine to ejs
-app.set('view engine', 'ejs');
 
 var db;
 
