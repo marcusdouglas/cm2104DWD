@@ -112,7 +112,7 @@ function getLocation() {
     url: locationUrl,
     type: "GET",
     headers: {"user-key": "3c672f5af7519d65f72ed90953badca5"},
-    dataType: "json",
+    //dataType: "json",
     success: function(result) {
       // deal with data here
       console.log(result);
@@ -141,7 +141,7 @@ function performSearch(entityId, entityType) {
     url: searchUrl,
     type: "GET",
     headers: {"user-key": "3c672f5af7519d65f72ed90953badca5"},
-    dataType: "json",
+    //dataType: "json",
     success: function(result) {
       // deal with data here
       console.log(result);
