@@ -5,8 +5,6 @@ $(function() {
   // Makes sure only the first card image is displayed
   showDivs(slideIndex);
 
-  $("#password, #newPassword").keyup(checkPasswordMatch);
-
 });
 
 //----------------------Browse Card Images-----------------------
@@ -101,12 +99,16 @@ function signupDisplayNone() {
   $("#signupForm").css({display: "none"});
 }
 
+$(document).ready(function () {
+   $("#password, #newPassword").keyup(checkPasswordMatch);
+});
+
 // Check signup passwords match
 function checkPasswordMatch() {
     var password = $("#password").val();
     var confirmPassword = $("#newPassword").val();
 
-    if (password != confirmPassword)
+    if($(this).val() != $('#txtNewPassword').val().substr(0,$(this).val().length))
         $("#checkPasswordMatch").html("Passwords do not match!");
     else
         $("#checkPasswordMatch").html("Passwords match.");
