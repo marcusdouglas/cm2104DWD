@@ -130,7 +130,7 @@ function createUser() {
   } else {
     console.log("success");
 
-    var username = $(input).attr("name").text();
+    var username = $("input").attr("name").text();
     console.log(username);
 
     $.ajax({
