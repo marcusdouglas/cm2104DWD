@@ -139,7 +139,7 @@ function createUser() {
          url: "/adduser",
          data: {"username": username, "password": password},
          success: function(result) {
-           //console.log(result);
+           console.log(result);
          }
       });
   }
