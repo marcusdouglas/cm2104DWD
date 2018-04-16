@@ -73,6 +73,7 @@ app.post("/delete", function(req, res) {
 });
 
 app.post('/adduser', function(req, res) {
+  console.log(req.body);
 /*
   //we create the data string from the form components that have been passed in
   var datatostore = {
