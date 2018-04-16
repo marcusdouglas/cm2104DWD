@@ -98,3 +98,18 @@ function loginDisplayNone() {
 function signupDisplayNone() {
   $("#signupForm").css({display: "none"});
 }
+
+$(document).ready(function () {
+   $("#password, #newPassword").keyup(checkPasswordMatch);
+});
+
+// Check signup passwords match
+function checkPasswordMatch() {
+    var password = $("#password").val();
+    var confirmPassword = $("#newPassword").val();
+
+    if (password != confirmPassword)
+        $("#checkPasswordMatch").html("Passwords do not match!");
+    else
+        $("#checkPasswordMatch").html("Passwords match.");
+}
