@@ -98,10 +98,10 @@ function loginDisplayNone() {
 function signupDisplayNone() {
   $("#signupForm").css({display: "none"});
 }
-
+/*
 $(document).ready(function () {
    $("#password, #newPassword").keyup(checkPasswordMatch);
-});
+});*/
 
 // Check signup passwords match
 function checkPasswordMatch() {
