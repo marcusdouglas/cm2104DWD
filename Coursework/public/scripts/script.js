@@ -127,8 +127,10 @@ function createUser() {
 
   if (!checkPasswordMatch) {
     $("#checkPasswordMatch").html("<p style = 'color: red'>Password criteria failed</p>");
+    console.log("fail");
   } else {
     $("#checkPasswordMatch").html("<p style = 'color: red'>Success</p>");
+    console.log("success");
   }
 
 }
