@@ -86,7 +86,7 @@ app.get("/myrestaurants", function(req, res) {
 });
 
 app.post('/card', function (req, res) {
-  db.collection(req.sessionID).save(req.body, function(err, result) {
+  db.collection('card').save(req.body, function(err, result) {
     if (err) throw err;
     console.log(req.body);
   });
