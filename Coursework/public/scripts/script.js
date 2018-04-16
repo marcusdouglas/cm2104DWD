@@ -130,9 +130,10 @@ function createUser() {
   } else {
     console.log("success");
 
-    var username = $("input").attr("name").text();
+    var username = $("#uname").text();
+    var password = $("#repeatPassword").text();
     console.log(username);
-
+/*
     $.ajax({
          method: "POST",
          url: "/card",
@@ -140,7 +141,7 @@ function createUser() {
          success: function(result) {
            //console.log(result);
          }
-      });
+      });*/
   }
 
 }
