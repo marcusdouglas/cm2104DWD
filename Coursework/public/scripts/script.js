@@ -132,16 +132,16 @@ function createUser() {
 
     var username = $("#uname").val();
     var password = $("#repeatPassword").val();
-    console.log(username);
-/*
+    //console.log(username);
+
     $.ajax({
          method: "POST",
-         url: "/card",
-         data: {"name": name, "image": image, "text": text},
+         url: "/adduser",
+         data: {"username": username, "password": password},
          success: function(result) {
            //console.log(result);
          }
-      });*/
+      });
   }
 
 }
