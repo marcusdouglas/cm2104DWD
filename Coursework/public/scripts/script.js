@@ -132,6 +132,6 @@ function createUser() {
     $("#checkPasswordMatch").html("<p style = 'color: red'>Success</p>");
     console.log("success");
   }*/
-  console.log("hello");
+  $("#MainContent").append("Hello This is text");
 
 }
