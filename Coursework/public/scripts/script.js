@@ -130,8 +130,8 @@ function createUser() {
   } else {
     console.log("success");
 
-    var username = $("#uname").text();
-    var password = $("#repeatPassword").text();
+    var username = $("#uname").val();
+    var password = $("#repeatPassword").val();
     console.log(username);
 /*
     $.ajax({
