@@ -99,16 +99,17 @@ function signupDisplayNone() {
   $("#signupForm").css({display: "none"});
 }
 
+// Check signup passwords match
 $(document).ready(function () {
-   $("#password, #newPassword").keyup(checkPasswordMatch);
+   $("#password, #repeatPassword").keyup(checkPasswordMatch);
 });
 
 // Check signup passwords match
 function checkPasswordMatch() {
     var password = $("#password").val();
-    var confirmPassword = $("#newPassword").val();
+    var confirmPassword = $("#repeatPassword").val();
 
-    if($(this).val() != $('#txtNewPassword').val().substr(0,$(this).val().length))
+    if (password != confirmPassword)
         $("#checkPasswordMatch").html("Passwords do not match!");
     else
         $("#checkPasswordMatch").html("Passwords match.");
