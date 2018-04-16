@@ -110,7 +110,7 @@ function checkPasswordMatch() {
     var confirmPassword = $("#repeatPassword").val();
 
     if (password != confirmPassword)
-        $("#checkPasswordMatch").html("<p>Password Status: Passwords do not match!</p>");
+        $("#checkPasswordMatch").html("<p style = 'color: red'>Password Status: Passwords do not match!</p>");
     else
-        $("#checkPasswordMatch").html("<p>Password Status: Passwords match.</p>");
+        $("#checkPasswordMatch").html("<p style = 'color: green'>Password Status: Passwords match.</p>");
 }
