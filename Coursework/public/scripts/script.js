@@ -113,10 +113,12 @@ function checkPasswordMatch() {
 
   if (password != confirmPassword) {
     $("#checkPasswordMatch").html("<p style = 'color: red'>Password Status: Passwords do not match!</p>");
+    $("#confirmSignup").prop('disabled', true);
     return false;
   }
   else {
     $("#checkPasswordMatch").html("<p style = 'color: green'>Password Status: Passwords match.</p>");
+    $("#confirmSignup").prop('disabled', false);
     return true;
   }
 }
