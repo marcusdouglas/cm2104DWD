@@ -99,18 +99,34 @@ function signupDisplayNone() {
   $("#signupForm").css({display: "none"});
 }
 
+// ----------------- Code to handle sign ups -------------------
+
 // Check signup passwords match
 $(document).ready(function () {
    $("#password, #repeatPassword").keyup(checkPasswordMatch);
 });
 
-// Check signup passwords match
+// function to check signup passwords match
 function checkPasswordMatch() {
-    var password = $("#password").val();
-    var confirmPassword = $("#repeatPassword").val();
+  var password = $("#password").val();
+  var confirmPassword = $("#repeatPassword").val();
 
-    if (password != confirmPassword)
-        $("#checkPasswordMatch").html("<p style = 'color: red'>Password Status: Passwords do not match!</p>");
-    else
-        $("#checkPasswordMatch").html("<p style = 'color: green'>Password Status: Passwords match.</p>");
+  if (password != confirmPassword) {
+    $("#checkPasswordMatch").html("<p style = 'color: red'>Password Status: Passwords do not match!</p>");
+    return false;
+  }
+  else {
+    $("#checkPasswordMatch").html("<p style = 'color: green'>Password Status: Passwords match.</p>");
+    return true;
+  }
+}
+
+function createUser() {
+
+  if (!checkPasswordMatch) {
+    $("#checkPasswordMatch").html("<p style = 'color: red'>Password criteria failed</p>");
+  } else {
+    $("#checkPasswordMatch").html("<p style = 'color: red'>Success</p>");
+  }
+
 }
