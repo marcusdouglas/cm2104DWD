@@ -126,12 +126,21 @@ function checkPasswordMatch() {
 function createUser() {
 
   if (!checkPasswordMatch()) {
-    $("#checkPasswordMatch").html("<p style = 'color: red'>Password criteria failed</p>");
     console.log("fail");
   } else {
-    $("#checkPasswordMatch").html("<p style = 'color: red'>Success</p>");
     console.log("success");
+
+    var username = $(input).attr("name").text();
+    console.log(username);
+
+    $.ajax({
+         method: "POST",
+         url: "/card",
+         data: {"name": name, "image": image, "text": text},
+         success: function(result) {
+           //console.log(result);
+         }
+      });
   }
-  console.log("hello");
 
 }
