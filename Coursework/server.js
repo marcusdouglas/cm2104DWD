@@ -72,7 +72,7 @@ var uname = req.query.username;
 
     //var uname = "marcus";
 
-    console.log(test);
+    console.log(uname);
 
     db.collection('users').findOne({"username":uname}, function(err, result) {
      if (err) throw err;
