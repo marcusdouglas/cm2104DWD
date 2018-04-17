@@ -101,6 +101,7 @@ app.post("/delete", function(req, res) {
   });
 });
 
+// Logs the user in
 app.post('/login', function(req, res) {
   console.log(JSON.stringify(req.body));
   var uname = req.body.uname;
@@ -109,12 +110,20 @@ app.post('/login', function(req, res) {
   db.collection('users').findOne({"username":uname}, function(err, result) {
     if (err) throw err;//if there is an error, throw the error
     //if there is no result, redirect the user back to the login system as that username must not exist
-    if(!result){res.redirect('/');return}
+    if(!result){
+      res.redirect('/');
+      return
+    }
     //if there is a result then check the password, if the password is correct set session loggedin to true and send the user to the index
-    if(result.password == pword){ req.session.loggedin = true; res.redirect('/') }
+    if (result.password == pword){
+      req.session.loggedin = true;
+      res.redirect('/');
+      console.log("logged in as " + uname);
+    }
     //otherwise send them back to login
-    else{res.redirect('/')}
-    console.log("logged in as " + uname);
+    else{
+      res.redirect('/');
+    }
   });
 });
 
@@ -130,6 +139,7 @@ app.post('/adduser', function(req, res) {
   });
 });
 
+// Logs the user out
 app.get('/logout', function(req, res) {
   req.session.loggedin = false;
   req.session.destroy();
