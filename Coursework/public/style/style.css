@@ -13,7 +13,7 @@
   }
 
   #distance {
-    float: right;
+    /*float: right;*/
   }
 
   .searchBox {
@@ -65,7 +65,7 @@
   }
 
   .searchBox {
-    width: 95%;
+    width: 100%;
     display: block;
   }
 
@@ -370,17 +370,7 @@ body {
   border: 1px solid black;
 }
 
-.signupInput[type=text], .signupInput[type=password] {
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    display: inline-block;
-    border: none;
-    background: #f1f1f1;
-    box-sizing: border-box;
-}
-
-.searchBox[type=text] {
+.searchBox {
   border: 1px solid transparent;
   background-color: white;
   font-size: 16px;
