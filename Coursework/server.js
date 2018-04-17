@@ -66,7 +66,7 @@ app.get("/", function(req, res) {
 app.get("/myrestaurants", function(req, res) {
   //res.render("pages/myrestaurants", {pageName:myrestaurants});
 
-   var uname = req.query.username;
+   var uname = "marcus";
 
    db.collection('users').findOne({"username":uname}, function(err, result) {
     if (err) throw err;
