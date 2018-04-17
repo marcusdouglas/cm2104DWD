@@ -69,7 +69,8 @@ app.get("/myrestaurants", function(req, res) {
   var uname = req.query.username;
 
   db.collection('users').findOne({"username":uname}, function(err, result) {
-
+    console.log(result);
+/*
     //var cards = result.saved_cards;
     if (err) throw err;
 
@@ -82,7 +83,7 @@ app.get("/myrestaurants", function(req, res) {
 
       var restaurant = {name: name, imageUrl: imageUrl, text: text};
       restaurants[i] = restaurant;
-    }
+    }*/
     res.render("pages/myrestaurants", {
       restaurants: restaurants
     });
