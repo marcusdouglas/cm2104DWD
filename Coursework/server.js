@@ -133,7 +133,7 @@ app.post('/login', function(req, res) {
 // Creates a new user
 app.post('/adduser', function(req, res) {
   console.log(req.body);
-  var uname = req.body.uname;
+  var uname = req.body.username;
   //once created we just run the data string against the database and all our new data will be saved/
   db.collection('users').save(req.body, function(err, result) {
     if (err) throw err;
