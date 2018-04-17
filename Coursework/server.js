@@ -71,7 +71,7 @@ app.get("/", function(req, res) {
   } else {
 
     var uname = "marcus";
-    var test = req.query.username;
+    var test = req;
     console.log(test);
 
     db.collection('users').findOne({"username":uname}, function(err, result) {
