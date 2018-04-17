@@ -3,7 +3,7 @@
   <img src = "images/logo.png" id = "headerImage" alt = "Site Logo Image"/>
   <nav id = "nav">
     <ul class = "nav-tabs" id = "collapseNav">
-      <li><a id = "indexTab" class = "active" href = "/">Home</a></li>
+      <li><a id = "indexTab" class = "active" href="/index?username=<%= user.username %>">Home</a></li>
       <li><a id = "myrestaurantsTab" class = "tabs" href = "/myrestaurants">My Restaurants</a></li>
       <li><a class = "tabs" href = "/logout" >Logout</a></li>
       <li id = "login" onclick = "displayLogin()">
