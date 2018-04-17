@@ -132,7 +132,7 @@ function createUser() {
 
     var username = $("#uname").val();
     var password = $("#repeatPassword").val();
-    var saved_cards = [];
+    var saved_cards = [{"M"}];
     //console.log(username);
 
     $.ajax({
