@@ -310,7 +310,7 @@ body {
     background-color: white;
 }
 
-#userInfo a:hover {
+#userInfo:hover {
     left: 0;
 }
 
