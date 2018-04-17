@@ -75,7 +75,7 @@ app.get("/", function(req, res) {
      res.render('pages/index', {
        user: result
      });
-    }
+   });
   }
   //res.render("pages/index");
 });
