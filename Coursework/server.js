@@ -59,7 +59,7 @@ app.use(express.static(__dirname + '/public'));*/
 // index page
 app.get("/", function(req, res) {
   //res.render("pages/index",{pageName:index});
-
+var uname = req.query.username;
   if (!req.session.loggedin) {
 
     var result = {username: "No User"}
@@ -70,8 +70,8 @@ app.get("/", function(req, res) {
     return;
   } else {
 
-    var uname = "marcus";
-    var test = req.query;
+    //var uname = "marcus";
+
     console.log(test);
 
     db.collection('users').findOne({"username":uname}, function(err, result) {
