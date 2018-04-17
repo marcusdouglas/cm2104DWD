@@ -296,7 +296,7 @@ body {
   padding-bottom: 30px;
 }
 
-#userInfo {
+#userInfo a{
     position: absolute;
     left: -80px;
     transition: 0.3s;
