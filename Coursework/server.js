@@ -135,7 +135,7 @@ app.post('/adduser', function(req, res) {
   console.log(req.body);
   var uname = req.body.username;
   //once created we just run the data string against the database and all our new data will be saved/
-  db.collection('users').save(req.body, function(err, result) {
+  /*db.collection('users').save(req.body, function(err, result) {
     if (err) throw err;
     console.log('saved to database');
 
@@ -144,7 +144,7 @@ app.post('/adduser', function(req, res) {
     req.session.loggedin = true;
     res.redirect('/');
     console.log("logged in as " + uname);
-  });
+  });*/
 });
 
 // Logs the user out
