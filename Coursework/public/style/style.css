@@ -13,7 +13,7 @@
   }
 
   #distance {
-    /*float: right;*/
+    float: right;
   }
 
   .searchBox {
@@ -65,7 +65,7 @@
   }
 
   .searchBox {
-    width: 100%;
+    width: 95%;
     display: block;
   }
 
@@ -379,7 +379,6 @@ body {
   height: 30px;
   margin-left:auto;
   margin-right: auto;
-  box-sizing: border-box;
 }
 
 #search {
