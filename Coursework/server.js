@@ -70,6 +70,8 @@ app.get("/", function(req, res) {
     return;
   } else {
 
+    var uname = req.query.username;
+
     db.collection('users').findOne({"username":uname}, function(err, result) {
      if (err) throw err;
      res.render('pages/index', {
