@@ -1,6 +1,6 @@
 <div id = "loginForm" class = "modal">
 
-  <form class = "modal-content animate" action = "#"> <!-- Server response after action -->
+  <form class = "modal-content animate" action = "/login"> <!-- Server response after action -->
     <div class = "loginImgContainer">
       <span onclick = "loginDisplayNone()" class = "close" title = "Close Modal">&times;</span>
       <img id = "loginAvatar" src = "images/img_avatar2.png" alt = "Avatar">
@@ -13,7 +13,7 @@
       <label for = "psw"><b>Password</b></label>
       <input class = "loginInput" type = "password" placeholder = "Enter Password" name = "psw" required>
 
-      <button class = "loginButton" type = "submit" href = "/login">Login</button>
+      <button class = "loginButton" type = "submit">Login</button>
       <label>
         <input type = "checkbox" checked = "checked" name = "remember"> Remember me
       </label>
