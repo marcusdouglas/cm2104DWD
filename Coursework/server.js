@@ -115,7 +115,7 @@ app.post('/login', function(req, res) {
     //if there is no result, redirect the user back to the login system as that username must not exist
     if(!result){
       res.redirect('/');
-      return
+      return;
     }
     //if there is a result then check the password, if the password is correct set session loggedin to true and send the user to the index
     if (result.password == pword){
@@ -133,11 +133,12 @@ app.post('/login', function(req, res) {
 // Creates a new user
 app.post('/adduser', function(req, res) {
   console.log(req.body);
+  var uname = req.body.uname;
   //once created we just run the data string against the database and all our new data will be saved/
   db.collection('users').save(req.body, function(err, result) {
     if (err) throw err;
     console.log('saved to database');
-    
+
     //when complete redirect to the index
     console.log(req.body);
     req.session.loggedin = true;
