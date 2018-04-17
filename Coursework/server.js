@@ -101,6 +101,23 @@ app.post("/delete", function(req, res) {
   });
 });
 
+app.post('/login', function(req, res) {
+  console.log(JSON.stringify(req.body));
+  var uname = req.body.uname;
+  var pword = req.body.psw;
+
+  db.collection('users').findOne({"username":uname}, function(err, result) {
+    if (err) throw err;//if there is an error, throw the error
+    //if there is no result, redirect the user back to the login system as that username must not exist
+    if(!result){res.redirect('/');return}
+    //if there is a result then check the password, if the password is correct set session loggedin to true and send the user to the index
+    if(result.password == pword){ req.session.loggedin = true; res.redirect('/') }
+    //otherwise send them back to login
+    else{res.redirect('/')}
+    console.log("logged in as " + uname);
+  });
+});
+
 app.post('/adduser', function(req, res) {
   console.log(req.body);
   //once created we just run the data string against the database and all our new data will be saved/
@@ -116,6 +133,7 @@ app.post('/adduser', function(req, res) {
 app.get('/logout', function(req, res) {
   req.session.loggedin = false;
   req.session.destroy();
+  console.log("logged out");
   res.redirect('/');
 });
 
