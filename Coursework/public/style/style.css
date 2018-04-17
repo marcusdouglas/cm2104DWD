@@ -370,7 +370,17 @@ body {
   border: 1px solid black;
 }
 
-.searchBox {
+.signupInput[type=text], .signupInput[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+    box-sizing: border-box;
+}
+
+.searchBox[type=text] {
   border: 1px solid transparent;
   background-color: white;
   font-size: 16px;
@@ -379,6 +389,7 @@ body {
   height: 30px;
   margin-left:auto;
   margin-right: auto;
+  box-sizing: border-box;
 }
 
 #search {

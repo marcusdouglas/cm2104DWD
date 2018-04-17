@@ -102,7 +102,7 @@ app.post("/delete", function(req, res) {
 });
 
 app.post('/adduser', function(req, res) {
-
+/*
   //once created we just run the data string against the database and all our new data will be saved/
   db.collection('users').save(req.body, function(err, result) {
     if (err) throw err;
@@ -110,7 +110,7 @@ app.post('/adduser', function(req, res) {
     //when complete redirect to the index
     console.log(req.body);
     res.redirect('/');
-  });
+  });*/
 });
 
 // This works
