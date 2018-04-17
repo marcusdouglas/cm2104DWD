@@ -23,6 +23,8 @@ function saveCard() {
   var name = $("#rName").text();
   var image = $("#rImage").attr("src");
   var text = $("#rText").text();
+
+  var card = {name: name, image: image, text: text};
   //var image = "images/foodImage4.jpeg";
   //var text = "Some Text";
 
@@ -31,7 +33,7 @@ function saveCard() {
   $.ajax({
        method: "POST",
        url: "/card",
-       data: {"name": name, "image": image, "text": text},
+       data: {card: card},
        success: function(result) {
          //console.log(result);
        }

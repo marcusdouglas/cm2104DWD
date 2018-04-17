@@ -66,15 +66,18 @@ app.get("/", function(req, res) {
 app.get("/myrestaurants", function(req, res) {
   //res.render("pages/myrestaurants", {pageName:myrestaurants});
 
-  db.collection('card').find().toArray(function(err, result) {
+   var uname = req.query.username;
+
+   db.collection('users').findOne({"username":uname}, function(err, result) {
     if (err) throw err;
 
+    var saved_cards = result.saved_cards;
     var restaurants = [];
 
-    for (var i = 0; i < result.length; i++) {
-      var name = result[i].name;
-      var imageUrl = result[i].image;
-      var text = result[i].text;
+    for (var i = 0; i < saved_cards.length; i++) {
+      var name = saved_cards[i].name;
+      var imageUrl = saved_cards[i].image;
+      var text = saved_cards[i].text;
 
       var restaurant = {name: name, imageUrl: imageUrl, text: text};
       restaurants[i] = restaurant;
@@ -135,10 +138,10 @@ app.post('/adduser', function(req, res) {
   console.log(JSON.stringify(req.body));
   console.log(req.body);
   var uname = req.body.username;
-  var array = req.body.saved_cards;
-  console.log("Array" + array)
+  //var array = req.body.saved_cards;
+  //console.log("Array" + array)
   //once created we just run the data string against the database and all our new data will be saved/
-  /*db.collection('users').save(req.body, function(err, result) {
+  db.collection('users').save(req.body, function(err, result) {
     if (err) throw err;
     console.log('saved to database');
 
@@ -147,7 +150,7 @@ app.post('/adduser', function(req, res) {
     req.session.loggedin = true;
     res.redirect('/');
     console.log("logged in as " + uname);
-  });*/
+  });
 });
 
 // Logs the user out
