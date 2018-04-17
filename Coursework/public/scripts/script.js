@@ -130,10 +130,10 @@ function createUser() {
   } else {
     console.log("success");
 
-    var placeCard = {name: "Name", image: "images/foodImage6.jpeg", text: "Some text"};
+    //var placeCard = {name: "Name", image: "images/foodImage6.jpeg", text: "Some text"};
     var username = $("#uname").val();
     var password = $("#repeatPassword").val();
-    var saved_cards = [placeCard];
+    //var saved_cards = [placeCard];
     //console.log(username);
 
     $.ajax({
