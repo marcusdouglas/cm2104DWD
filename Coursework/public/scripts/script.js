@@ -132,13 +132,13 @@ function createUser() {
 
     var username = $("#uname").val();
     var password = $("#repeatPassword").val();
-    //var saved_cards = [];
+    var saved_cards = [];
     //console.log(username);
 
     $.ajax({
          method: "POST",
          url: "/adduser",
-         data: {"username": username, "password": password},
+         data: {"username": username, "password": password, "saved_cards": saved_cards},
          success: function(result) {
            console.log(result);
          }
