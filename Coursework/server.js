@@ -85,6 +85,8 @@ app.get("/myrestaurants", function(req, res) {
   });
 });
 
+
+// Saves a card
 app.post('/card', function (req, res) {
   db.collection('card').save(req.body, function(err, result) {
     if (err) throw err;
@@ -92,6 +94,7 @@ app.post('/card', function (req, res) {
   });
 });
 
+// Deletes a card
 app.post("/delete", function(req, res) {
   //console.log(req.body);
 
@@ -127,15 +130,19 @@ app.post('/login', function(req, res) {
   });
 });
 
+// Creates a new user
 app.post('/adduser', function(req, res) {
   console.log(req.body);
   //once created we just run the data string against the database and all our new data will be saved/
   db.collection('users').save(req.body, function(err, result) {
     if (err) throw err;
     console.log('saved to database');
+    
     //when complete redirect to the index
     console.log(req.body);
+    req.session.loggedin = true;
     res.redirect('/');
+    console.log("logged in as " + uname);
   });
 });
 
