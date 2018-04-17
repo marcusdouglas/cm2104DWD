@@ -20,7 +20,7 @@ MongoClient.connect(url, function(err, database) {
 });*/
 
 const MongoClient = require('mongodb').MongoClient; //npm install mongodb@2.2.32
-const url = "mongodb://localhost:27017/saved_cards";
+const url = "mongodb://localhost:27017/user_data";
 const express = require('express'); //npm install express
 const session = require('express-session'); //npm install express-session
 const bodyParser = require('body-parser'); //npm install body-parser
@@ -66,10 +66,14 @@ app.get("/", function(req, res) {
 app.get("/myrestaurants", function(req, res) {
   //res.render("pages/myrestaurants", {pageName:myrestaurants});
 
-  db.collection('card').find().toArray(function(err, result) {
+  var uname = req.query.username;
+
+  db.collection('users').findOne({"username":uname}, function(err, result) {
+
+    //var cards = result.saved_cards;
     if (err) throw err;
 
-    var restaurants = [];
+    var restaurants = result.saved_cards;
 
     for (var i = 0; i < result.length; i++) {
       var name = result[i].name;
@@ -86,7 +90,11 @@ app.get("/myrestaurants", function(req, res) {
 });
 
 app.post('/card', function (req, res) {
-  db.collection('card').save(req.body, function(err, result) {
+
+  var query = req.query.username;
+  var newValues = { $push: { saved_cards: req.body } };
+
+  db.collection('users').updateOne(query, newValues, function(err, result) {
     if (err) throw err;
     console.log(req.body);
   });
@@ -102,7 +110,7 @@ app.post("/delete", function(req, res) {
 });
 
 app.post('/adduser', function(req, res) {
-/*
+
   //once created we just run the data string against the database and all our new data will be saved/
   db.collection('users').save(req.body, function(err, result) {
     if (err) throw err;
@@ -110,7 +118,28 @@ app.post('/adduser', function(req, res) {
     //when complete redirect to the index
     console.log(req.body);
     res.redirect('/');
-  });*/
+
+    // ---- First time login
+    console.log(JSON.stringify(req.body))
+    var uname = req.body.username;
+    var pword = req.body.password;
+
+    db.collection('users').findOne({"username":uname}, function(err, result) {
+      if (err) throw err;//if there is an error, throw the error
+      //if there is no result, redirect the user back to the login system as that username must not exist
+      if(!result){res.redirect('/');return}
+      //if there is a result then check the password, if the password is correct set session loggedin to true and send the user to the index
+      if(result.login.password == pword){ req.session.loggedin = true; res.redirect('/') }
+      //otherwise send them back to login
+      else{res.redirect('/')}
+    });
+  });
+});
+
+app.get('/logout', function(req, res) {
+  req.session.loggedin = false;
+  req.session.destroy();
+  res.redirect('/');
 });
 
 // This works
