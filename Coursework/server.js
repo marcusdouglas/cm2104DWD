@@ -66,15 +66,10 @@ app.get("/", function(req, res) {
 app.get("/myrestaurants", function(req, res) {
   //res.render("pages/myrestaurants", {pageName:myrestaurants});
 
-  var uname = req.query.username;
-
-  db.collection('users').findOne({"username":uname}, function(err, result) {
-    console.log(result);
-/*
-    //var cards = result.saved_cards;
+  db.collection('card').find().toArray(function(err, result) {
     if (err) throw err;
 
-    var restaurants = result.saved_cards;
+    var restaurants = [];
 
     for (var i = 0; i < result.length; i++) {
       var name = result[i].name;
@@ -83,7 +78,7 @@ app.get("/myrestaurants", function(req, res) {
 
       var restaurant = {name: name, imageUrl: imageUrl, text: text};
       restaurants[i] = restaurant;
-    }*/
+    }
     res.render("pages/myrestaurants", {
       restaurants: restaurants
     });
@@ -91,11 +86,7 @@ app.get("/myrestaurants", function(req, res) {
 });
 
 app.post('/card', function (req, res) {
-
-  var query = req.query.username;
-  var newValues = { $push: { saved_cards: req.body } };
-
-  db.collection('users').updateOne(query, newValues, function(err, result) {
+  db.collection('card').save(req.body, function(err, result) {
     if (err) throw err;
     console.log(req.body);
   });
@@ -119,21 +110,6 @@ app.post('/adduser', function(req, res) {
     //when complete redirect to the index
     console.log(req.body);
     res.redirect('/');
-
-    // ---- First time login
-    console.log(JSON.stringify(req.body))
-    var uname = req.body.username;
-    var pword = req.body.password;
-
-    db.collection('users').findOne({"username":uname}, function(err, result) {
-      if (err) throw err;//if there is an error, throw the error
-      //if there is no result, redirect the user back to the login system as that username must not exist
-      if(!result){res.redirect('/');return}
-      //if there is a result then check the password, if the password is correct set session loggedin to true and send the user to the index
-      if(result.login.password == pword){ req.session.loggedin = true; res.redirect('/') }
-      //otherwise send them back to login
-      else{res.redirect('/')}
-    });
   });
 });
 
