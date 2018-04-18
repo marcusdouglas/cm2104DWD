@@ -250,31 +250,34 @@ app.post('/adduser', function(req, res) {
 
   console.log(JSON.stringify(req.body));
   var uname = req.body.uname;
+  var pword = req.body.psw;
 
   db.collection('users').findOne({"username":uname}, function(err, result) {
-
     if (err) throw err;
-    else{
-      res.redirect('/');
-    }
 
-      db.collection('users').save(req.body, function(err, result) {
-        if (err) throw err;
-        console.log('saved to database');
+    db.collection('users').save(req.body, function(err, result) {
+      if (err) throw err;
+      console.log('saved to database');
 
-        db.collection('users').findOne({"username":uname}, function(err, result) {
-         if (err) throw err;
-         res.render('pages/index', {
-           user: result
-         });
+      //when complete redirect to the index
+      console.log(req.body);
+
+      console.log("logged in as " + uname);
+    });
+
+
+      db.collection('users').findOne({"username":uname}, function(err, result) {
+       if (err) throw err;
+       res.render('pages/index', {
+         user: result
        });
-       req.session.loggedin = true;
-       console.log("logged in as " + uname);
-      });
-
-
-    //otherwise send them back to login
-
+     });
+     req.session.loggedin = true;
+     console.log("logged in as " + uname);
+      /*
+      req.session.loggedin = true;
+      res.redirect('/');
+      console.log("logged in as " + uname);*/
   });
 
   /*
