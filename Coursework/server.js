@@ -146,10 +146,20 @@ app.post('/card', function (req, res) {
      var saved_cards = result.saved_cards;
     // console.log(saved_cards);
      saved_cards.push(newCard);
-     console.log(saved_cards);
+     //console.log(saved_cards);
      //console.log(req.body);
      //console.log(result);
      //console.log(uname);
+   });
+
+   var query = {username: uname};
+   var newvalues = {$set: {saved_cards: saved_cards}};
+   console.log(query);
+   console.log(newValues);
+
+   db.collection('users').updateOne(query, newvalues, function(err, result) {
+     if (err) throw err;
+     console.log(result);
    });
   }
   //res.render("pages/index");
