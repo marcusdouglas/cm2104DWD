@@ -70,9 +70,9 @@ app.get("/", function(req, res) {
     return;
   } else {
 
-    var uname = "marcus";
-    var test = req.query.username;
-    console.log(test);
+    //var uname = "marcus";
+    var uname = req.query.username;
+    console.log(uname);
 
     db.collection('users').findOne({"username":uname}, function(err, result) {
      if (err) throw err;
@@ -156,7 +156,7 @@ app.post('/login', function(req, res) {
          user: result
        });
      });
-
+     console.log("logged in as " + uname);
       /*
       req.session.loggedin = true;
       res.redirect('/');
