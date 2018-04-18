@@ -149,15 +149,18 @@ app.post('/login', function(req, res) {
     }
     //if there is a result then check the password, if the password is correct set session loggedin to true and send the user to the index
     if (result.password == pword){
-      var usern = req.query.username;
-      req.session.loggedin = true;
-      db.collection('users').findOne({"username":usern}, function(err, result) {
+
+      db.collection('users').findOne({"username":uname}, function(err, result) {
        if (err) throw err;
        res.render('pages/index', {
          user: result
        });
      });
-      console.log("logged in as " + uname);
+
+      /*
+      req.session.loggedin = true;
+      res.redirect('/');
+      console.log("logged in as " + uname);*/
     }
     //otherwise send them back to login
     else{
