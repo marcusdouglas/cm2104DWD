@@ -119,10 +119,37 @@ app.get("/myrestaurants", function(req, res) {
 
 // Saves a card
 app.post('/card', function (req, res) {
+
+  if (!req.session.loggedin) {
+
+    var result = {username: "No User"}
+
+    res.render('pages/index', {
+      user: result
+    });
+    return;
+  } else {
+
+    //var uname = "marcus";
+    var uname = req.query.username;
+    console.log(uname);
+
+    db.collection('users').findOne({"username":uname}, function(err, result) {
+     if (err) throw err;
+
+     var saved_cards = result.saved_cards;
+     //saved_cards.push(req.body);
+     console.log(saved_cards);
+     console.log(req.body);
+     console.log(result);
+   });
+  }
+  //res.render("pages/index");
+  /*
   db.collection('card').save(req.body, function(err, result) {
     if (err) throw err;
     console.log(req.body);
-  });
+  });*/
 });
 
 // Deletes a card
