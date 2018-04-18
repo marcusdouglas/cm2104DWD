@@ -254,7 +254,9 @@ app.post('/adduser', function(req, res) {
   db.collection('users').findOne({"username":uname}, function(err, result) {
 
     if (err) throw err;
-
+    else{
+      res.redirect('/');
+    }
 
       db.collection('users').save(req.body, function(err, result) {
         if (err) throw err;
@@ -272,9 +274,7 @@ app.post('/adduser', function(req, res) {
 
 
     //otherwise send them back to login
-    else{
-      res.redirect('/');
-    }
+
   });
 
   /*
