@@ -151,9 +151,11 @@ app.post('/card', function (req, res) {
      var newvalues = {$set: {"saved_cards.$[element]": newCard}};
 
      db.collection("quotes").updateOne(query, newvalues, function(err, result) {
+       if (err) throw err;
      //console.log(req.body);
      //console.log(result);
      //console.log(uname);
+     });
    });
   }
   //res.render("pages/index");
