@@ -172,10 +172,41 @@ app.post('/card', function (req, res) {
 app.post("/delete", function(req, res) {
   //console.log(req.body);
 
+  if (!req.session.loggedin) {
+    res.redirect("/");
+    return;
+  } else {
+
+    var uname = req.body.uname;
+    var cardName = req.body.name;
+
+     db.collection('users').findOne({"username":uname}, function(err, result) {
+      if (err) throw err;
+
+      var saved_cards = result.saved_cards;
+
+      for (var i = 0; i < saved_cards.length; i++) {
+        if (cardName == saved_cards[i].name) {
+          saved_cards.splice(i, 1);
+          break;
+        }
+      }
+
+      var query = {username: uname};
+      var newValues = {$set: {saved_cards: saved_cards}};
+      console.log(query);
+      console.log(newValues);
+      db.collection('users').updateOne(query, newValues, function(err, result) {
+        if (err) throw err;
+        console.log(result);
+      });
+    });
+  }
+/*
   var name = req.body.name;
   db.collection("card").deleteOne(req.body, function(err, result) {
     if (err) throw error;
-  });
+  });*/
 });
 
 // Logs the user in
