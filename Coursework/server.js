@@ -131,7 +131,7 @@ app.post('/card', function (req, res) {
   } else {
 
     //var uname = "marcus";
-    //var uname = req.body.username;
+    var uname = "marcus";
     console.log("First Body: " + req.body);
 
     db.collection('users').findOne({"username":uname}, function(err, result) {
