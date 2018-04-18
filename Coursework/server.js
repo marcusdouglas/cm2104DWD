@@ -258,21 +258,22 @@ app.post('/adduser', function(req, res) {
     if (err) throw err;
     console.log('saved to database');
 
-    db.collection('users').findOne({"username":uname}, function(err, result) {
-     if (err) throw err;
-     res.render('pages/index', {
-       user: test
-     });
-    });
-    req.session.loggedin = true;
-    console.log("logged in as " + uname);
 /*
     //when complete redirect to the index
     console.log(req.body);
     req.session.loggedin = true;
     res.redirect('/');
-    console.log("logged in as " + uname);
-  });*/
+    console.log("logged in as " + uname);*/
+
+    db.collection('users').findOne({"username":uname}, function(err, result) {
+     if (err) throw err;
+     res.render('pages/index', {
+       user: test
+     });
+   });
+   req.session.loggedin = true;
+   console.log("logged in as " + uname);
+  });
 });
 
 // Logs the user out
