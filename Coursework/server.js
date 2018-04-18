@@ -267,6 +267,7 @@ app.post('/adduser', function(req, res) {
     console.log(uname);
     db.collection('users').findOne({"username":uname}, function(err, result) {
      if (err) throw err;
+     console.log(result);
      res.render('pages/index', {
        user: result
      });
