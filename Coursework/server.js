@@ -150,7 +150,7 @@ app.post('/card', function (req, res) {
      var query = req.body.card.username;
      var newvalues = {$set: {"saved_cards.$[element]": newCard}};
 
-     db.collection("quotes").updateOne(query, newvalues, function(err, result) {
+     db.collection("users").updateOne(query, newvalues, function(err, result) {
        if (err) throw err;
      //console.log(req.body);
      //console.log(result);
