@@ -156,6 +156,7 @@ app.post('/login', function(req, res) {
          user: result
        });
      });
+     req.session.loggedin = true;
      console.log("logged in as " + uname);
       /*
       req.session.loggedin = true;
