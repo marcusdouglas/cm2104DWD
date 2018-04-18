@@ -147,6 +147,8 @@ app.post('/card', function (req, res) {
     // console.log(saved_cards);
      saved_cards.push(newCard);
      console.log(saved_cards);
+
+     db.users.updateOne(newCard);
      //console.log(req.body);
      //console.log(result);
      //console.log(uname);
