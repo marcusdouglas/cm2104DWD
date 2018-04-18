@@ -260,7 +260,14 @@ app.post('/adduser', function(req, res) {
     //when complete redirect to the index
     console.log(req.body);
     req.session.loggedin = true;
-    res.redirect('/');
+    db.collection('users').findOne({"username":uname}, function(err, result) {
+     if (err) throw err;
+     res.render('pages/index', {
+       user: result
+     });
+   });
+   req.session.loggedin = true;
+   console.log("logged in as " + uname);
     console.log("logged in as " + uname);
   });
 });
