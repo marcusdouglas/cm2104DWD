@@ -132,14 +132,20 @@ app.post('/card', function (req, res) {
 
     //var uname = "marcus";
     var uname = req.body.card.username;
-    //console.log(req.body);
+    console.log(req.body);
     //console.log(uname);
 
     db.collection('users').findOne({"username":uname}, function(err, result) {
      if (err) throw err;
 
+     var name = req.body.card.name;
+     var image = req.body.card.image;
+     var text = req.body.card.text;
+     var newCard = {name: name, image: image, text: text};
+
      var saved_cards = result.saved_cards;
-     //saved_cards.push(req.body);
+     console.log(saved_cards);
+     saved_cards.push(req.body);
      console.log(saved_cards);
      //console.log(req.body);
      //console.log(result);
