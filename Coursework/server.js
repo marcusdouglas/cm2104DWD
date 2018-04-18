@@ -70,9 +70,9 @@ app.get("/", function(req, res) {
     return;
   } else {
 
-    var uname = req.query.username;
-    //var test = req.query.username;
-    //console.log(test);
+    var uname = "marcus";
+    var test = req.query.username;
+    console.log(test);
 
     db.collection('users').findOne({"username":uname}, function(err, result) {
      if (err) throw err;
