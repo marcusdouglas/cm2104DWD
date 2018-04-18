@@ -154,7 +154,7 @@ app.post('/card', function (req, res) {
      var newValues = {$set: {saved_cards: saved_cards}};
      console.log(query);
      console.log(newValues);
-     db.collection('users').updateOne(query, newvalues, function(err, result) {
+     db.collection('users').updateOne(query, newValues, function(err, result) {
        if (err) throw err;
        console.log(result);
      });
