@@ -92,7 +92,7 @@ app.get("/myrestaurants", function(req, res) {
     res.redirect("/");
     return;
   } else {
-    var uname = req.query.username;
+    var uname = "marcus";
 
      db.collection('users').findOne({"username":uname}, function(err, result) {
       if (err) throw err;
