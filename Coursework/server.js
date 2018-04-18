@@ -255,7 +255,7 @@ app.post('/adduser', function(req, res) {
 
     if (err) throw err;
 
-    if(!result){
+
       db.collection('users').save(req.body, function(err, result) {
         if (err) throw err;
         console.log('saved to database');
@@ -270,7 +270,7 @@ app.post('/adduser', function(req, res) {
        console.log("logged in as " + uname);
       });
       return;
-    }
+
 
     //otherwise send them back to login
     else{
