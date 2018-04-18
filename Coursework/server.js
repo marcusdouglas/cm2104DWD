@@ -141,8 +141,8 @@ app.post('/card', function (req, res) {
      //saved_cards.push(req.body);
      //console.log(saved_cards);
      console.log(req.body);
-     console.log(result);
-     console.log(uname);
+     //console.log(result);
+     //console.log(uname);
    });
   }
   //res.render("pages/index");
