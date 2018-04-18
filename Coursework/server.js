@@ -265,6 +265,7 @@ app.post('/adduser', function(req, res) {
     console.log("logged in as " + uname);*/
   });
 
+  console.log(uname);
   db.collection('users').findOne({"username":uname}, function(err, result) {
    if (err) throw err;
    res.render('pages/index', {
