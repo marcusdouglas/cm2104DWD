@@ -1,11 +1,11 @@
 <div id = "signupForm" class = "signupModal">
 
-  <form class = "modal-content animate" action = "#"> <!-- Server response after action -->
+  <form class = "modal-content animate" action="/adduser" method="POST"> <!-- Server response after action -->
     <div class = "loginImgContainer">
       <span onclick = "signupDisplayNone()" class = "close" title = "Close Modal">&times;</span>
     </div>
 
-    <form class = "signupModal-content" action="/adduser" method="POST">
+    <form class = "signupModal-content">
       <div class = "signupContainer">
         <h1>Sign Up</h1>
         <p>Please fill in this form to create an account.</p>
