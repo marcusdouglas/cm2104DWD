@@ -247,6 +247,38 @@ app.post('/login', function(req, res) {
 
 // Creates a new user
 app.post('/adduser', function(req, res) {
+
+  console.log(JSON.stringify(req.body));
+  var uname = req.body.uname;
+
+  db.collection('users').findOne({"username":uname}, function(err, result) {
+
+    if (err) throw err;
+
+    if(!result){
+      db.collection('users').save(req.body, function(err, result) {
+        if (err) throw err;
+        console.log('saved to database');
+
+        db.collection('users').findOne({"username":uname}, function(err, result) {
+         if (err) throw err;
+         res.render('pages/index', {
+           user: result
+         });
+       });
+       req.session.loggedin = true;
+       console.log("logged in as " + uname);
+      });
+      return;
+    }
+
+    //otherwise send them back to login
+    else{
+      res.redirect('/');
+    }
+  });
+
+  /*
   console.log(JSON.stringify(req.body));
   console.log(req.body);
   var uname = req.body.username;
@@ -263,7 +295,7 @@ app.post('/adduser', function(req, res) {
     req.session.loggedin = true;
     res.redirect('/');
     console.log("logged in as " + uname);
-  });
+  });*/
 });
 
 // Logs the user out

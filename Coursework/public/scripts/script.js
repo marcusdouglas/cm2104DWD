@@ -122,7 +122,7 @@ function checkPasswordMatch() {
     return true;
   }
 }
-
+/*
 function createUser() {
 
   if (!checkPasswordMatch()) {
@@ -146,4 +146,4 @@ function createUser() {
       });
   }
 
-}
+}*/
