@@ -131,8 +131,8 @@ app.post('/card', function (req, res) {
   } else {
 
     //var uname = "marcus";
-    var uname = "marcus";
-    console.log("First Body: " + req.body);
+    var uname = req.body.username;
+    //console.log(uname);
 
     db.collection('users').findOne({"username":uname}, function(err, result) {
      if (err) throw err;
@@ -140,8 +140,9 @@ app.post('/card', function (req, res) {
      //var saved_cards = result.saved_cards;
      //saved_cards.push(req.body);
      //console.log(saved_cards);
-     console.log("Body: " + req.body);
-     console.log("Result: " + result);
+     console.log(req.body);
+     console.log(result);
+     console.log(uname);
    });
   }
   //res.render("pages/index");
