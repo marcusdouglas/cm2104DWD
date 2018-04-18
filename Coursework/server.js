@@ -137,9 +137,9 @@ app.post('/card', function (req, res) {
     db.collection('users').findOne({"username":uname}, function(err, result) {
      if (err) throw err;
 
-     var saved_cards = result.saved_cards;
+     //var saved_cards = result.saved_cards;
      //saved_cards.push(req.body);
-     console.log(saved_cards);
+     //console.log(saved_cards);
      console.log(req.body);
      console.log(result);
    });
