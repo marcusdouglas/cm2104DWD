@@ -287,7 +287,7 @@ app.post('/adduser', function(req, res) {
         res.redirect('/');
         console.log("logged in as " + uname);*/
       }
-
+    });
 
 });
 
