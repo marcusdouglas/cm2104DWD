@@ -272,7 +272,7 @@ app.post('/adduser', function(req, res) {
         return;
       }
       //if there is a result then check the password, if the password is correct set session loggedin to true and send the user to the index
-      else {
+      else{
 
         db.collection('users').findOne({"username":uname}, function(err, result) {
          if (err) throw err;
@@ -288,6 +288,8 @@ app.post('/adduser', function(req, res) {
         console.log("logged in as " + uname);*/
       }
     });
+  });
+
 
 });
 
