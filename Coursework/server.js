@@ -263,7 +263,7 @@ app.post('/adduser', function(req, res) {
     //when complete redirect to the index
     console.log(req.body);
     req.session.loggedin = true;
-    res.redirect('/');
+    //res.redirect('/');
     console.log("logged in as " + uname);
   });
 });
