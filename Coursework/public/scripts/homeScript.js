@@ -20,11 +20,12 @@ function saveCard() {
   //var test = $("#rName").text();
   //console.log("Actual Display: " + test);
 
+  var uname = $("#username").text();
   var name = $("#rName").text();
   var image = $("#rImage").attr("src");
   var text = $("#rText").text();
 
-  var card = {name: name, image: image, text: text};
+  var card = {username: uname, name: name, image: image, text: text};
   //var image = "images/foodImage4.jpeg";
   //var text = "Some Text";
 
