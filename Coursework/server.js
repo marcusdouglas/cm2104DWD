@@ -269,7 +269,6 @@ app.post('/adduser', function(req, res) {
        req.session.loggedin = true;
        console.log("logged in as " + uname);
       });
-      return;
 
 
     //otherwise send them back to login
