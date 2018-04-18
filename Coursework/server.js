@@ -154,13 +154,10 @@ app.post('/card', function (req, res) {
      var newvalues = {$set: {saved_cards: saved_cards}};
      console.log(query);
      console.log(newValues);
-   });
-
-
-
-   db.collection('users').updateOne(query, newvalues, function(err, result) {
-     if (err) throw err;
-     console.log(result);
+     db.collection('users').updateOne(query, newvalues, function(err, result) {
+       if (err) throw err;
+       console.log(result);
+     });
    });
   }
   //res.render("pages/index");
