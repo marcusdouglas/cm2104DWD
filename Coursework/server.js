@@ -263,17 +263,17 @@ app.post('/adduser', function(req, res) {
     req.session.loggedin = true;
     res.redirect('/');
     console.log("logged in as " + uname);*/
-  });
 
-  console.log(uname);
-  db.collection('users').findOne({"username":uname}, function(err, result) {
-   if (err) throw err;
-   res.render('pages/index', {
-     user: result
+    console.log(uname);
+    db.collection('users').findOne({"username":uname}, function(err, result) {
+     if (err) throw err;
+     res.render('pages/index', {
+       user: result
+     });
    });
- });
- req.session.loggedin = true;
- console.log("logged in as " + uname);
+   req.session.loggedin = true;
+   console.log("logged in as " + uname);
+  });
 
 
 });
