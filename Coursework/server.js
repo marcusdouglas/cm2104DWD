@@ -147,8 +147,10 @@ app.post('/card', function (req, res) {
     // console.log(saved_cards);
      saved_cards.push(newCard);
      console.log(saved_cards);
+     var query = req.body.card.username;
+     var newvalues = {$set: {"saved_cards.$[element]": newCard}};
 
-     db.users.updateOne(newCard);
+     db.collection("quotes").updateOne(query, newvalues, function(err, result) {
      //console.log(req.body);
      //console.log(result);
      //console.log(uname);
