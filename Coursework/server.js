@@ -88,26 +88,31 @@ app.get("/", function(req, res) {
 app.get("/myrestaurants", function(req, res) {
   //res.render("pages/myrestaurants", {pageName:myrestaurants});
 
-   var uname = "marcus";
+  if (!req.session.loggedin) {
+    res.redirect("/");
+    return;
+  } else {
+    var uname = "marcus";
 
-   db.collection('users').findOne({"username":uname}, function(err, result) {
-    if (err) throw err;
+     db.collection('users').findOne({"username":uname}, function(err, result) {
+      if (err) throw err;
 
-    var saved_cards = result.saved_cards;
-    var restaurants = [];
+      var saved_cards = result.saved_cards;
+      var restaurants = [];
 
-    for (var i = 0; i < saved_cards.length; i++) {
-      var name = saved_cards[i].name;
-      var imageUrl = saved_cards[i].image;
-      var text = saved_cards[i].text;
+      for (var i = 0; i < saved_cards.length; i++) {
+        var name = saved_cards[i].name;
+        var imageUrl = saved_cards[i].image;
+        var text = saved_cards[i].text;
 
-      var restaurant = {name: name, imageUrl: imageUrl, text: text};
-      restaurants[i] = restaurant;
-    }
-    res.render("pages/myrestaurants", {
-      restaurants: restaurants
+        var restaurant = {name: name, imageUrl: imageUrl, text: text};
+        restaurants[i] = restaurant;
+      }
+      res.render("pages/myrestaurants", {
+        restaurants: restaurants
+      });
     });
-  });
+  }
 });
 
 
