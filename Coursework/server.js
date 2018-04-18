@@ -151,7 +151,7 @@ app.post('/login', function(req, res) {
     if (result.password == pword){
       var usern = req.query.username;
       req.session.loggedin = true;
-      res.redirect('/?username=<%= user.username %>');
+      res.redirect('/');
       console.log("logged in as " + usern);
     }
     //otherwise send them back to login
