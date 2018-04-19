@@ -338,7 +338,7 @@ body {
     background-color: white;
 }
 
-.expandUserInfo {
+#userInfo a:hover {
     left: 0;
 }
 
