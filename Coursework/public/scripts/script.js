@@ -94,7 +94,7 @@ $(function() {
     var loginText = $("#login").text();
     console.log(loginText);
 
-    if (loginText == "Login or Signup") {
+    if (loginText === "Login or Signup") {
       displayLogin();
     }
   });
