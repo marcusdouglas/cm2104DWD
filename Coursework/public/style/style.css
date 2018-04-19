@@ -341,12 +341,12 @@ body {
 #userInfo a:hover {
     left: 0;
 }
-
+/*
 #arrow {
   display: inline;
   margin-left: 30px;
   padding: 0;
-}
+}*/
 
 #username {
   display: inline;
