@@ -6,7 +6,7 @@
       <li><a id = "indexTab" class = "active" href="/?username=<%= user.username %>">Home</a></li>
       <li><a id = "myrestaurantsTab" class = "tabs" href = "/myrestaurants?username=<%= user.username %>">My Restaurants</a></li>
       <li><a class = "tabs" href = "/logout" >Logout</a></li>
-      <li id = "login" >
+      <li id = "login" onclick = "displayLogin()">
         <a id = "logText" class = "tabs" href = "#">Login or Signup</a></li>
       <li class = "icon">
         <a href = "javascript:void(0);" style = "font-size: 17px;" onclick = "navCollapse()">☰</a>

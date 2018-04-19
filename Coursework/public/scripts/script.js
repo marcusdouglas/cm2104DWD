@@ -88,7 +88,7 @@ function displaySignup() {
   $("#loginForm").css({display: "none"});
   $("#signupForm").css({display: "block"});
 }
-
+/*
 $(function() {
   $("#PageHeader").on("click", "#login", function() {
     var loginText = $("#logText").text();
@@ -98,11 +98,7 @@ $(function() {
       displayLogin();
     }
   });
-
-  $("#loginForm").on("click", "#doLogin", function() {
-    $("#logText").text("Logout");
-  });
-});
+});*/
 
 // Will remove login form elements visibility
 function loginDisplayNone() {
