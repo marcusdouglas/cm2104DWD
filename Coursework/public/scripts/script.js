@@ -147,3 +147,15 @@ function createUser() {
   }
 
 }
+
+var expanded = false;
+
+function expandUserInfo() {
+  $("#userInfo").addClass(".expandUserInfo");
+
+  if (!expanded) {
+    expanded = true;
+  } else {
+    expanded = false;
+  }
+}
