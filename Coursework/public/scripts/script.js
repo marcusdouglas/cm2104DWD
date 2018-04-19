@@ -89,6 +89,16 @@ function displaySignup() {
   $("#signupForm").css({display: "block"});
 }
 
+$(function() {
+  $("#login").on("click", function() {
+    var loginText = $("#login").text();
+
+    if (loginText == "Login or Signup") {
+      displayLogin();
+    }
+  });
+});
+
 // Will remove login form elements visibility
 function loginDisplayNone() {
   $("#loginForm").css({display: "none"});
