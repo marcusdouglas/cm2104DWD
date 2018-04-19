@@ -343,7 +343,7 @@ body {
 }
 
 #arrow {
-  float: right;
+  display: inline;
 }
 
 #username {
