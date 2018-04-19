@@ -4,13 +4,13 @@ $(function() {
 
   $("#searchForm").submit(function(e) {
     // Stops the page jumping to the top on click
+    $("#cardLoader").addClass("loader");
     e.preventDefault();
     getLocation();
   });
 
 //---------------------Creates a new card---------------------
   $("#MainContent").on("click", ".button", function() {
-    $("#cardLoader").addClass("loader");
     createCard();
     index++;
   });
