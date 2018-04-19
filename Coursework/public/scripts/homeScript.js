@@ -50,8 +50,10 @@ function createCard() {
 
   //$("#cardLoader").addClass("loader");
 
+  $("#cardLoader").removeClass("loader");
+
   $("#activeCard").fadeOut(500, function() {
-$("#cardLoader").removeClass("loader");
+
     var name = restaurantsArray[index].name;
     var thumbnail = restaurantsArray[index].thumbnail;
     var userRating = restaurantsArray[index].userRating;
