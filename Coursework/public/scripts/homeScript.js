@@ -10,6 +10,7 @@ $(function() {
 
 //---------------------Creates a new card---------------------
   $("#MainContent").on("click", ".button", function() {
+    $("#cardLoader").addClass("loader");
     createCard();
     index++;
   });
@@ -47,7 +48,7 @@ var index = 0;
 function createCard() {
   // Remove current card with fade out and create new one
 
-  $("#cardLoader").addClass("loader");
+  //$("#cardLoader").addClass("loader");
 
   $("#activeCard").fadeOut(500, function() {
 $("#cardLoader").removeClass("loader");
