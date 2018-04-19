@@ -153,26 +153,33 @@ function performSearch(entityId, entityType) {
       index = 0;
       restaurantsArray.length = 0;
 
-      console.log(res.results_found);
+      //console.log(res.results_found);
+      var resultsFound = res.results_found;
+      var loop = Math.round(resultsFound / 20);
+      var resultsStart = res.results_start;
 
-      for (var i = 0; i < res.restaurants.length; i++) {
-        var name = res.restaurants[i].restaurant.name;
-        var thumbnail = res.restaurants[i].restaurant.thumb;
-        var userRating = res.restaurants[i].restaurant.user_rating.aggregate_rating;
-        var voteCount = res.restaurants[i].restaurant.user_rating.votes;
-        var foodType = res.restaurants[i].restaurant.cuisines;
-        var averageCost = res.restaurants[i].restaurant.price_range;
-        var siteUrl = res.restaurants[i].restaurant.url;
-        var latitude = res.restaurants[i].restaurant.location.latitude;
-        var longitude = res.restaurants[i].restaurant.location.longitude;
+      for (var i = 0; i < loop; i++) {
 
-        var restaurant = {name: name, thumbnail: thumbnail,
-          userRating: userRating, voteCount: voteCount,
-          foodType: foodType, averageCost: averageCost, siteUrl: siteUrl,
-          latitude: latitude, longitude: longitude};
-        //console.log(restaurant);
+        for (var i = 0; i < res.restaurants.length; i++) {
+          var name = res.restaurants[i].restaurant.name;
+          var thumbnail = res.restaurants[i].restaurant.thumb;
+          var userRating = res.restaurants[i].restaurant.user_rating.aggregate_rating;
+          var voteCount = res.restaurants[i].restaurant.user_rating.votes;
+          var foodType = res.restaurants[i].restaurant.cuisines;
+          var averageCost = res.restaurants[i].restaurant.price_range;
+          var siteUrl = res.restaurants[i].restaurant.url;
+          var latitude = res.restaurants[i].restaurant.location.latitude;
+          var longitude = res.restaurants[i].restaurant.location.longitude;
 
-        restaurantsArray[i] = restaurant;
+          var restaurant = {name: name, thumbnail: thumbnail,
+            userRating: userRating, voteCount: voteCount,
+            foodType: foodType, averageCost: averageCost, siteUrl: siteUrl,
+            latitude: latitude, longitude: longitude};
+          //console.log(restaurant);
+
+          restaurantsArray[i] = restaurant;
+        }
+        res.results_start = 20;
       }
 
       // Shuffle the array. This will help stop the user having to go through
