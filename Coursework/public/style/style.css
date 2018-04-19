@@ -24,9 +24,9 @@
     width: 20%;
   }
 
-  #userInfo a{
-      left: -150px;
-      width: 160px;
+  #userInfo a {
+      left: -190px;
+      width: 200px;
       font-size: 20px;
       top: 200px;
   }
@@ -81,8 +81,8 @@
   }
 
   #userInfo a{
-      left: -150px;
-      width: 160px;
+      left: -190px;
+      width: 200px;
       font-size: 20px;
       top: 200px;
   }
@@ -331,7 +331,7 @@ body {
     padding: 15px;
     /*width: 100px;*/
     text-decoration: none;
-    font-size: 20px;
+    /*font-size: 20px;*/
     color: black;
     border-radius: 0 5px 5px 0;
     /*top: 200px;*/
