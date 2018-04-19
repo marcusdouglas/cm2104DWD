@@ -156,7 +156,8 @@ function performSearch(entityId, entityType) {
       //console.log(res.results_found);
       var resultsFound = res.results_found;
       var loop = Math.round(resultsFound / 20);
-      var resultsStart = res.results_start;
+      console.log(loop);
+      //var resultsStart = res.results_start;
 
       for (var i = 0; i < loop; i++) {
 
@@ -179,7 +180,8 @@ function performSearch(entityId, entityType) {
 
           restaurantsArray[i] = restaurant;
         }
-        res.results_start = 20;
+        res.results_start += 20;
+        console.log(res.results_start);
       }
 
       // Shuffle the array. This will help stop the user having to go through
