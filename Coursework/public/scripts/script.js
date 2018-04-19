@@ -98,6 +98,16 @@ $(function() {
       displayLogin();
     }
   });
+
+  $("#loginForm").on("click", ".loginButton", function() {
+    $.ajax({
+         method: "POST",
+         url: "/login",
+         success: function(result) {
+           //console.log(result);
+         }
+      });
+  });
 });
 
 // Will remove login form elements visibility
