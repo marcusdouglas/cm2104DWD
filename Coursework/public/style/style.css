@@ -192,10 +192,10 @@
     }
 
     #userInfo a{
-        left: -110px;
-        width: 120px;
+        left: -156px;
+        width: 160px;
         font-size: 16px;
-        top: 100px;
+        top: 90px;
     }
 
     #headerImage {
@@ -249,10 +249,10 @@
   }
 
   #userInfo a{
-      left: -90px;
-      width: 100px;
-      font-size: 12px;
-      top: 100px;
+      left: -146px;
+      width: 150px;
+      font-size: 14px;
+      top: 90px;
   }
 }
 
