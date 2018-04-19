@@ -343,9 +343,8 @@ body {
 }
 
 #arrow {
-  float: right;
-  margin: 0;
-  padding: 0;
+  display: inline;
+  margin-left: 12px;
 }
 
 #username {
