@@ -99,9 +99,8 @@ $(function() {
     }
   });
 
-  $("#loginForm").on("click", ".loginButton", function() {
-    var text = $(".loginButton").text("Logout");
-    console.log(text);
+  $("#loginForm").on("click", "#doLogin", function() {
+    $("#logText").text("Logout");
   });
 });
 
