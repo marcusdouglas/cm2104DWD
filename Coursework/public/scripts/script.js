@@ -100,8 +100,8 @@ $(function() {
   });
 
   $("#loginForm").on("click", ".loginButton", function() {
-
-    $(".loginButton").text("Logout");
+    var text = $(".loginButton").text("Logout");
+    console.log(text);
   });
 });
 
