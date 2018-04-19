@@ -153,6 +153,8 @@ function performSearch(entityId, entityType) {
       index = 0;
       restaurantsArray.length = 0;
 
+      console.log(res);
+
       for (var i = 0; i < res.restaurants.length; i++) {
         var name = res.restaurants[i].restaurant.name;
         var thumbnail = res.restaurants[i].restaurant.thumb;
@@ -173,12 +175,15 @@ function performSearch(entityId, entityType) {
         restaurantsArray[i] = restaurant;
       }
 
+      // Shuffle the array. This will help stop the user having to go through
+      // restaurants in the same order every time they search
       shuffle(restaurantsArray);
       createCard();
     }
   });
 }
 
+// Method for shuffling array order
 function shuffle(array) {
   var currentIndex = array.length, temporaryValue, randomIndex;
 
