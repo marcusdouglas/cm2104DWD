@@ -90,7 +90,7 @@ function displaySignup() {
 }
 
 $(function() {
-  $("#PageHeader").on("click", ,"#login" function() {
+  $("#PageHeader").on("click", "#login", function() {
     var loginText = $("#login").text();
     console.log(loginText);
 
