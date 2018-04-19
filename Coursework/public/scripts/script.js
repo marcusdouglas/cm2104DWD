@@ -100,13 +100,8 @@ $(function() {
   });
 
   $("#loginForm").on("click", ".loginButton", function() {
-    $.ajax({
-         method: "POST",
-         url: "/login",
-         success: function(result) {
-           //console.log(result);
-         }
-      });
+
+    $(".loginButton").text("Logout");
   });
 });
 
