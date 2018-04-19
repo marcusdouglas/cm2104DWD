@@ -46,8 +46,11 @@ var index = 0;
 
 function createCard() {
   // Remove current card with fade out and create new one
-  $("#activeCard").fadeOut(500, function() {
 
+  $("#cardLoader").addClass("loader");
+
+  $("#activeCard").fadeOut(500, function() {
+$("#cardLoader").removeClass("loader");
     var name = restaurantsArray[index].name;
     var thumbnail = restaurantsArray[index].thumbnail;
     var userRating = restaurantsArray[index].userRating;
