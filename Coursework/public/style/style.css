@@ -344,7 +344,8 @@ body {
 
 #arrow {
   display: inline;
-  margin-left: 12px;
+  margin-left: 30px;
+  padding: 0;
 }
 
 #username {
