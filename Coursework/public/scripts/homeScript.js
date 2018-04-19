@@ -153,7 +153,7 @@ function performSearch(entityId, entityType) {
       index = 0;
       restaurantsArray.length = 0;
 
-      console.log(res);
+      console.log(res.results_found);
 
       for (var i = 0; i < res.restaurants.length; i++) {
         var name = res.restaurants[i].restaurant.name;
