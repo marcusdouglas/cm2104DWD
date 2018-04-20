@@ -78,7 +78,8 @@ app.get("/", function(req, res) {
     db.collection('users').findOne({"username":uname}, function(err, result) {
      if (err) throw err;
      res.render('pages/index', {
-       user: result
+       user: result,
+       page: "index"
      });
    });
   }
@@ -112,7 +113,7 @@ app.get("/myrestaurants", function(req, res) {
       res.render("pages/myrestaurants", {
         user: result,
         restaurants: restaurants,
-        page: "index"
+        page: "myrestaurants"
       });
     });
   }
@@ -127,7 +128,8 @@ app.post('/card', function (req, res) {
     var result = {username: "No User"}
 
     res.render('pages/index', {
-      user: result
+      user: result,
+      page: "index"
     });
     return;
   } else {
@@ -230,7 +232,8 @@ app.post('/login', function(req, res) {
       db.collection('users').findOne({"username":uname}, function(err, result) {
        if (err) throw err;
        res.render('pages/index', {
-         user: result
+         user: result,
+         page: "index"
        });
      });
      req.session.loggedin = true;
@@ -260,7 +263,8 @@ app.post('/adduser', function(req, res) {
     db.collection('users').findOne({"username":uname}, function(err, result) {
      if (err) throw err;
      res.render('pages/index', {
-       user: result
+       user: result,
+       page: "index"
      });
    });
    req.session.loggedin = true;
