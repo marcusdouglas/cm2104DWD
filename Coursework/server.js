@@ -257,13 +257,13 @@ app.post('/adduser', function(req, res) {
 
   db.collection('users').save(req.body, function(err, result) {
     if (err) throw err;
-    console.log(result);
+    //console.log(result);
     console.log('saved to database');
 
     //when complete redirect to the index
     db.collection('users').findOne({"username":uname}, function(err, result) {
      if (err) throw err;
-     console.log(result);
+     //console.log(result);
      res.render('pages/index', {
        user: result,
        page: "index"
