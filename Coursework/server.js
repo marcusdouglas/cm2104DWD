@@ -65,7 +65,8 @@ app.get("/", function(req, res) {
     var result = {username: "No User"}
 
     res.render('pages/index', {
-      user: result
+      user: result,
+      page: "index"
     });
     return;
   } else {
