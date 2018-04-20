@@ -111,7 +111,8 @@ app.get("/myrestaurants", function(req, res) {
       }
       res.render("pages/myrestaurants", {
         user: result,
-        restaurants: restaurants
+        restaurants: restaurants,
+        page: "index"
       });
     });
   }

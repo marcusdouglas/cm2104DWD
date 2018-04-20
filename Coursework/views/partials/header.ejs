@@ -6,7 +6,8 @@
       <!--<li <% if (page === 'index') { %> class="active" <% } %> ><a href="/index">Index</a></li>-->
       <li><a id = "indexTab" href="/?username=<%= user.username %>" <% if (page === 'index') { %> class="active" <% } %>>Home</a></li>
       <!--<li><a id = "indexTab" class = "active" href="/?username=<%= user.username %>">Home</a></li>-->
-      <li><a id = "myrestaurantsTab" class = "tabs" href = "/myrestaurants?username=<%= user.username %>">My Restaurants</a></li>
+      <li><a id = "myrestaurantsTab" href = "/myrestaurants?username=<%= user.username %>" <% if (page === 'myrestaurants') { %> class="active" <% } %>>My Restaurants</a></li>
+      <!--<li><a id = "myrestaurantsTab" class = "tabs" href = "/myrestaurants?username=<%= user.username %>">My Restaurants</a></li>-->
       <li><a class = "tabs" href = "/logout" >Logout</a></li>
       <li id = "login" onclick = "displayLogin()">
         <a id = "logText" class = "tabs" href = "#">Login or Signup</a></li>
