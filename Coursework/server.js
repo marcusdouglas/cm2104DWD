@@ -66,7 +66,8 @@ app.get("/", function(req, res) {
 
     res.render('pages/index', {
       user: result,
-      page: "index"
+      page: "index",
+      logged: "Login or Signup"
     });
     return;
   } else {
@@ -79,7 +80,8 @@ app.get("/", function(req, res) {
      if (err) throw err;
      res.render('pages/index', {
        user: result,
-       page: "index"
+       page: "index",
+       logged: "Logout"
      });
    });
   }
@@ -113,7 +115,8 @@ app.get("/myrestaurants", function(req, res) {
       res.render("pages/myrestaurants", {
         user: result,
         restaurants: restaurants,
-        page: "myrestaurants"
+        page: "myrestaurants",
+        logged: "Logout"
       });
     });
   }
@@ -129,7 +132,8 @@ app.post('/card', function (req, res) {
 
     res.render('pages/index', {
       user: result,
-      page: "index"
+      page: "index",
+      logged: "Login or Signup"
     });
     return;
   } else {
@@ -233,7 +237,8 @@ app.post('/login', function(req, res) {
        if (err) throw err;
        res.render('pages/index', {
          user: result,
-         page: "index"
+         page: "index",
+         logged: "Logout"
        });
      });
      req.session.loggedin = true;
@@ -266,7 +271,8 @@ app.post('/adduser', function(req, res) {
      //console.log(result);
      res.render('pages/index', {
        user: result,
-       page: "index"
+       page: "index",
+       logged: "Logout"
      });
    });
    req.session.loggedin = true;
