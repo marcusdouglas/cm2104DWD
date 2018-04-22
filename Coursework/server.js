@@ -267,6 +267,29 @@ app.post('/login', function(req, res) {
 app.post('/adduser', function(req, res) {
   console.log(JSON.stringify(req.body));
   var uname = req.body.uname;
+  var signin = {username: uname};
+
+  db.collection('users').save(req.body, function(err, result) {
+    if (err) throw err;
+    //console.log(result);
+    console.log('saved to database');
+
+  });
+  //console.log(result);
+  res.render('pages/index', {
+    user: signin,
+    page: "index",
+    logged: "Logout"
+  });
+  req.session.loggedin = true;
+  console.log("logged in as " + uname);
+});
+
+/*
+// Creates a new user
+app.post('/adduser', function(req, res) {
+  console.log(JSON.stringify(req.body));
+  var uname = req.body.uname;
 
   db.collection('users').save(req.body, function(err, result) {
     if (err) throw err;
@@ -287,25 +310,7 @@ app.post('/adduser', function(req, res) {
    console.log("logged in as " + uname);
 
   });
-  /*
-  console.log(JSON.stringify(req.body));
-  console.log(req.body);
-  var uname = req.body.username;
-
-  //var array = req.body.saved_cards;
-  //console.log("Array" + array)
-  //once created we just run the data string against the database and all our new data will be saved/
-  db.collection('users').save(req.body, function(err, result) {
-    if (err) throw err;
-    console.log('saved to database');
-
-    //when complete redirect to the index
-    console.log(req.body);
-    req.session.loggedin = true;
-    res.redirect('/');
-    console.log("logged in as " + uname);
-  });*/
-});
+});*/
 
 // Logs the user out
 app.get('/logout', function(req, res) {
