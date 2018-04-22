@@ -44,7 +44,7 @@
               <div class = "info">
                 <p class = "cardText"><%= restaurant.rating %></p>
                 <p class = "cardText"><%= restaurant.cuisines %></p>
-                <p id = "costText" <% onload='getAverage(<%= restaurant.averageCost %>)' %> class = "cardText"></p>
+                <p id = "costText" onload = "getAverage(3)" class = "cardText"><%= restaurant.cost %></p>
               </div>
             </div>
           </div>
