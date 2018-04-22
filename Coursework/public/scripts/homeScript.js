@@ -146,6 +146,7 @@ function getLocation() {
 // is pressed
 function performSearch(entityId, entityType, lat, lon, rad) {
 
+  console.log(rad);
   rad = rad / 0.00062137;
   console.log(rad);
 
