@@ -33,7 +33,7 @@
 
         <div class = "signupClearfix">
           <button class = "signupButton signupCancelBtn" type = "button" onclick = "signupDisplayNone()">Cancel</button>
-          <a href="/?username=<%= user.username %>"><button id = "confirmSignup" class = "signupButton" type = "submit"  onclick = "createUser()">Sign Up</button></a>
+          <a onmousedown = "createUser()" href="/?username=<%= user.username %>"><button id = "confirmSignup" class = "signupButton" type = "submit">Sign Up</button></a>
         </div>
       </div>
     </form>
