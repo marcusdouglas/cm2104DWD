@@ -58,6 +58,7 @@
 
     <form id = "searchForm">
       <input type = "text" id = "location" class = "searchBox" placeholder = "Location(e.g. 'Edinburgh, Scotland')" name = "location">
+      <input id="pac-input" class="controls" type="text" placeholder="Search Box">
       <input type = "text" id = "distance" class = "searchBox" placeholder = "Distance(Miles)" name = "distance">
       <button type = "submit" id = "search">Go!</button>
     </form>
@@ -81,5 +82,6 @@
   </footer>
 
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBPO_ZRe5JJellJY06o4c2yrGL55loC0w&callback=createMap"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBPO_ZRe5JJellJY06o4c2yrGL55loC0w&libraries=places"></script>
 </body>
 </html>
