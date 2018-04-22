@@ -282,6 +282,6 @@ function createMap(latitude, longitude) {
 }
 
 function initialize() {
-  var input = $("#location");
+  var input = document.getElementById('location');
   new google.maps.places.Autocomplete(input);
 }
