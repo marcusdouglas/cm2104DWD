@@ -267,12 +267,14 @@ app.post('/login', function(req, res) {
 app.post('/adduser', function(req, res) {
   console.log(JSON.stringify(req.body));
   var uname = req.body.uname;
+
+  // Some descriptive text loaded in the rating part of EJS for place holding
   var pageDescription = "On this page you can find all the restaurants that"
     + " you have saved and all their details. To remove a restaurant from this"
     + " page, click the cross at the top right of the restaurants card. You may"
     + " feel free to delete this information card!";
 
-  var placeCard = {name: "Welcome to the My Restaurants page!", image: "images/logo.png", rating: "Some Text"};
+  var placeCard = {name: "Welcome to the My Restaurants page!", image: "images/logo.png", rating: pageDescription};
   var password = req.body.psw;
   var saved_cards = [placeCard];
 
