@@ -522,15 +522,16 @@ body {
 
 .cardText {
   margin: 0;
-  padding: 4px;
+  padding-top: 4px;
 }
 
 #rating {
-  padding-top: 12px;
+  padding-top: 8px;
 }
 
 #cost {
   display: inline-block;
+  padding-right: 8px;
 }
 
 #seeMore:checked ~ .expand {
