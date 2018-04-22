@@ -24,9 +24,7 @@ function saveCard() {
   var uname = $("#username").text();
   var name = $("#rName").text();
   var image = $("#rImage").attr("src");
-  var rating = $("#rRating").text();
   var text = $("#rText").text();
-  text += rating;
 
   var card = {username: uname, name: name, image: image, text: text};
   //var image = "images/foodImage4.jpeg";
@@ -243,7 +241,7 @@ function shuffle(array) {
 
 // Uses API data to create a star rating
 function getRating(userRating, voteCount) {
-  var restaurantRating = "<span id = 'rRating'><span class = 'starText'><b>Star Rating:</b> </span>";
+  var restaurantRating = "<span class = 'starText'><b>Star Rating:</b> </span>";
   var roundedRating = Math.round(userRating);
   var starCount = 0;
 
@@ -253,7 +251,7 @@ function getRating(userRating, voteCount) {
   }
 
   for (var i = starCount; i < 5; i++) {
-    restaurantRating += "<span style = 'margin-right: 4px' class = 'fa fa-star'></span></span>";
+    restaurantRating += "<span style = 'margin-right: 4px' class = 'fa fa-star'></span>";
     starCount ++;
   }
 
