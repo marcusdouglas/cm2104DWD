@@ -32,7 +32,6 @@ function saveCard() {
     cuisines: cuisines, cost: cost};
   //var image = "images/foodImage4.jpeg";
   //var text = "Some Text";
-  console.log(card);
 
   //console.log(name);
 
@@ -87,7 +86,7 @@ function formatCard (name, thumbnail, userRating, voteCount, foodType,
   averageCost, latitude, longitude, address) {
 
   var restaurantName = "<div id = 'activeCard'><h2 id = 'rName' class = 'paraTitle'>" + name + "</h2>";
-  var restaurantFood = "<br><b>Cuisine/s:</b> " + foodType;
+  var restaurantFood = "<p id = 'cuisines' class = 'cardText'><b>Cuisine/s:</b> " + foodType + "</p>";
 
   $("#MainContent").append(restaurantName
   + "<div class = 'imageContainer'><img id = 'rImage' class = 'cardImage' src = " + "'" + thumbnail + "'" + ">"
@@ -97,7 +96,7 @@ function formatCard (name, thumbnail, userRating, voteCount, foodType,
   + getRating(userRating, voteCount)
   + restaurantFood
   + getAverageCost(averageCost)
-  + "</p><input id = 'seeMore' class = 'collapseInfo' type = 'checkbox'>"
+  + "<input id = 'seeMore' class = 'collapseInfo' type = 'checkbox'>"
   + "<label class = 'collapseLabel' for = 'seeMore'>See more...</label><div class = 'expand'>"
   + "<h3>Location</h3>"
   + "<div id = 'map'></div>" + "<h3>Address</h3><p>" + address + "</p>"
@@ -242,8 +241,8 @@ function getRating(userRating, voteCount) {
     starCount ++;
   }
 
-  restaurantRating += "<p id = 'rText'><b>User Rating:</b> This restaurant has been rated "
-  + userRating + " out of 5 stars based on " + voteCount + " reviews.";
+  restaurantRating += "<p id = 'rating' class = 'cardText'><b>User Rating:</b> This restaurant has been rated "
+  + userRating + " out of 5 stars based on " + voteCount + " reviews.</p>";
 
   return restaurantRating;
 }
@@ -252,7 +251,7 @@ function getRating(userRating, voteCount) {
 
 // Uses API data to create a rating for the average cost at the restaurant
 function getAverageCost(averageCost) {
-  var restaurantAverageCost = "<br><b>Average Cost:</b> ";
+  var restaurantAverageCost = "<p><b>Average Cost:</b> </p>";
   var poundCount = 0;
 
   for (var i = 0; i < averageCost; i++) {
