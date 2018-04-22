@@ -519,6 +519,9 @@ body {
 .dollarOff {
   color: lightBlue;
 }
+h4 {
+  display: inline;
+}
 
 .cardTextBold {
   font-weight: bold;
