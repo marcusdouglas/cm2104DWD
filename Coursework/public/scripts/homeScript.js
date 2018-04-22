@@ -149,7 +149,7 @@ function performSearch(entityId, entityType, lat, lon) {
 
   var searchUrl = "https://developers.zomato.com/api/v2.1/search?entity_id="
     + entityId + "&entity_type=" + entityType
-    + "&lat=" + lat + "&lon=" + lon + "&radius=" + rad + "&sort=real_distance";
+    + "&lat=" + lat + "&lon=" + lon + "&radius=" + rad;
   //console.log(searchUrl);
 
   $.ajax ({
