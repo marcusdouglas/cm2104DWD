@@ -34,5 +34,5 @@ function getAverage(averageCost) {
     poundCount++;
   }
 
-  $("#costText").append(restaurantAverageCost);
+  $(".costText").append(restaurantAverageCost);
 }
