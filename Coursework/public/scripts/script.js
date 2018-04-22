@@ -141,7 +141,7 @@ function createUser() {
   } else {
     console.log("success");
 
-    var placeCard = {name: "Name", image: "images/foodImage6.jpeg", text: "Some text"};
+    var placeCard = {name: "Welcome to the My Restaurants Tab!", image: "images/logo.jpeg", text: "Your saved restaurants will be loaded here!"};
     var username = $("#uname").val();
     var password = $("#repeatPassword").val();
     var saved_cards = [placeCard];
