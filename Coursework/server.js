@@ -154,8 +154,9 @@ app.post('/card', function (req, res) {
      var rating = req.body.card.rating;
      var cuisines = req.body.card.cuisines;
      var cost = req.body.card.cost;
+     var averageCost = req.body.card.averageCost;
      var newCard = {name: name, image: image, rating: rating, cuisines: cuisines,
-      cost: cost};
+      cost: cost, averageCost: averageCost};
 
      var saved_cards = result.saved_cards;
     // console.log(saved_cards);
