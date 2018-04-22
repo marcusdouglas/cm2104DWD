@@ -525,6 +525,10 @@ body {
   padding: 0;
 }
 
+#rating {
+  padding-top: 12px;
+}
+
 #cost {
   display: inline-block;
 }
