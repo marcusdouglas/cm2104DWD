@@ -113,7 +113,6 @@ function formatCard (name, thumbnail, userRating, voteCount, foodType,
 function getLocation() {
 
   var loc = $("#location").val();
-  var rad = $("distance").val();
 
   var locationUrl = "https://developers.zomato.com/api/v2.1/locations?query=" + loc;
 
@@ -143,7 +142,11 @@ function getLocation() {
 // is pressed
 function performSearch(entityId, entityType) {
 
-  var searchUrl = "https://developers.zomato.com/api/v2.1/search?entity_id=" + entityId + "&entity_type=" + entityType;
+  var rad = $("distance").val();
+
+  var searchUrl = "https://developers.zomato.com/api/v2.1/search?entity_id="
+    + entityId + "&entity_type=" + entityType
+    + "&radius=" + rad;
   //console.log(searchUrl);
 
   $.ajax ({
