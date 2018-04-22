@@ -341,4 +341,3 @@ function createMap(latitude, longitude) {
     });
     map.fitBounds(bounds);
   });
-}
