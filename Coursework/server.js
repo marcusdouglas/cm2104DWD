@@ -107,9 +107,12 @@ app.get("/myrestaurants", function(req, res) {
       for (var i = 0; i < saved_cards.length; i++) {
         var name = saved_cards[i].name;
         var imageUrl = saved_cards[i].image;
-        var text = saved_cards[i].text;
+        var rating = saved_cards[i].rating;
+        var cuisines = saved_cards[i].cuisines;
+        var cost = saved_cards[i].cost;
 
-        var restaurant = {name: name, imageUrl: imageUrl, text: text};
+        var restaurant = {name: name, imageUrl: imageUrl, rating: rating,
+          cuisines: cuisines, cost: cost};
         restaurants[i] = restaurant;
       }
       res.render("pages/myrestaurants", {
@@ -145,7 +148,7 @@ app.post('/card', function (req, res) {
 
     db.collection('users').findOne({"username":uname}, function(err, result) {
      if (err) throw err;
-console.log(req.body.card.rating);
+
      var name = req.body.card.name;
      var image = req.body.card.image;
      var rating = req.body.card.rating;
@@ -153,8 +156,6 @@ console.log(req.body.card.rating);
      var cost = req.body.card.cost;
      var newCard = {name: name, image: image, rating: rating, cuisines: cuisines,
       cost: cost};
-      console.log(rating);
-      console.log(newCard);
 
      var saved_cards = result.saved_cards;
     // console.log(saved_cards);
