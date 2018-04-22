@@ -251,7 +251,7 @@ function getRating(userRating, voteCount) {
 
 // Uses API data to create a rating for the average cost at the restaurant
 function getAverageCost(averageCost) {
-  var restaurantAverageCost = "<p><b>Average Cost:</b> </p>";
+  var restaurantAverageCost = "<p id = 'cost' class = 'cardText'><b>Average Cost:</b> </p>";
   var poundCount = 0;
 
   for (var i = 0; i < averageCost; i++) {
