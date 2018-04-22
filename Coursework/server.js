@@ -110,9 +110,10 @@ app.get("/myrestaurants", function(req, res) {
         var rating = saved_cards[i].rating;
         var cuisines = saved_cards[i].cuisines;
         var cost = saved_cards[i].cost;
+        var averageCost = saved_cards[i].averageCost;
 
         var restaurant = {name: name, imageUrl: imageUrl, rating: rating,
-          cuisines: cuisines, cost: cost};
+          cuisines: cuisines, cost: cost, averageCost: averageCost};
         restaurants[i] = restaurant;
       }
       res.render("pages/myrestaurants", {
