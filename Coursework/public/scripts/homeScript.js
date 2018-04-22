@@ -32,6 +32,7 @@ function saveCard() {
     cuisines: cuisines, cost: cost};
   //var image = "images/foodImage4.jpeg";
   //var text = "Some Text";
+  console.log(card);
 
   //console.log(name);
 
@@ -40,7 +41,7 @@ function saveCard() {
        url: "/card",
        data: {card: card},
        success: function(result) {
-         //console.log(result);
+         console.log(result);
        }
     });
 }
