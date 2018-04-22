@@ -519,12 +519,11 @@ body {
 .dollarOff {
   color: lightBlue;
 }
-h4 {
-  display: inline;
-}
 
-.cardTextBold {
-  font-weight: bold;
+.cardHeadings {
+  display: inline;
+  margin: 0;
+  padding: 0;
 }
 
 .cardText {
