@@ -279,15 +279,16 @@ app.post('/adduser', function(req, res) {
     //console.log(result);
     console.log('saved to database');
 
+    //console.log(result);
+    res.render('pages/index', {
+      user: newUser,
+      page: "index",
+      logged: "Logout"
+    });
+    req.session.loggedin = true;
+    console.log("logged in as " + uname);
+
   });
-  //console.log(result);
-  res.render('pages/index', {
-    user: newUser,
-    page: "index",
-    logged: "Logout"
-  });
-  req.session.loggedin = true;
-  console.log("logged in as " + uname);
 });
 
 /*
