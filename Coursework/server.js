@@ -279,11 +279,14 @@ app.post('/adduser', function(req, res) {
     //console.log(result);
     console.log('saved to database');
 
-    //console.log(result);
-    res.render('pages/index', {
-      user: newUser,
-      page: "index",
-      logged: "Logout"
+    db.collection('users').findOne({"username":uname}, function(err, result) {
+     if (err) throw err;
+      //console.log(result);
+      res.render('pages/index', {
+        user: result,
+        page: "index",
+        logged: "Logout"
+      });
     });
     req.session.loggedin = true;
     console.log("logged in as " + uname);
