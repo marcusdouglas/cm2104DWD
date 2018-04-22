@@ -272,7 +272,7 @@ app.post('/adduser', function(req, res) {
     + " page, click the cross at the top right of the restaurants card. You may"
     + " feel free to delete this information card!";
 
-  var placeCard = {name: "Welcome to the My Restaurants page!", image: "images/logo.png", placeText: pageDescription};
+  var placeCard = {name: "Welcome to the My Restaurants page!", image: "images/logo.png", placeText: "pageDescription"};
   var password = req.body.psw;
   var saved_cards = [placeCard];
 
