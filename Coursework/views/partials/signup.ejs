@@ -1,6 +1,6 @@
 <div id = "signupForm" class = "signupModal">
 
-  <form class = "modal-content animate" action="/adduser" method="POST"> <!-- Server response after action -->
+  <form class = "modal-content animate" > <!-- Server response after action -->
     <div class = "loginImgContainer">
       <span onclick = "signupDisplayNone()" class = "close" title = "Close Modal">&times;</span>
     </div>
@@ -18,7 +18,7 @@
         placeholder = "Enter Password" name = "psw" required>
 
         <label for = "psw-repeat"><b>Repeat Password</b></label>
-        <input id = "repeatPassword" class = "signupInput" type = "password" 
+        <input id = "repeatPassword" class = "signupInput" type = "password" onchange="checkPasswordMatch()"
         placeholder = "Repeat Password" name = "psw-repeat" required>
 
         <div id = "checkPasswordMatch">
