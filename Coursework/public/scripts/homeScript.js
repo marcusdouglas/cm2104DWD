@@ -145,13 +145,18 @@ function getLocation() {
 // is pressed
 function performSearch(entityId, entityType, lat, lon) {
 
+  // Converting miles to metres as API works in metres
   var rad = $("#distance").val();
-  console.log(rad);
   rad = rad / 0.00062137;
-  console.log(rad);
+
+  // The API allows for a maximum of 100 restaurants per search location to be user_data
+  // So here we randomise the point at which we start looking through the API's array
+  // so that the user sees a random selection of the available results each time
+  var randomStart = Math.floor((Math.random() * 80) + 1);
+  console.log(randomStart);
 
   var searchUrl = "https://developers.zomato.com/api/v2.1/search?entity_id="
-    + entityId + "&entity_type=" + entityType
+    + entityId + "&entity_type=" + entityType + "&start=" + randomStart
     + "&lat=" + lat + "&lon=" + lon + "&radius=" + rad;
   //console.log(searchUrl);
 
