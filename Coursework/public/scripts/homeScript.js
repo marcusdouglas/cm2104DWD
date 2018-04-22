@@ -289,18 +289,9 @@ function createMap(latitude, longitude) {
 // parameter when you first load the API. For example:
 // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
-var searchBox;
-   function initAutocomplete() {
+function initialize() {
+  var input = document.getElementById('searchTextField');
+  new google.maps.places.Autocomplete(input);
+}
 
-   var options = {types: ['(cities)']};
-
-   var input = document.getElementById('placeAuto');
-    searchBox = new google.maps.places.Autocomplete(input);
-   searchBox.addListener('place_changed', fillInAddress);
-   }
-
-  function fillInAddress()
-  {
-      var place = searchBox.getPlace();
-      console.log(place);
-  }
+google.maps.event.addDomListener(window, 'load', initialize);
