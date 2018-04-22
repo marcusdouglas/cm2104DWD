@@ -70,6 +70,7 @@ function createCard() {
     var address = restaurantsArray[index].address;
 
     gloablAverageCost = averageCost;
+    console.log(averageCost);
 
     $("#activeCard").remove();
 
