@@ -146,6 +146,7 @@ function getLocation() {
 function performSearch(entityId, entityType, lat, lon) {
 
   var rad = $("distance").val();
+  console.log(rad);
   rad = rad / 0.00062137;
   console.log(rad);
 
