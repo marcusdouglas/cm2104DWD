@@ -520,6 +520,16 @@ body {
   color: lightBlue;
 }
 
+.cardTextBold {
+  font-weight: bold;
+}
+
+.cardText {
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+
 #seeMore:checked ~ .expand {
   height: 500px;
 }
