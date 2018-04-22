@@ -274,7 +274,7 @@ app.post('/adduser', function(req, res) {
 
   var newUser = {username: uname, password: password, saved_cards: saved_cards};
 
-  db.collection('users').save(req.body, function(err, result) {
+  db.collection('users').save(newUser, function(err, result) {
     if (err) throw err;
     //console.log(result);
     console.log('saved to database');
