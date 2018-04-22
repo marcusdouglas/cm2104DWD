@@ -267,8 +267,12 @@ app.post('/login', function(req, res) {
 app.post('/adduser', function(req, res) {
   console.log(JSON.stringify(req.body));
   var uname = req.body.uname;
+  var pageDescription = "On this page you can find all the restaurants that"
+    + " you have saved and all their details. To remove a restaurant from this"
+    + " page, click the cross at the top right of the restaurants card. You may"
+    + " feel free to delete this information card!";
 
-  var placeCard = {name: "Name", image: "images/foodImage6.jpeg", text: "Some text"};
+  var placeCard = {name: "Welcome to the My Restaurants page!", image: "images/logo.png", text: pageDescription};
   var password = req.body.psw;
   var saved_cards = [placeCard];
 
