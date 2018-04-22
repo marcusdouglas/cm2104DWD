@@ -523,7 +523,7 @@ body {
 .cardText {
   margin: 0;
   padding: 0;
-  display: inline-block;
+  display: block;
 }
 
 #seeMore:checked ~ .expand {
