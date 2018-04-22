@@ -41,7 +41,11 @@
 
             <div class = "textContainer">
               <h2 class = "paraTitle"><%= restaurant.name %></h2>
-              <p class = "info"><%= restaurant.text %></p>
+              <div class = "info">
+                <p><%= restaurant.rating %></p>
+                <p><%= restaurant.cuisines %></p>
+                <p><%= restaurant.cost %></p>
+              </div>
             </div>
           </div>
         <% }); %>

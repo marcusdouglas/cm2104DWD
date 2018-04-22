@@ -24,9 +24,12 @@ function saveCard() {
   var uname = $("#username").text();
   var name = $("#rName").text();
   var image = $("#rImage").attr("src");
-  var text = $("#rText").text();
+  var rating = $("#rating").text();
+  var cuisines = $("#cuisines").text();
+  var cost = $("#cost").text();
 
-  var card = {username: uname, name: name, image: image, text: text};
+  var card = {username: uname, name: name, image: image, rating: rating,
+    cuisines: cuisines, cost: cost};
   //var image = "images/foodImage4.jpeg";
   //var text = "Some Text";
 

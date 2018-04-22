@@ -148,8 +148,11 @@ app.post('/card', function (req, res) {
 
      var name = req.body.card.name;
      var image = req.body.card.image;
-     var text = req.body.card.text;
-     var newCard = {name: name, image: image, text: text};
+     var rating = req.body.card.rating;
+     var cuisines = req.body.card.cuisines;
+     var cost = req.body.card.cost;
+     var newCard = {name: name, image: image, rating: rating, cuisines: cuisines,
+      cost: cost};
 
      var saved_cards = result.saved_cards;
     // console.log(saved_cards);
