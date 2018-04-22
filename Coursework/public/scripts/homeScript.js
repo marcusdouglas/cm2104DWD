@@ -93,7 +93,7 @@ function formatCard (name, thumbnail, userRating, voteCount, foodType,
   + getRating(userRating, voteCount)
   + restaurantFood
   + getAverageCost(averageCost)
-  + "</p><input id = 'seeMore' class = 'collapseInfo' type = 'checkbox'>"
+  + "</pre><input id = 'seeMore' class = 'collapseInfo' type = 'checkbox'>"
   + "<label class = 'collapseLabel' for = 'seeMore'>See more...</label><div class = 'expand'>"
   + "<h3>Location</h3>"
   + "<div id = 'map'></div>" + "<h3>Address</h3><p>" + address + "</p>"
@@ -153,7 +153,7 @@ function performSearch(entityId, entityType, lat, lon) {
   // So here we randomise the point at which we start looking through the API's array
   // so that the user sees a random selection of the available results each time
   var randomStart = Math.floor((Math.random() * 80) + 1);
-  console.log(randomStart);
+  //console.log(randomStart);
 
   var searchUrl = "https://developers.zomato.com/api/v2.1/search?entity_id="
     + entityId + "&entity_type=" + entityType + "&start=" + randomStart
@@ -238,7 +238,7 @@ function getRating(userRating, voteCount) {
     starCount ++;
   }
 
-  restaurantRating += "<p id = 'rText'><b>User Rating:</b> This restaurant has been rated "
+  restaurantRating += "<pre id = 'rText'><b>User Rating:</b> This restaurant has been rated "
   + userRating + " out of 5 stars based on " + voteCount + " reviews.";
 
   return restaurantRating;
