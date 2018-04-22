@@ -146,6 +146,8 @@ function getLocation() {
 function performSearch(entityId, entityType, lat, lon) {
 
   var rad = $("distance").val();
+  rad = rad / 0.00062137;
+  console.log(rad);
 
   var searchUrl = "https://developers.zomato.com/api/v2.1/search?entity_id="
     + entityId + "&entity_type=" + entityType
