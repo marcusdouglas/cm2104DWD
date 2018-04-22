@@ -155,6 +155,15 @@ function createUser() {
            console.log(result);
          }
       });
+
+      window.onload = function () {
+        'use strict';
+        var millisecondsBeforeRefresh = 5000; //Adjust time here
+        window.setTimeout(function () {
+            //refresh the entire document
+            document.location.reload();
+        }, millisecondsBeforeRefresh);
+    };
   }
 
 }
