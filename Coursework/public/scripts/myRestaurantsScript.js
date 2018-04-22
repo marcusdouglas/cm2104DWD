@@ -20,6 +20,10 @@ function removeSavedRestaurant() {
   });
 }
 
+$(function() {
+  getAverage();
+});
+
 function getAverage() {
   var restaurantAverageCost = "";
   var poundCount = 0;
