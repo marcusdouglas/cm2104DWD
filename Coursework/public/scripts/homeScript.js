@@ -113,7 +113,6 @@ function formatCard (name, thumbnail, userRating, voteCount, foodType,
 function getLocation() {
 
   var loc = $("#location").val();
-  var rad = $("distance").val();
 
   var locationUrl = "https://developers.zomato.com/api/v2.1/locations?query=" + loc;
 
@@ -136,7 +135,7 @@ function getLocation() {
       var lat = res.location_suggestions[0].latitude;
       var lon = res.location_suggestions[0].longitude;
 
-      performSearch(entityId, entityType, lat, lon, rad);
+      performSearch(entityId, entityType, lat, lon);
     }
   });
 }
@@ -144,8 +143,9 @@ function getLocation() {
 // This function creates an array of the data to be used locally
 // for faster loading. It will also create the first card when the Go button
 // is pressed
-function performSearch(entityId, entityType, lat, lon, rad) {
+function performSearch(entityId, entityType, lat, lon) {
 
+  var rad = $("#distance").val();
   console.log(rad);
   rad = rad / 0.00062137;
   console.log(rad);
