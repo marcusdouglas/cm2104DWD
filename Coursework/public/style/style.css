@@ -530,7 +530,6 @@ h4 {
 .cardText {
   margin: 0;
   padding: 0;
-  display: inline;
 }
 
 #seeMore:checked ~ .expand {
