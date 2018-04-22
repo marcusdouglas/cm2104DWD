@@ -523,7 +523,10 @@ body {
 .cardText {
   margin: 0;
   padding: 0;
-  display: block;
+}
+
+#cost {
+  display: inline-block;
 }
 
 #seeMore:checked ~ .expand {
