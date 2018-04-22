@@ -228,6 +228,7 @@ app.post('/login', function(req, res) {
     //if there is no result, redirect the user back to the login system as that username must not exist
     if(!result){
       res.redirect('/');
+      alert("Bad Uname and Password combo");
       return;
     }
     //if there is a result then check the password, if the password is correct set session loggedin to true and send the user to the index
