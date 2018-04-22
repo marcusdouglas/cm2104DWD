@@ -62,11 +62,12 @@ function createCard() {
     var averageCost = restaurantsArray[index].averageCost;
     var latitude = restaurantsArray[index].latitude;
     var longitude = restaurantsArray[index].longitude;
+    var address = restaurantsArray[index].address;
 
     $("#activeCard").remove();
 
     formatCard(name, thumbnail, userRating, voteCount, foodType, averageCost,
-      latitude, longitude);
+      latitude, longitude, address);
 
     // Calls the function to create the google map
     createMap(latitude, longitude);
@@ -79,7 +80,7 @@ function createCard() {
 
 // Formats the new card
 function formatCard (name, thumbnail, userRating, voteCount, foodType,
-  averageCost, latitude, longitude) {
+  averageCost, latitude, longitude, address) {
 
   var restaurantName = "<div id = 'activeCard'><h2 id = 'rName' class = 'paraTitle'>" + name + "</h2>";
   var restaurantFood = "<br><b>Cuisine/s:</b> " + foodType;
@@ -95,7 +96,7 @@ function formatCard (name, thumbnail, userRating, voteCount, foodType,
   + "</p><input id = 'seeMore' class = 'collapseInfo' type = 'checkbox'>"
   + "<label class = 'collapseLabel' for = 'seeMore'>See more...</label><div class = 'expand'>"
   + "<h3>Location</h3>"
-  + "<div id = 'map'></div>"
+  + "<div id = 'map'></div>" + "<h3>Address</h3><p>" + address + "</p>"
   + "</div><form id = 'scrollForm'><button id = 'dislikeButton' class = 'button' type = 'button'>"
   + "<button id = 'likeButton' class = 'button' type = 'button' onclick = 'saveCard()'></button>"
   + "</button></form></div>");
@@ -169,40 +170,8 @@ function performSearch(entityId, entityType, lat, lon) {
       console.log(result);
       var res = JSON.parse(JSON.stringify(result));
 
-      // These two variables belong to working version
       index = 0;
       restaurantsArray.length = 0;
-/*
-      //console.log(res.results_found);
-      var resultsFound = res.results_found;
-      var loop = Math.round(resultsFound / 20);
-      console.log(loop);
-      //var resultsStart = res.results_start;
-
-      for (var i = 0; i < loop; i++) {
-
-        for (var i = 0; i < res.restaurants.length; i++) {
-          var name = res.restaurants[i].restaurant.name;
-          var thumbnail = res.restaurants[i].restaurant.thumb;
-          var userRating = res.restaurants[i].restaurant.user_rating.aggregate_rating;
-          var voteCount = res.restaurants[i].restaurant.user_rating.votes;
-          var foodType = res.restaurants[i].restaurant.cuisines;
-          var averageCost = res.restaurants[i].restaurant.price_range;
-          var siteUrl = res.restaurants[i].restaurant.url;
-          var latitude = res.restaurants[i].restaurant.location.latitude;
-          var longitude = res.restaurants[i].restaurant.location.longitude;
-
-          var restaurant = {name: name, thumbnail: thumbnail,
-            userRating: userRating, voteCount: voteCount,
-            foodType: foodType, averageCost: averageCost, siteUrl: siteUrl,
-            latitude: latitude, longitude: longitude};
-          //console.log(restaurant);
-
-          restaurantsArray[i] = restaurant;
-        }
-        res.results_start += 20;
-        console.log(res.results_start);
-      }*/
 
       for (var i = 0; i < res.restaurants.length; i++) {
         var name = res.restaurants[i].restaurant.name;
@@ -214,11 +183,12 @@ function performSearch(entityId, entityType, lat, lon) {
         var siteUrl = res.restaurants[i].restaurant.url;
         var latitude = res.restaurants[i].restaurant.location.latitude;
         var longitude = res.restaurants[i].restaurant.location.longitude;
+        var address = res.restaurants[i].restaurant.location.address;
 
         var restaurant = {name: name, thumbnail: thumbnail,
           userRating: userRating, voteCount: voteCount,
           foodType: foodType, averageCost: averageCost, siteUrl: siteUrl,
-          latitude: latitude, longitude: longitude};
+          latitude: latitude, longitude: longitude, address};
         //console.log(restaurant);
 
         restaurantsArray[i] = restaurant;
