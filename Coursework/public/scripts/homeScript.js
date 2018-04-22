@@ -41,7 +41,7 @@ function saveCard() {
        url: "/card",
        data: {card: card},
        success: function(result) {
-         console.log(result);
+         //console.log(result);
        }
     });
 }
