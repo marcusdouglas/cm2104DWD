@@ -132,7 +132,10 @@ function getLocation() {
       //console.log(res.location_suggestions[0].entity_type);
       var entityType = res.location_suggestions[0].entity_type;
 
-      performSearch(entityId, entityType);
+      var lat = res.location_suggestions[0].latitude;
+      var lon = res.location_suggestions[0].longitude;
+
+      performSearch(entityId, entityType, lat, lon);
     }
   });
 }
@@ -140,13 +143,13 @@ function getLocation() {
 // This function creates an array of the data to be used locally
 // for faster loading. It will also create the first card when the Go button
 // is pressed
-function performSearch(entityId, entityType) {
+function performSearch(entityId, entityType, lat, lon) {
 
   var rad = $("distance").val();
 
   var searchUrl = "https://developers.zomato.com/api/v2.1/search?entity_id="
     + entityId + "&entity_type=" + entityType
-    + "&radius=" + rad;
+    + "&lat=" + lat + "&lon=" + lon + "&radius=" + rad + "&sort=real_distance";
   //console.log(searchUrl);
 
   $.ajax ({
