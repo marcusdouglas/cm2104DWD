@@ -113,6 +113,7 @@ function formatCard (name, thumbnail, userRating, voteCount, foodType,
 function getLocation() {
 
   var loc = $("#location").val();
+  console.log(loc);
 
   var locationUrl = "https://developers.zomato.com/api/v2.1/locations?query=" + loc;
 
