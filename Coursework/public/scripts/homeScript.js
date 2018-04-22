@@ -291,7 +291,6 @@ function createMap(latitude, longitude) {
 
   // Create the search box and link it to the UI element.
   var input = document.getElementById('pac-input');
-  var searchBox = new google.maps.places.SearchBox(input);
 
   var markers = [];
   // Listen for the event fired when the user selects a prediction and retrieve
