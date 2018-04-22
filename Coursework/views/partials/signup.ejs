@@ -1,6 +1,6 @@
 <div id = "signupForm" class = "signupModal">
 
-  <form class = "modal-content animate" > <!-- Server response after action -->
+  <form class = "modal-content animate" action="/adduser" method="POST"> <!-- Server response after action -->
     <div class = "loginImgContainer">
       <span onclick = "signupDisplayNone()" class = "close" title = "Close Modal">&times;</span>
     </div>
@@ -33,7 +33,7 @@
 
         <div class = "signupClearfix">
           <button class = "signupButton signupCancelBtn" type = "button" onclick = "signupDisplayNone()">Cancel</button>
-          <a href="/?username=<%= user.username %>"><button id = "confirmSignup" class = "signupButton" type = "submit"  onmouseup = "createUser()">Sign Up</button></a>
+          <a href="/?username=<%= user.username %>"><button id = "confirmSignup" class = "signupButton" type = "submit"  >Sign Up</button></a>
         </div>
       </div>
     </form>
