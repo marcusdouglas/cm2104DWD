@@ -267,7 +267,12 @@ app.post('/login', function(req, res) {
 app.post('/adduser', function(req, res) {
   console.log(JSON.stringify(req.body));
   var uname = req.body.uname;
-  var signin = {username: uname};
+
+  var placeCard = {name: "Name", image: "images/foodImage6.jpeg", text: "Some text"};
+  var password = req.body.psw;
+  var saved_cards = [placeCard];
+
+  var newUser = {username: uname, password: password, saved_cards: saved_cards};
 
   db.collection('users').save(req.body, function(err, result) {
     if (err) throw err;
@@ -277,7 +282,7 @@ app.post('/adduser', function(req, res) {
   });
   //console.log(result);
   res.render('pages/index', {
-    user: signin,
+    user: newUser,
     page: "index",
     logged: "Logout"
   });
