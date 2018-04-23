@@ -23,7 +23,7 @@
   <section id = "MainContent">
 
     <div id = "userInfo">
-      <a href = "#">Signed in as: <p id = "username"><b><%= user.username %></b></p></a>
+      <a href = "#">Signed in as: <p id = "username"><b><%= user.username %></b></p>
       <p id = "arrow"><</p></a>
     </div>
 
@@ -43,7 +43,6 @@
             <div class = "textContainer">
               <h2 class = "paraTitle"><%= restaurant.name %></h2>
               <div class = "info">
-                <p class = "cardText"><%= restaurant.text %></p>
                 <p class = "cardText"><%= restaurant.rating %></p>
                 <p class = "cardText"><%= restaurant.cuisines %></p>
                 <p onclick = "getAverage(<%= restaurant.averageCost %>)" class = "cardText costText"><%= restaurant.cost %> <%= restaurant.averageCost %></p>
