@@ -111,9 +111,12 @@ app.get("/myrestaurants", function(req, res) {
         var cuisines = saved_cards[i].cuisines;
         var cost = saved_cards[i].cost;
         var averageCost = saved_cards[i].averageCost;
+        var lat = saved_cards[i].lat;
+        var lon = saved_cards[i].lon;
 
         var restaurant = {name: name, imageUrl: imageUrl, rating: rating,
-          cuisines: cuisines, cost: cost, averageCost: averageCost};
+          cuisines: cuisines, cost: cost, averageCost: averageCost,
+          lat: lat, lon: lon};
         restaurants[i] = restaurant;
       }
       res.render("pages/myrestaurants", {
@@ -156,6 +159,8 @@ app.post('/card', function (req, res) {
      var cuisines = req.body.card.cuisines;
      var cost = req.body.card.cost;
      var averageCost = req.body.card.averageCost;
+     var lat = req.body.card.lat;
+     var lon = req.body.card.lon;
      var newCard = {name: name, image: image, rating: rating, cuisines: cuisines,
       cost: cost, averageCost: averageCost};
 

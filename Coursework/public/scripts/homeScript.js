@@ -28,9 +28,12 @@ function saveCard() {
   var cuisines = $("#cuisines").text();
   var cost = $("#cost").text();
   var averageCost = gloablAverageCost;
+  var lat = globalLat;
+  var lon = globalLon;
 
   var card = {username: uname, name: name, image: image, rating: rating,
-    cuisines: cuisines, cost: cost, averageCost: averageCost};
+    cuisines: cuisines, cost: cost, averageCost: averageCost, lat: lat,
+    lon: lon};
   //var image = "images/foodImage4.jpeg";
   //var text = "Some Text";
 
@@ -49,6 +52,8 @@ function saveCard() {
 var restaurantsArray = [];
 var index = 0;
 var globalAverageCost = 0;
+var globalLat = 0;
+var globalLon = 0;
 
 function createCard() {
   // Remove current card with fade out and create new one
@@ -270,7 +275,7 @@ function getAverageCost(averageCost) {
 
   return restaurantAverageCost;
 }
-
+/*
 // Creates the google map and sets the location
 function createMap(latitude, longitude) {
   var myCenter = new google.maps.LatLng(latitude, longitude);
@@ -279,7 +284,7 @@ function createMap(latitude, longitude) {
   var map = new google.maps.Map(mapCanvas, mapOptions);
   var marker = new google.maps.Marker({position:myCenter});
   marker.setMap(map);
-}
+}*/
 
 function initialize() {
   var input = document.getElementById('location');
