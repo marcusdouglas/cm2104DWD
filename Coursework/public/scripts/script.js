@@ -158,13 +158,3 @@ function createUser() {
   }
 
 }
-
-// Creates the google map and sets the location
-function createMap(latitude, longitude) {
-  var myCenter = new google.maps.LatLng(latitude, longitude);
-  var mapCanvas = document.getElementByClass("map");
-  var mapOptions = {center: myCenter, zoom: 16};
-  var map = new google.maps.Map(mapCanvas, mapOptions);
-  var marker = new google.maps.Marker({position:myCenter});
-  marker.setMap(map);
-}
