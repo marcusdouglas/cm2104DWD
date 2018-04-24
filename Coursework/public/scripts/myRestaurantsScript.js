@@ -20,7 +20,7 @@ function removeSavedRestaurant() {
   });
 }
 
-$("#<%= id %>").on("click", ".savedRestaurant", function() {
+$("<%= id %>").on("click", ".savedRestaurant", function() {
 
   var restaurantAverageCost = "";
   var poundCount = 0;
