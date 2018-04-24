@@ -12,7 +12,7 @@ $(function() {
 //---------------------Creates a new card---------------------
   $("#MainContent").on("click", ".button", function() {
 
-    if (index === restaurantsArray.length - 1) {
+    if (index === restaurantsArray.length) {
       $("#cardLoader").addClass("loader");
       getLocation();
     }
