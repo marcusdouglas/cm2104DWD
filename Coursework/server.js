@@ -268,64 +268,45 @@ app.post('/adduser', function(req, res) {
   console.log(JSON.stringify(req.body));
   var uname = req.body.uname;
 
-  // Some descriptive text loaded in the rating part of EJS for place holding
-  var pageDescription = "On this page you can find all the restaurants that"
-    + " you have saved and all their details. To remove a restaurant from this"
-    + " page, click the cross at the top right of the restaurants card. You may"
-    + " feel free to delete this information card!";
+  db.collection('users').findOne({"username":uname}, function(err, result) {
+    if (result.username == uname) {
+      res.redirect('/');
+    } else {
 
-  var placeCard = {name: "Welcome to the My Restaurants page!", image: "images/logo.png", rating: pageDescription};
-  var password = req.body.psw;
-  var saved_cards = [placeCard];
+      // Some descriptive text loaded in the rating part of EJS for place holding
+      var pageDescription = "On this page you can find all the restaurants that"
+        + " you have saved and all their details. To remove a restaurant from this"
+        + " page, click the cross at the top right of the restaurants card. You may"
+        + " feel free to delete this information card!";
 
-  var newUser = {username: uname, password: password, saved_cards: saved_cards};
+      var placeCard = {name: "Welcome to the My Restaurants page!", image: "images/logo.png", rating: pageDescription};
+      var password = req.body.psw;
+      var saved_cards = [placeCard];
 
-  db.collection('users').save(newUser, function(err, result) {
-    if (err) throw err;
-    //console.log(result);
-    console.log('saved to database');
+      var newUser = {username: uname, password: password, saved_cards: saved_cards};
 
-    db.collection('users').findOne({"username":uname}, function(err, result) {
-     if (err) throw err;
-      //console.log(result);
-      res.render('pages/index', {
-        user: result,
-        page: "index",
-        logged: "Logout"
+      db.collection('users').save(newUser, function(err, result) {
+        if (err) throw err;
+        //console.log(result);
+        console.log('saved to database');
+
+        db.collection('users').findOne({"username":uname}, function(err, result) {
+         if (err) throw err;
+          //console.log(result);
+          res.render('pages/index', {
+            user: result,
+            page: "index",
+            logged: "Logout"
+          });
+        });
+        req.session.loggedin = true;
+        console.log("logged in as " + uname);
+
       });
-    });
-    req.session.loggedin = true;
-    console.log("logged in as " + uname);
 
+    }
   });
 });
-
-/*
-// Creates a new user
-app.post('/adduser', function(req, res) {
-  console.log(JSON.stringify(req.body));
-  var uname = req.body.uname;
-
-  db.collection('users').save(req.body, function(err, result) {
-    if (err) throw err;
-    //console.log(result);
-    console.log('saved to database');
-
-    //when complete redirect to the index
-    db.collection('users').findOne({"username":uname}, function(err, result) {
-     if (err) throw err;
-     //console.log(result);
-     res.render('pages/index', {
-       user: result,
-       page: "index",
-       logged: "Logout"
-     });
-   });
-   req.session.loggedin = true;
-   console.log("logged in as " + uname);
-
-  });
-});*/
 
 // Logs the user out
 app.get('/logout', function(req, res) {
