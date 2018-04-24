@@ -72,13 +72,14 @@ function createCard() {
     var latitude = restaurantsArray[index].latitude;
     var longitude = restaurantsArray[index].longitude;
     var address = restaurantsArray[index].address;
+    var sireUrl = restaurantsArray[index].siteUrl;
 
     gloablAverageCost = averageCost;
 
     $("#activeCard").remove();
 
     formatCard(name, thumbnail, userRating, voteCount, foodType, averageCost,
-      latitude, longitude, address);
+      latitude, longitude, address, siteUrl);
 
     // Calls the function to create the google map
     createMap(latitude, longitude);
@@ -108,6 +109,7 @@ function formatCard (name, thumbnail, userRating, voteCount, foodType,
   + "<label class = 'collapseLabel' for = 'seeMore'>See more...</label><div class = 'expand'>"
   + "<h3>Location</h3>"
   + "<div id = 'map'></div>" + "<p><b>Address:</b> " + address + "</p>"
+  + "<p>For more information click <a href = '" + siteUrl + "'>here</a></p>"
   + "</div><form id = 'scrollForm'><button id = 'dislikeButton' class = 'button' type = 'button'>"
   + "<button id = 'likeButton' class = 'button' type = 'button' onclick = 'saveCard()'></button>"
   + "</button></form></div>");
