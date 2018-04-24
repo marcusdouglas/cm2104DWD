@@ -43,9 +43,11 @@
             <div class = "textContainer">
               <h2 class = "paraTitle"><%= restaurant.name %></h2>
               <div class = "info">
+                <% if (<%= restaurant.name %> != 'Welcome to the My Restaurants page!') { %>
                 <p class = "cardText"><b>User Rating:</b> <%= restaurant.rating %></p>
                 <p class = "cardText"><%= restaurant.cuisines %></p>
                 <p onclick = "getAverage(<%= restaurant.averageCost %>)" class = "cardText costText"><b>Average Cost:</b> <%= restaurant.averageCost %></p>
+                <% } %>
               </div>
             </div>
           </div>
