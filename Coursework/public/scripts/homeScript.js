@@ -192,6 +192,10 @@ function performSearch(entityId, entityType, lat, lon) {
         var longitude = res.restaurants[i].restaurant.location.longitude;
         var address = res.restaurants[i].restaurant.location.address;
 
+        if (thumbnail === "") {
+          thumbnail = "images/noImage.png";
+        }
+
         var restaurant = {name: name, thumbnail: thumbnail,
           userRating: userRating, voteCount: voteCount,
           foodType: foodType, averageCost: averageCost, siteUrl: siteUrl,
