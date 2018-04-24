@@ -109,7 +109,7 @@ function formatCard (name, thumbnail, userRating, voteCount, foodType,
   + "<label class = 'collapseLabel' for = 'seeMore'>See more...</label><div class = 'expand'>"
   + "<h3>Location</h3>"
   + "<div id = 'map'></div>" + "<p><b>Address:</b> " + address + "</p>"
-  + "<p>For more information click <a target = '_blank' href = '" + siteUrl + "'>here</a></p>"
+  + "<p><b>Further Information: </b>For more information click <a target = '_blank' href = '" + siteUrl + "'>here</a></p>"
   + "</div><form id = 'scrollForm'><button id = 'dislikeButton' class = 'button' type = 'button'>"
   + "<button id = 'likeButton' class = 'button' type = 'button' onclick = 'saveCard()'></button>"
   + "</button></form></div>");
