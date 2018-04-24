@@ -107,12 +107,13 @@ app.get("/myrestaurants", function(req, res) {
       for (var i = 0; i < saved_cards.length; i++) {
         var name = saved_cards[i].name;
         var imageUrl = saved_cards[i].image;
+        var placeText = saved_cards[i].placeText;
         var rating = saved_cards[i].rating;
         var cuisines = saved_cards[i].cuisines;
         var averageCost = saved_cards[i].averageCost;
 
         var restaurant = {name: name, imageUrl: imageUrl, rating: rating,
-          cuisines: cuisines, averageCost: averageCost};
+          cuisines: cuisines, averageCost: averageCost, placeText: placeText};
         restaurants[i] = restaurant;
       }
       res.render("pages/myrestaurants", {
@@ -272,7 +273,7 @@ app.post('/adduser', function(req, res) {
     + " page, click the cross at the top right of the restaurants card. You may"
     + " feel free to delete this information card!";
 
-  var placeCard = {name: "Welcome to the My Restaurants page!", image: "images/logo.png", rating: pageDescription};
+  var placeCard = {name: "Welcome to the My Restaurants page!", image: "images/logo.png", placeText: pageDescription};
   var password = req.body.psw;
   var saved_cards = [placeCard];
 
