@@ -92,7 +92,7 @@ function createCard() {
 
 // Formats the new card
 function formatCard (name, thumbnail, userRating, voteCount, foodType,
-  averageCost, latitude, longitude, address) {
+  averageCost, latitude, longitude, address, siteUrl) {
 
   var restaurantName = "<div id = 'activeCard'><h2 id = 'rName' class = 'paraTitle'>" + name + "</h2>";
   var restaurantFood = "<p id = 'cuisines' class = 'cardText'><b>Cuisine/s:</b> " + foodType + "</p>";
