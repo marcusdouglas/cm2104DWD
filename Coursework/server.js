@@ -270,6 +270,7 @@ app.post('/adduser', function(req, res) {
 
   db.collection('users').findOne({"username":uname}, function(err, result) {
     if (result.username == uname) {
+      console.log("Username already exists");
       res.redirect('/');
     } else {
 
