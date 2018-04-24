@@ -12,12 +12,14 @@ $(function() {
 //---------------------Creates a new card---------------------
   $("#MainContent").on("click", ".button", function() {
 
-    if (index === restaurantsArray.length - 2) {
+    if (index === restaurantsArray.length - 1) {
+      $("#cardLoader").addClass("loader");
       getLocation();
-    } else {createCard();
-    index++;}
-
-    
+    }
+    else {
+      createCard();
+      index++;
+    }
   });
 });
 
