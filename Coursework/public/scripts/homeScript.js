@@ -11,6 +11,11 @@ $(function() {
 
 //---------------------Creates a new card---------------------
   $("#MainContent").on("click", ".button", function() {
+
+    if (index === restaurantsArray.length) {
+      getLocation();
+    }
+
     createCard();
     index++;
   });
@@ -31,10 +36,6 @@ function saveCard() {
 
   var card = {username: uname, name: name, image: image, rating: rating,
     cuisines: cuisines, cost: cost, averageCost: averageCost};
-  //var image = "images/foodImage4.jpeg";
-  //var text = "Some Text";
-
-  //console.log(name);
 
   $.ajax({
        method: "POST",
@@ -192,6 +193,7 @@ function performSearch(entityId, entityType, lat, lon) {
         var longitude = res.restaurants[i].restaurant.location.longitude;
         var address = res.restaurants[i].restaurant.location.address;
 
+        // If no image is found display a sorry no image found image
         if (thumbnail === "") {
           thumbnail = "images/noImage.png";
         }
