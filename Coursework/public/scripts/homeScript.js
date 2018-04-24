@@ -12,7 +12,8 @@ $(function() {
 //---------------------Creates a new card---------------------
   $("#MainContent").on("click", ".button", function() {
 
-    if (index === restaurantsArray.length) {
+    // If the end of the array is reached search again for more results
+    if (index === restaurantsArray.length - 1) {
       $("#cardLoader").addClass("loader");
       getLocation();
     }
