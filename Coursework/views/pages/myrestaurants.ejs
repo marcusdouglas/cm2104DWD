@@ -33,7 +33,7 @@
         <h1 id = "heading" class = "paraTitle">My Restaurants</h1>
       </div>
 
-        <% restaurants.forEach(function(restaurant) { id ++; var id = 1; %>
+        <% restaurants.forEach(function(restaurant) { %>
           <div id = "<%= restaurant.name %>" class = "savedRestaurant">
             <span class = "close" onclick = "removeSavedRestaurant()">&times;</span>
             <div class = "sideImgContainer">
@@ -45,7 +45,7 @@
               <div class = "info">
                 <p class = "cardText"><%= restaurant.rating %></p>
                 <p class = "cardText"><%= restaurant.cuisines %></p>
-                <p id = "<%= id %>" class = "cardText costText"><%= restaurant.cost %> <%= restaurant.averageCost %></p>
+                <p onclick = "getAverage(<%= restaurant.averageCost %>)" class = "cardText costText"><%= restaurant.cost %> <%= restaurant.averageCost %></p>
               </div>
             </div>
           </div>
