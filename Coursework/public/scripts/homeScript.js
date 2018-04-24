@@ -94,7 +94,7 @@ function formatCard (name, thumbnail, userRating, voteCount, foodType,
   averageCost, latitude, longitude, address, siteUrl) {
 
   var restaurantName = "<div id = 'activeCard'><h2 id = 'rName' class = 'paraTitle'>" + name + "</h2>";
-  var restaurantFood = "<p id = 'cuisines' class = 'cardText'><b>Cuisine/s:</b> " + foodType + "</p>";
+  var restaurantFood = "<p class = 'cardText'><b>Cuisine/s:</b> <span id = 'cuisines'>" + foodType + "</span></p>";
 
   $("#MainContent").append(restaurantName
   + "<div class = 'imageContainer'><img id = 'rImage' class = 'cardImage' src = " + "'" + thumbnail + "'" + ">"
