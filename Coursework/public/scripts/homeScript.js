@@ -72,7 +72,7 @@ function createCard() {
     var latitude = restaurantsArray[index].latitude;
     var longitude = restaurantsArray[index].longitude;
     var address = restaurantsArray[index].address;
-    var sireUrl = restaurantsArray[index].siteUrl;
+    var siteUrl = restaurantsArray[index].siteUrl;
 
     gloablAverageCost = averageCost;
 
