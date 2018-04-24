@@ -34,7 +34,7 @@ function saveCard() {
   var image = $("#rImage").attr("src");
   var rating = $("#rating").text();
   var cuisines = $("#cuisines").text();
-  var cost = $("#cost").html();
+  var cost = $("#cost").text();
   var averageCost = gloablAverageCost;
 
   var card = {username: uname, name: name, image: image, rating: rating,
@@ -256,8 +256,8 @@ function getRating(userRating, voteCount) {
     starCount ++;
   }
 
-  restaurantRating += "<p id = 'rating' class = 'cardText'><b>User Rating:</b> This restaurant has been rated "
-  + userRating + " out of 5 stars based on " + voteCount + " reviews.</p>";
+  restaurantRating += "<p class = 'cardText'><b>User Rating:</b> <span id = 'rating'>This restaurant has been rated "
+  + userRating + " out of 5 stars based on " + voteCount + " reviews.</span></p>";
 
   return restaurantRating;
 }
