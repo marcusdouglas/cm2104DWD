@@ -34,7 +34,6 @@ function saveCard() {
   var image = $("#rImage").attr("src");
   var rating = $("#rating").text();
   var cuisines = $("#cuisines").text();
-  var cost = $("#cost").text();
   var averageCost = gloablAverageCost;
 
   var card = {username: uname, name: name, image: image, rating: rating,
@@ -266,7 +265,7 @@ function getRating(userRating, voteCount) {
 
 // Uses API data to create a rating for the average cost at the restaurant
 function getAverageCost(averageCost) {
-  var restaurantAverageCost = "<p id = 'cost' class = 'cardText'><b>Average Cost:</b></p>";
+  var restaurantAverageCost = "<p class = 'cardText'><b>Average Cost:</b></p>";
   var poundCount = 0;
 
   for (var i = 0; i < averageCost; i++) {
