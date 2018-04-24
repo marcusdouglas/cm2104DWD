@@ -34,7 +34,7 @@ function saveCard() {
   var image = $("#rImage").attr("src");
   var rating = $("#rating").text();
   var cuisines = $("#cuisines").text();
-  var cost = $("#cost").text();
+  var cost = $("#cost").html();
   var averageCost = gloablAverageCost;
 
   var card = {username: uname, name: name, image: image, rating: rating,
