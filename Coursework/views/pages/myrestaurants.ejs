@@ -47,7 +47,7 @@
                   <div id = "map_<%= restaurant.name %>" class = "resMap"></div>
 
                   <% var myCenter = new google.maps.LatLng(55.9454305556, -3.1843444444); %>
-                  <% var mapCanvas = document.getElementById("map_<%= restaurant.name %>"); %>
+                  <% var mapCanvas = document.getElementById("map_ restaurant.name"); %>
                   <% var mapOptions = {center: myCenter, zoom: 16}; %>
                   <% var map = new google.maps.Map(mapCanvas, mapOptions); %>
                   <% var marker = new google.maps.Marker({position:myCenter}); %>
