@@ -46,7 +46,7 @@
                 <p class = "cardText"><%= restaurant.placeText %></p>
                 <p class = "cardText"><b>User Rating:</b> <%= restaurant.rating %></p>
                 <p class = "cardText"><b>Cuisine/s:</b> <%= restaurant.cuisines %></p>
-                <p onclick = "getAverage(<%= restaurant.averageCost %>)" class = "cardText costText" id="res<%=_restaurant.name %>">
+                <p onclick = "getAverage(<%= restaurant.averageCost %>)" class = "cardText costText">
                   <b>Average Cost:</b>
                 <% var count = 0; for(var x=0; x <restaurant.averageCost; x++) { %>
                 <span class='fa fa-dollar dollarOn'></span>
