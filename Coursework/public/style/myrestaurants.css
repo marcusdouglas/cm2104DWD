@@ -50,6 +50,10 @@
     width: 100%;
     padding-left: 0;
   }
+
+  .sideImgContainer {
+    margin-bottom: 12px;
+  }
 }
 
 /* ------------------Screens < 700px-------------------- */
