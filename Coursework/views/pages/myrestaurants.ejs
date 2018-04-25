@@ -44,8 +44,16 @@
               <h2 class = "paraTitle"><%= restaurant.name %></h2>
               <div class = "info">
                 <% if (restaurant.name != 'Welcome to the My Restaurants page!') { %>
-                <!--<p class = "cardText"><%= restaurant.placeText %></p>-->
-                <p class = "cardText"><b>Star Rating:</b>
+                  <div id = "map_<% restaurant.name %>" class = "resMap"></div>
+
+                  <% var myCenter = new google.maps.LatLng(55.9454305556, -3.1843444444);
+                  var mapCanvas = document.getElementById("map_<% restaurant.name %>");
+                  var mapOptions = {center: myCenter, zoom: 16};
+                  var map = new google.maps.Map(mapCanvas, mapOptions);
+                  var marker = new google.maps.Marker({position:myCenter});
+                  marker.setMap(map); %>
+
+                  <p class = "cardText"><b>Star Rating:</b>
 
                   <!-- Generate the star rating -->
                   <% var count = 0; for(var i = 0; i < restaurant.userRating; i++) { %>
