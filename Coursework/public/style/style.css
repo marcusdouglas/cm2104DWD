@@ -484,6 +484,7 @@ body {
     width: 100%;
     border: 2px solid black;
     background-color: black;
+    margin-bottom: 12px;
 }
 
 .imageContainer .btn {
@@ -505,7 +506,6 @@ body {
 
 .fa-star {
     font-size: 20px;
-    margin-top: 12px;
 }
 
 .starChecked {
