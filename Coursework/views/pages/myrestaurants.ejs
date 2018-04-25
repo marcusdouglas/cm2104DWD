@@ -43,6 +43,7 @@
             <div class = "textContainer">
               <h2 class = "paraTitle"><%= restaurant.name %></h2>
               <div class = "info">
+                <% if (restaurant.name == 'Welcome to the My Restaurants page!') { %>
                 <!--<p class = "cardText"><%= restaurant.placeText %></p>-->
                 <p class = "cardText"><b>Star Rating:</b>
 
@@ -70,6 +71,9 @@
                     <span class='fa fa-dollar dollarOff'></span>
                   <% } %>
                 </p>
+                <% } else { %>
+                  <p class = "cardText"><%= restaurant.placeText %></p>
+                  <% } %>
 
               </div>
             </div>
