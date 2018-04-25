@@ -46,6 +46,7 @@
                 <p class = "cardText"><%= restaurant.placeText %></p>
                 <p class = "cardText"><b>Star Rating:</b>
 
+                  <!-- Generate the star rating -->
                   <% var count = 0; for(var i = 0; i < restaurant.userRating; i++) { %>
                     <span style = 'margin-right: 4px' class = 'fa fa-star starChecked'></span>
                   <% count++; } %>
@@ -60,6 +61,7 @@
                 <p class = "cardText"><b>Cuisine/s:</b> <%= restaurant.cuisines %></p>
                 <p class = "cardText"><b>Average Cost:</b>
 
+                  <!-- Generate the average cost -->
                   <% var count = 0; for(var i = 0; i < restaurant.averageCost; i++) { %>
                     <span class='fa fa-dollar dollarOn'></span>
                   <% count++; } %>
