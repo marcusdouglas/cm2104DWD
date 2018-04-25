@@ -71,9 +71,13 @@
                     <span class='fa fa-dollar dollarOff'></span>
                   <% } %>
                 </p>
+
+                <p class = "cardText"><b>Address:</b> <%= restaurant.address %></p>
+                <p class = "cardText"><b>Further Information:</b>
+                  for more information click <a href = "<%= restaurant.siteUrl %>">here!</a></p>
                 <% } else { %>
                   <p class = "cardText"><%= restaurant.placeText %></p>
-                  <% } %>
+                <% } %>
 
               </div>
             </div>

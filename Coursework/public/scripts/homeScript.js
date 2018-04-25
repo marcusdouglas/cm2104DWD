@@ -36,9 +36,12 @@ function saveCard() {
   var cuisines = $("#cuisines").text();
   var averageCost = gloablAverageCost;
   var userRating = globalUserRating;
+  var address = globalAddress;
+  var siteUrl = globalSiteUrl;
 
   var card = {username: uname, name: name, image: image, rating: rating,
-    cuisines: cuisines, averageCost: averageCost, userRating: userRating};
+    cuisines: cuisines, averageCost: averageCost, userRating: userRating,
+    address: address, siteUrl: siteUrl};
 
   $.ajax({
        method: "POST",
@@ -77,6 +80,8 @@ function createCard() {
 
     gloablAverageCost = averageCost;
     globalUserRating = userRating;
+    globalAddress = address;
+    globalSiteUrl = siteUrl;
 
     $("#activeCard").remove();
 
