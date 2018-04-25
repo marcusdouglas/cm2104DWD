@@ -46,7 +46,7 @@
                 <% if (restaurant.name != 'Welcome to the My Restaurants page!') { %>
                   <div id = "map_restaurant.name" class = "resMap"></div>
 
-                  <% window.onload = function(e) { %>
+                  <% window.document.onload = function(e) { %>
                   <% var myCenter = new google.maps.LatLng(55.9454305556, -3.1843444444); %>
                   <% var mapCanvas = document.getElementById("map_restaurant.name"); %>
                   <% var mapOptions = {center: myCenter, zoom: 16}; %>
