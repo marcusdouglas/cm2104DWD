@@ -73,6 +73,10 @@
     width: 180px;
     height: 180px;
   }
+
+  .paraTitle {
+    max-width: 200px;
+  }
 }
 
 #pageTitle {
