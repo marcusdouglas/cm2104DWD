@@ -1,9 +1,10 @@
 /* ------------------Desktop-------------------- */
 @media only screen and (min-width:1200px) {
   .textContainer {
-    width: 300px;
+    /* width: 70% */
+    width: 500px;
     padding-right: 36px;
-
+    /* float: right */
   }
 
   .savedRestaurant {
@@ -23,7 +24,8 @@
 /* ------------------Screens < 1200px-------------------- */
 @media only screen and (max-width:1200px) {
   .textContainer {
-    width: 300px;
+    /* width: 100% */
+    width: 400px;
   }
 
   .savedRestaurant {
@@ -93,6 +95,7 @@
 
 .textContainer {
   display: inline-block;
+  /* no padding */
   padding-left: 12px;
 }
 
