@@ -44,14 +44,6 @@
               <h2 class = "paraTitle"><%= restaurant.name %></h2>
               <div class = "info">
                 <% if (restaurant.name != 'Welcome to the My Restaurants page!') { %>
-                  <div id = "map_restaurant.name" class = "resMap"></div>
-
-                  <% var myCenter = new google.maps.LatLng(55.9454305556, -3.1843444444); %>
-                  <% var mapCanvas = document.getElementById("map_restaurant.name"); %>
-                  <% var mapOptions = {center: myCenter, zoom: 16}; %>
-                  <% var map = new google.maps.Map(mapCanvas, mapOptions); %>
-                  <% var marker = new google.maps.Marker({position:myCenter}); %>
-                  <% marker.setMap(map); %>
 
                   <p class = "cardText"><b>Star Rating:</b>
 
@@ -95,9 +87,6 @@
   <footer id = "PageFooter">
     <% include ../partials/footer %>
   </footer>
-
-  <script src="https://maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyCBPO_ZRe5JJellJY06o4c2yrGL55loC0w" type="text/javascript"></script>
-<script src="/assets/gmap3.js?body=1" type="text/javascript"></script>
 
 </body>
 </html>
