@@ -412,6 +412,10 @@ body {
   font-size: 22px;
 }
 
+#fullDescription {
+  font-size: 16px;
+}
+
 .paraTitle {
   color: #FD3A0F;
   margin: 0;
