@@ -44,7 +44,7 @@
               <h2 class = "paraTitle"><%= restaurant.name %></h2>
               <div class = "info">
                 <% if (restaurant.name != 'Welcome to the My Restaurants page!') { %>
-                  <div id = "map_<%= restaurant.name %>" class = "resMap"></div>
+                  <div id = "map_ restaurant.name" class = "resMap"></div>
 
                   <% var myCenter = new google.maps.LatLng(55.9454305556, -3.1843444444); %>
                   <% var mapCanvas = document.getElementById("map_ restaurant.name"); %>
@@ -96,7 +96,7 @@
     <% include ../partials/footer %>
   </footer>
 
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBPO_ZRe5JJellJY06o4c2yrGL55loC0w&sensor=false"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBPO_ZRe5JJellJY06o4c2yrGL55loC0w"></script>
 
 </body>
 </html>
