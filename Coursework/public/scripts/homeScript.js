@@ -35,9 +35,10 @@ function saveCard() {
   var rating = $("#rating").text();
   var cuisines = $("#cuisines").text();
   var averageCost = gloablAverageCost;
+  var userRating = globalUserRating;
 
   var card = {username: uname, name: name, image: image, rating: rating,
-    cuisines: cuisines, averageCost: averageCost};
+    cuisines: cuisines, averageCost: averageCost, userRating: userRating};
 
   $.ajax({
        method: "POST",
@@ -52,6 +53,7 @@ function saveCard() {
 var restaurantsArray = [];
 var index = 0;
 var globalAverageCost = 0;
+var globalUserRating = 0;
 
 function createCard() {
   // Remove current card with fade out and create new one
@@ -74,6 +76,7 @@ function createCard() {
     var siteUrl = restaurantsArray[index].siteUrl;
 
     gloablAverageCost = averageCost;
+    globalUserRating = userRating;
 
     $("#activeCard").remove();
 

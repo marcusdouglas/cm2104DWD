@@ -111,9 +111,11 @@ app.get("/myrestaurants", function(req, res) {
         var rating = saved_cards[i].rating;
         var cuisines = saved_cards[i].cuisines;
         var averageCost = saved_cards[i].averageCost;
+        var userRating = saved_cards[i].userRating;
 
         var restaurant = {name: name, imageUrl: imageUrl, rating: rating,
-          cuisines: cuisines, averageCost: averageCost, placeText: placeText};
+          cuisines: cuisines, averageCost: averageCost,
+          placeText: placeText, userRating: userRating};
         restaurants[i] = restaurant;
       }
       res.render("pages/myrestaurants", {
@@ -155,8 +157,9 @@ app.post('/card', function (req, res) {
      var rating = req.body.card.rating;
      var cuisines = req.body.card.cuisines;
      var averageCost = req.body.card.averageCost;
+     var userRating = req.body.card.userRating;
      var newCard = {name: name, image: image, rating: rating, cuisines: cuisines,
-      averageCost: averageCost};
+      averageCost: averageCost, userRating: userRating};
 
      var saved_cards = result.saved_cards;
     // console.log(saved_cards);

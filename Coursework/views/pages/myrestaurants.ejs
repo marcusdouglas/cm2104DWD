@@ -44,17 +44,28 @@
               <h2 class = "paraTitle"><%= restaurant.name %></h2>
               <div class = "info">
                 <p class = "cardText"><%= restaurant.placeText %></p>
+                <p class = "cardText"><b>Star Rating:</b>
+
+                  <% var count = 0; for(var i = 0; i < restaurant.userRating; i++) { %>
+                    <span style = 'margin-right: 4px' class = 'fa fa-star starChecked'></span>
+                  <% count++; } %>
+
+                  <% for(var i = count; i < 5; i++) { %>
+                    <span style = 'margin-right: 4px' class = 'fa fa-star'></span>
+                  <% } %>
+
+                </p>
+
                 <p class = "cardText"><b>User Rating:</b> <%= restaurant.rating %></p>
                 <p class = "cardText"><b>Cuisine/s:</b> <%= restaurant.cuisines %></p>
-                <p onclick = "getAverage(<%= restaurant.averageCost %>)" class = "cardText costText">
-                  <b>Average Cost:</b>
+                <p class = "cardText"><b>Average Cost:</b>
 
                   <% var count = 0; for(var i = 0; i < restaurant.averageCost; i++) { %>
                     <span class='fa fa-dollar dollarOn'></span>
                   <% count++; } %>
 
                   <% for(var i = count; i < 4; i++) { %>
-                      <span class='fa fa-dollar dollarOff'></span>
+                    <span class='fa fa-dollar dollarOff'></span>
                   <% } %>
                 </p>
 
