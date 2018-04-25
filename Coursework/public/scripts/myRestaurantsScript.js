@@ -19,20 +19,3 @@ function removeSavedRestaurant() {
       });
   });
 }
-
-function getAverage(averageCost) {
-  var restaurantAverageCost = "";
-  var poundCount = 0;
-
-  for (var i = 0; i < averageCost; i++) {
-    restaurantAverageCost += "<span class='fa fa-dollar dollarOn'></span>";
-    poundCount++;
-  }
-
-  for (var i = poundCount; i < 4; i++) {
-    restaurantAverageCost += "<span class='fa fa-dollar dollarOff'></span>";
-    poundCount++;
-  }
-
-  $(".costText").append(restaurantAverageCost);
-}
