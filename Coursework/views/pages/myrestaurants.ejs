@@ -46,12 +46,12 @@
                 <% if (restaurant.name != 'Welcome to the My Restaurants page!') { %>
                   <div id = "map_<% restaurant.name %>" class = "resMap"></div>
 
-                  <% var myCenter = new google.maps.LatLng(55.9454305556, -3.1843444444); %>
-                  <% var mapCanvas = document.getElementById("map_<% restaurant.name %>"); %>
-                  <% var mapOptions = {center: myCenter, zoom: 16}; %>
-                  <% var map = new google.maps.Map(mapCanvas, mapOptions); %>
-                  <% var marker = new google.maps.Marker({position:myCenter}); %>
-                  <% marker.setMap(map); %>
+                  var myCenter = new google.maps.LatLng(55.9454305556, -3.1843444444);
+                  var mapCanvas = document.getElementById("map_<% restaurant.name %>");
+                  var mapOptions = {center: myCenter, zoom: 16};
+                  var map = new google.maps.Map(mapCanvas, mapOptions);
+                  var marker = new google.maps.Marker({position:myCenter});
+                  marker.setMap(map);
 
                   <p class = "cardText"><b>Star Rating:</b>
 
