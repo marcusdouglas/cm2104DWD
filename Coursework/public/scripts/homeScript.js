@@ -294,6 +294,7 @@ function createMap(latitude, longitude) {
   marker.setMap(map);
 }
 
+// Function for the searches autocomplete feature
 function initialize() {
   var input = document.getElementById('location');
   new google.maps.places.Autocomplete(input);
