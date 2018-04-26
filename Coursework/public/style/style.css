@@ -528,6 +528,10 @@ body {
   padding-top: 4px;
 }
 
+.placeCard {
+  text-align: center;
+}
+
 #rating {
   padding-top: 8px;
 }

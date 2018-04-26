@@ -96,9 +96,11 @@
             <% } else { %>
               <!-- Placeholder Card -->
               <span class = "close" onclick = "removeSavedRestaurant()">&times;</span>
-              <h2 class = "paraTitle cardTitle placeCard"><%= restaurant.name %></h2>
-              <img src = "images/logo.png" id = "placeImage" alt = "Site Logo Image"/>
-              <p class = "cardText placeCard"><%= restaurant.placeText %></p>
+              <div class = "placeCard">
+                <h2 class = "paraTitle cardTitle"><%= restaurant.name %></h2>
+                <img src = "images/logo.png" id = "placeImage" alt = "Site Logo Image"/>
+                <p class = "cardText"><%= restaurant.placeText %></p>
+              </div>
             <% } %>
 
           </div>
