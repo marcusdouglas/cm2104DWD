@@ -35,14 +35,14 @@
       <!-- For each loop goes here to load each of the users saved cards -->
         <% restaurants.forEach(function(restaurant) { %>
 
-          <% if (restaurant.name != 'Welcome to the My Restaurants page!') { %>
-
           <!-- Container for single card -->
           <div id = "<%= restaurant.name %>" class = "savedRestaurant">
 
             <!-- Restaurant name and close button -->
             <span class = "close" onclick = "removeSavedRestaurant()">&times;</span>
             <h2 class = "paraTitle cardTitle"><%= restaurant.name %></h2>
+
+            <% if (restaurant.name != 'Welcome to the My Restaurants page!') { %>
 
             <!-- The Restaurants image -->
             <div class = "sideImgContainer">
@@ -89,7 +89,7 @@
                 <p class = "cardText"><b>Further Information:</b>
                   for more information click <a href = "<%= restaurant.siteUrl %>">here!</a></p>
                 <% } else { %>
-                  <p class = "cardText"><%= restaurant.placeText %></p>
+                  <!--<p class = "cardText"><%= restaurant.placeText %></p>-->
                 <% } %>
 
               </div>
