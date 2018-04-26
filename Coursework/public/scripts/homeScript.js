@@ -228,7 +228,7 @@ function performSearch(entityId, entityType, lat, lon, resultsFound) {
   if (resultsFound >= 100) {
     var randomStart = Math.floor((Math.random() * 80) + 1);
   }
-  if (resultsFound > 20) {
+  else if (resultsFound > 20) {
     var randomStart = Math.floor((Math.random() * (resultsFound - 20)) + 1);
   } else { // If it's less than 20. Just start from 0
     var randomStart = 0;
