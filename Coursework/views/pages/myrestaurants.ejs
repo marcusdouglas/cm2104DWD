@@ -98,9 +98,7 @@
               <span class = "close" onclick = "removeSavedRestaurant()">&times;</span>
               <div class = "placeCard">
                 <h2 class = "paraTitle"><%= restaurant.name %></h2>
-                <div id = "placeImageContainer">
-                  <img src = "<%= restaurant.imageUrl %>" id = "myResPlaceImage" alt = "Site Logo Image"/>
-                </div>
+                <img src = "<%= restaurant.imageUrl %>" id = "myResPlaceImage" alt = "Site Logo Image"/>
                 <p class = "cardText"><%= restaurant.placeText %></p>
               </div>
             <% } %>
