@@ -13,7 +13,7 @@
 
 
   <% if (logAttempt === "denied") { %>
-    $("#loginForm").css({display: "block"});
+    document.getElementById("loginForm").style.display = "block";
   <% } %>
 
   <!-- Login section which stays hidden till in use -->
