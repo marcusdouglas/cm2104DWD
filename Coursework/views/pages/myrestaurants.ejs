@@ -40,12 +40,7 @@
 
             <!-- Restaurant name and close button -->
             <span class = "close" onclick = "removeSavedRestaurant()">&times;</span>
-
-            <% if (restaurant.name != 'Welcome to the My Restaurants page!') { %>
-              <h2 class = "paraTitle cardTitle"><%= restaurant.name %></h2>
-            <% } else { %>
-              <h2 class = "paraTitle cardTitle placeCard"><%= restaurant.name %></h2>
-            <% } %>
+            <h2 class = "paraTitle cardTitle"><%= restaurant.name %></h2>
 
             <!-- The Restaurants image -->
             <div class = "sideImgContainer">
@@ -93,7 +88,7 @@
                 <p class = "cardText"><b>Further Information:</b>
                   for more information click <a href = "<%= restaurant.siteUrl %>">here!</a></p>
                 <% } else { %>
-                  <p class = "cardText placeCard"><%= restaurant.placeText %></p>
+                  <p class = "cardText"><%= restaurant.placeText %></p>
                 <% } %>
 
               </div>
