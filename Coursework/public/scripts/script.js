@@ -38,7 +38,7 @@ function showDivs(n) {
 
 // Collapses the navigation bar for smaller screens
 function navCollapse() {
-    var x = document.getElementById("collapseNav");
+    var x = $("#collapseNav");
     if (x.className === "nav-tabs") {
         x.className += " responsive";
     } else {
