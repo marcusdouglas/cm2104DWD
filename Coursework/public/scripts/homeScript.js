@@ -218,7 +218,7 @@ function performSearch(entityId, entityType, lat, lon, resultsFound) {
 
   // Converting miles to metres as API works in metres
   var rad = $("#distance").val();
-  if (rad === "") {
+  if ((rad === "") || (rad == 0)) {
     rad = 50;
   }
   console.log(rad);
