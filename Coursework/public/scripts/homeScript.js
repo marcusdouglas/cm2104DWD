@@ -180,6 +180,8 @@ function getLocation() {
   });
 }
 
+// This must be called before the performSearch method in order to be able to
+// calculate an appropriate start point for searching through the array
 function getStartPoint(entityId, entityType, lat, lon) {
 
   // Converting miles to metres as API works in metres
@@ -200,8 +202,10 @@ function getStartPoint(entityId, entityType, lat, lon) {
       console.log(result);
       var res = JSON.parse(JSON.stringify(result));
 
+      // Getting how many results are found for the users specified input
       var resultsFound = res.results_found;
 
+      // Now performing the full search which will load the results
       performSearch(entityId, entityType, lat, lon, resultsFound);
     }
   });
@@ -220,7 +224,6 @@ function performSearch(entityId, entityType, lat, lon, resultsFound) {
   // So here we randomise the point at which we start looking through the API's array
   // so that the user sees a random selection of the available results each time
   var randomStart = Math.floor((Math.random() * (resultsFound - 20)) + 1);
-  console.log(randomStart);
 
   // Create the url we search. We could add it so that the resutls are displayed
   // from closest to furthest however results look best when it is random and
