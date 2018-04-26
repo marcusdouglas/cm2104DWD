@@ -28,7 +28,7 @@ function removeSavedRestaurant() {
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-    if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    if (document.body.scrollTop > 160 || document.documentElement.scrollTop > 160) {
         document.getElementById("topButton").style.display = "block";
     } else {
         document.getElementById("topButton").style.display = "none";
