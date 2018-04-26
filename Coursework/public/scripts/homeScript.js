@@ -173,15 +173,39 @@ function getLocation() {
       var lon = res.location_suggestions[0].longitude;
 
       // Now we have the location so find restaurants in that area
-      performSearch(entityId, entityType, lat, lon);
+      //performSearch(entityId, entityType, lat, lon);
+
+      getStartPoint(entityId, entityType, lat, lon);
     }
   });
+}
+
+function getStartPoint(entityId, entityType, lat, lon) {
+
+  var searchUrl = "https://developers.zomato.com/api/v2.1/search?entity_id="
+    + entityId + "&entity_type=" + entityType
+    + "&lat=" + lat + "&lon=" + lon + "&radius=" + rad;
+
+  $.ajax ({
+    url: searchUrl,
+    type: "GET",
+    headers: {"user-key": "3c672f5af7519d65f72ed90953badca5"},
+    dataType: "json",
+    success: function(result) {
+      // deal with data here
+      console.log(result);
+      var res = JSON.parse(JSON.stringify(result));
+
+      var resultsFound = res.results_found;
+  });
+
+  performSearch(entityId, entityType, lat, lon, resultsFound);
 }
 
 // This function creates an array of the data to be used locally
 // for faster loading. It will also create the first card when the Go button
 // is pressed
-function performSearch(entityId, entityType, lat, lon) {
+function performSearch(entityId, entityType, lat, lon, resultsFound) {
 
   // Converting miles to metres as API works in metres
   var rad = $("#distance").val();
@@ -190,7 +214,8 @@ function performSearch(entityId, entityType, lat, lon) {
   // The API allows for a maximum of 100 restaurants per search location to be user_data
   // So here we randomise the point at which we start looking through the API's array
   // so that the user sees a random selection of the available results each time
-  var randomStart = Math.floor((Math.random() * 80) + 1);
+  var randomStart = Math.floor((Math.random() * (resultsFound - 20)) + 1);
+  console.log(randomStart);
 
   // Create the url we search. We could add it so that the resutls are displayed
   // from closest to furthest however results look best when it is random and
