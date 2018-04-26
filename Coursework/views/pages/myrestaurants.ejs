@@ -42,8 +42,6 @@
             <span class = "close" onclick = "removeSavedRestaurant()">&times;</span>
             <h2 class = "paraTitle cardTitle"><%= restaurant.name %></h2>
 
-            <% if (restaurant.name != 'Welcome to the My Restaurants page!') { %>
-
             <!-- The Restaurants image -->
             <div class = "sideImgContainer">
               <img class = "sideImg" src = "<%= restaurant.imageUrl %>">
@@ -52,6 +50,7 @@
             <!-- Contains the restaurants information -->
             <div class = "textContainer">
               <div class = "info">
+                <% if (restaurant.name != 'Welcome to the My Restaurants page!') { %>
 
                   <!-- Round the user rating -->
                   <% var roundedRating = Math.round(restaurant.userRating); %>
