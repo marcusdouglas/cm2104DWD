@@ -11,6 +11,11 @@
   <!-- Gets the header file -->
   <% include ../partials/header.ejs %>
 
+
+  <% if (logAttempt === "denied") { %>
+    $("#loginForm").css({display: "block"});
+  <% } %>
+
   <!-- Login section which stays hidden till in use -->
   <% include ../partials/login.ejs %>
 
