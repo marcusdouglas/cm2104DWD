@@ -140,6 +140,10 @@
   margin-right: auto;
 }
 
+.placeText {
+  width: 70%;
+}
+
 .info {
   padding: 0;
   clear: left;
