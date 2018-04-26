@@ -248,11 +248,11 @@ app.post('/login', function(req, res) {
     //if there is no result, redirect the user back to the login system as that username must not exist
     if(!result){
       var result = {username: "No User"}
-      
+
       res.render('pages/index', {
         user: result,
         page: "index",
-        logged: "Logout",
+        logged: "Login or Signup",
         logAttempt: "denied"
       });
       return;

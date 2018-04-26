@@ -9,7 +9,7 @@
       <li><a id = "myrestaurantsTab" href = "/myrestaurants?username=<%= user.username %>" <% if (page === 'myrestaurants') { %> class="active" <% } %>>My Restaurants</a></li>
       <!--<li><a id = "myrestaurantsTab" class = "tabs" href = "/myrestaurants?username=<%= user.username %>">My Restaurants</a></li>-->
       <!--<li><a class = "tabs" href = "/logout" >Logout</a></li>-->
-      <li id = "login" <% if (logged === 'Login or Signup') { %> onclick='displayLogin()' <% } %>>
+      <li id = "login" <% if (logAttempt === "denied") { %> onload='displayLogin()' <% } %> <% if (logged === 'Login or Signup') { %> onclick='displayLogin()' <% } %>>
         <a id = "logText" class = "tabs" <% if (logged === 'Logout') { %> href='/logout' <% } else { %> href = '#' <% } %>><%= logged %></a></li>
       <li class = "icon">
       <!--<li id = "login" onclick = "displayLogin()">
