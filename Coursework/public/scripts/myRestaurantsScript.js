@@ -25,7 +25,11 @@ function removeSavedRestaurant() {
   });
 }
 
-window.onscroll = function() {scrollFunction()};
+$(document).ready(function () {
+  $(window).scroll(function () {
+    scrollFunction();
+  });
+});
 
 function scrollFunction() {
     if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
