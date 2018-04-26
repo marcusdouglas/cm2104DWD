@@ -11,11 +11,6 @@
   <!-- Gets the header file -->
   <% include ../partials/header.ejs %>
 
-
-  <% if (logAttempt === "denied") { %>
-    document.getElementById("loginForm").style.display = "block";
-  <% } %>
-
   <!-- Login section which stays hidden till in use -->
   <% include ../partials/login.ejs %>
 
