@@ -218,23 +218,26 @@ function performSearch(entityId, entityType, lat, lon, resultsFound) {
 
   // Converting miles to metres as API works in metres
   var rad = $("#distance").val();
+  if (rad === "") {
+    rad = 50;
+  }
+  console.log(rad);
+
   rad = rad / 0.00062137;
 
   // The API allows for a maximum of 100 restaurants per search location to be user_data
   // So here we randomise the point at which we start looking through the API's array
   // so that the user sees a random selection of the available results each time
 
-  // Checking that more than 20 results are found. If so get a random start point
-  if (resultsFound >= 100) {
+  // Checking how many results are found to provide an appropriate result
+  if (resultsFound >= 100) { // If >= 100 use a random number up to 80
     var randomStart = Math.floor((Math.random() * 80) + 1);
   }
-  else if (resultsFound > 20) {
+  else if (resultsFound > 20) { // If greater than 20 use the number of results found -20
     var randomStart = Math.floor((Math.random() * (resultsFound - 20)) + 1);
   } else { // If it's less than 20. Just start from 0
     var randomStart = 0;
   }
-  console.log(resultsFound);
-  console.log(randomStart);
 
   // Create the url we search. We could add it so that the resutls are displayed
   // from closest to furthest however results look best when it is random and
