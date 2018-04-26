@@ -225,6 +225,9 @@ function performSearch(entityId, entityType, lat, lon, resultsFound) {
   // so that the user sees a random selection of the available results each time
 
   // Checking that more than 20 results are found. If so get a random start point
+  if (resultsFound >= 100) {
+    var randomStart = Math.floor((Math.random() * 80) + 1);
+  }
   if (resultsFound > 20) {
     var randomStart = Math.floor((Math.random() * (resultsFound - 20)) + 1);
   } else { // If it's less than 20. Just start from 0
