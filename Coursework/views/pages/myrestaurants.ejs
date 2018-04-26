@@ -2,8 +2,10 @@
 <html lang = "en">
 
 <head>
+  <!-- Gets the head file -->
   <% include ../partials/head %>
 
+  <!-- Gets page specific files -->
   <script src = "scripts/myRestaurantsScript.js"></script>
   <link rel = "stylesheet" type = "text/css" href = "style/myrestaurants.css">
 </head>
@@ -22,31 +24,44 @@
   <!-- The Main Content section -->
   <section id = "MainContent">
 
+    <!-- Side tab for displaying the currently signed in user -->
     <div id = "userInfo">
       <a href = "#">Signed in as: <p id = "username"><b><%= user.username %></b></p>
       <p id = "arrow"><</p></a>
     </div>
 
+    <!-- Container for the cards -->
     <div id = "myRestaurantsContainer">
 
+      <!-- Page Title -->
       <div id = "pageTitle">
         <h1 id = "heading" class = "paraTitle">My Restaurants</h1>
       </div>
 
+      <!-- For each loop goes here to load each of the users saved cards -->
         <% restaurants.forEach(function(restaurant) { %>
+
+          <!-- Container for single card -->
           <div id = "<%= restaurant.name %>" class = "savedRestaurant">
+
+            <!-- Restaurant name and close button -->
             <span class = "close" onclick = "removeSavedRestaurant()">&times;</span>
             <h2 class = "paraTitle cardTitle"><%= restaurant.name %></h2>
 
+            <!-- The Restaurants image -->
             <div class = "sideImgContainer">
               <img class = "sideImg" src = "<%= restaurant.imageUrl %>">
             </div>
 
+            <!-- Contains the restaurants information -->
             <div class = "textContainer">
-              <!--<h2 class = "paraTitle"><%= restaurant.name %></h2>-->
               <div class = "info">
                 <% if (restaurant.name != 'Welcome to the My Restaurants page!') { %>
+
+                  <!-- Round the user rating -->
                   <% var roundedRating = Math.round(restaurant.userRating); %>
+
+                  <!-- Star Rating -->
                   <p class = "cardText"><b>Star Rating:</b>
 
                   <!-- Generate the star rating -->
@@ -60,6 +75,7 @@
 
                 </p>
 
+                <!-- User rating, cuisines and average cost -->
                 <p class = "cardText"><b>User Rating:</b> <%= restaurant.rating %></p>
                 <p class = "cardText"><b>Cuisine/s:</b> <%= restaurant.cuisines %></p>
                 <p class = "cardText"><b>Average Cost:</b>
