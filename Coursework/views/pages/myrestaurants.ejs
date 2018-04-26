@@ -38,11 +38,11 @@
           <!-- Container for single card -->
           <div id = "<%= restaurant.name %>" class = "savedRestaurant">
 
+            <% if (restaurant.name != 'Welcome to the My Restaurants page!') { %>
+
             <!-- Restaurant name and close button -->
             <span class = "close" onclick = "removeSavedRestaurant()">&times;</span>
             <h2 class = "paraTitle cardTitle"><%= restaurant.name %></h2>
-
-            <% if (restaurant.name != 'Welcome to the My Restaurants page!') { %>
 
             <!-- The Restaurants image -->
             <div class = "sideImgContainer">
@@ -92,9 +92,14 @@
                 </p>
               </div>
             </div>
+
             <% } else { %>
-              <p class = "cardText"><%= restaurant.placeText %></p>
+              <!-- Placeholder Card -->
+              <span class = "close" onclick = "removeSavedRestaurant()">&times;</span>
+              <h2 class = "paraTitle cardTitle placeCard"><%= restaurant.name %></h2>
+              <p class = "cardText placeCard"><%= restaurant.placeText %></p>
             <% } %>
+
           </div>
         <% }); %>
 
