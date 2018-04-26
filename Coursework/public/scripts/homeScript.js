@@ -201,10 +201,10 @@ function getStartPoint(entityId, entityType, lat, lon) {
       var res = JSON.parse(JSON.stringify(result));
 
       var resultsFound = res.results_found;
+
+      performSearch(entityId, entityType, lat, lon, resultsFound);
     }
   });
-
-  performSearch(entityId, entityType, lat, lon, resultsFound);
 }
 
 // This function creates an array of the data to be used locally
