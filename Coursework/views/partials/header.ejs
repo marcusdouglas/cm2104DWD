@@ -1,20 +1,29 @@
 <!-- Page Header -->
 <header id = "PageHeader">
+  <!-- Site logo Image -->
   <img src = "images/logo.png" id = "headerImage" alt = "Site Logo Image"/>
+
+  <!-- Site Navigation -->
   <nav id = "nav">
     <ul class = "nav-tabs" id = "collapseNav">
-      <!--<li <% if (page === 'index') { %> class="active" <% } %> ><a href="/index">Index</a></li>-->
-      <li><a id = "indexTab" href="/?username=<%= user.username %>" <% if (page === 'index') { %> class="active" <% } %>>Home</a></li>
-      <!--<li><a id = "indexTab" class = "active" href="/?username=<%= user.username %>">Home</a></li>-->
-      <li><a id = "myrestaurantsTab" href = "/myrestaurants?username=<%= user.username %>" <% if (page === 'myrestaurants') { %> class="active" <% } %>>My Restaurants</a></li>
-      <!--<li><a id = "myrestaurantsTab" class = "tabs" href = "/myrestaurants?username=<%= user.username %>">My Restaurants</a></li>-->
-      <!--<li><a class = "tabs" href = "/logout" >Logout</a></li>-->
+      <!-- Home Tab -->
+      <li><a id = "indexTab" href="/?username=<%= user.username %>"
+         <% if (page === 'index') { %> class="active" <% } %>>Home
+      </a></li>
+
+      <!-- My Restaurants Tab -->
+      <li><a id = "myrestaurantsTab" href = "/myrestaurants?username=<%= user.username %>"
+        <% if (page === 'myrestaurants') { %> class="active" <% } %>>My Restaurants
+      </a></li>
+
+      <!-- Login Tab -->
       <li id = "login" <% if (logged === 'Login or Signup') { %> onclick='displayLogin()' <% } %>>
-        <a id = "logText" class = "tabs" <% if (logged === 'Logout') { %> href='/logout' <% } else { %> href = '#' <% } %>><%= logged %></a></li>
+        <a id = "logText" class = "tabs" <% if (logged === 'Logout') { %>
+          href='/logout' <% } else { %> href = '#' <% } %>><%= logged %>
+      </a></li>
+
+      <!-- Collapseable Nav Tab -->
       <li class = "icon">
-      <!--<li id = "login" onclick = "displayLogin()">
-        <a id = "logText" class = "tabs" href = "#">Login or Signup</a></li>
-      <li class = "icon">-->
         <a href = "javascript:void(0);" style = "font-size: 17px;" onclick = "navCollapse()">☰</a>
       </li>
     </ul>
