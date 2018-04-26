@@ -182,6 +182,10 @@ function getLocation() {
 
 function getStartPoint(entityId, entityType, lat, lon) {
 
+  // Converting miles to metres as API works in metres
+  var rad = $("#distance").val();
+  rad = rad / 0.00062137;
+
   var searchUrl = "https://developers.zomato.com/api/v2.1/search?entity_id="
     + entityId + "&entity_type=" + entityType
     + "&lat=" + lat + "&lon=" + lon + "&radius=" + rad;
