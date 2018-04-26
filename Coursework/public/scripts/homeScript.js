@@ -234,6 +234,7 @@ function performSearch(entityId, entityType, lat, lon, resultsFound) {
     var randomStart = 0;
   }
   console.log(resultsFound);
+  console.log(randomStart);
 
   // Create the url we search. We could add it so that the resutls are displayed
   // from closest to furthest however results look best when it is random and
