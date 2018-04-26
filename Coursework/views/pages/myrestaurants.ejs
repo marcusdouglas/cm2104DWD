@@ -35,6 +35,8 @@
       <!-- For each loop goes here to load each of the users saved cards -->
         <% restaurants.forEach(function(restaurant) { %>
 
+          <% if (restaurant.name != 'Welcome to the My Restaurants page!') { %>
+
           <!-- Container for single card -->
           <div id = "<%= restaurant.name %>" class = "savedRestaurant">
 
@@ -50,7 +52,6 @@
             <!-- Contains the restaurants information -->
             <div class = "textContainer">
               <div class = "info">
-                <% if (restaurant.name != 'Welcome to the My Restaurants page!') { %>
 
                   <!-- Round the user rating -->
                   <% var roundedRating = Math.round(restaurant.userRating); %>
