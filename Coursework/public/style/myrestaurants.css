@@ -99,6 +99,10 @@
   .myResPlaceText {
     width: 80%;
   }
+
+  #myResPlaceTitle {
+    max-width: 150px;
+  }
 }
 
 /* ------------------Screens < 500px-------------------- */
