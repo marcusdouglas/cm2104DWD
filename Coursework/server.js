@@ -258,7 +258,7 @@ app.post('/adduser', function(req, res) {
     + " feel free to delete this information card!";
 
   // Creates the users saved cards array. Adds a placeholder card
-  var placeCard = {name: "Welcome to the My Restaurants page!", image: "images/logo.png", placeText: pageDescription};
+  var placeCard = {name: "Welcome to the My Restaurants page!", image: "images/foodImage12.jpeg", placeText: pageDescription};
   var password = req.body.psw;
   var saved_cards = [placeCard];
 

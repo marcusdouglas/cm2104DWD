@@ -67,7 +67,6 @@
   }
 
   #distance {
-    /*display: block;*/
     margin-top: 12px;
   }
 
@@ -288,7 +287,6 @@ body {
 
 .nav-tabs {
   border-radius: 6px;
-  /*background-color: #559E54;*/
   background-color: #333;
   overflow: hidden;
   list-style-type: none;
@@ -316,28 +314,19 @@ body {
   display: none;
 }
 
-.sticky {
-  margin-top: 48px;
-}
-
 #MainContent {
-  /*background-color: #b3ffb3;*/
   background-color: #D4F7D4;
   padding-top: 20px;
   padding-bottom: 30px;
 }
 
-#userInfo a{
+#userInfo a {
     position: absolute;
-    /*left: -80px;*/
     transition: 0.3s;
     padding: 15px;
-    /*width: 100px;*/
     text-decoration: none;
-    /*font-size: 20px;*/
     color: black;
     border-radius: 0 5px 5px 0;
-    /*top: 200px;*/
     background-color: white;
 }
 
@@ -562,7 +551,6 @@ body {
 }
 
 #dislikeButton {
-  /*background-color: #ff3333;*/
   background: url(../images/crossIcon.png) no-repeat;
   background-size: 110px;
   background-position: center;
@@ -570,7 +558,6 @@ body {
 
 #likeButton {
   float: right;
-  /*background-color: #4CAF50;*/
   background: url(../images/tickIcon.png) no-repeat;
   background-size: 115px;
   background-position: center;
