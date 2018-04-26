@@ -25,13 +25,15 @@ function removeSavedRestaurant() {
   });
 }
 
+// Calls the topScroll function on scroll
 $(document).ready(function () {
   $(window).scroll(function () {
-    scrollFunction();
+    topScroll();
   });
 });
 
-function scrollFunction() {
+// Displays or removes the scroll button
+function topScroll() {
     if ($(window).scrollTop() > 400 || $(window).scrollTop() > 400) {
         $("#topButton").css({display: "block"});
     } else {
@@ -39,8 +41,7 @@ function scrollFunction() {
     }
 }
 
-// When the user clicks on the button, scroll to the top of the document
+// When the user clicks on the top button, scroll to the top of the document
 function topFunction() {
     $(window).scrollTop(0);
-    document.documentElement.scrollTop = 0;
 }
