@@ -527,11 +527,11 @@ body {
 }
 
 .dollarOn {
-  color: cornflowerblue;
+  color: dodgerblue;
 }
 
 .dollarOff {
-  color: lightBlue;
+  color: #b3d1ff;
 }
 
 .cardText {
