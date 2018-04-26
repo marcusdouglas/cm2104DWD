@@ -46,11 +46,11 @@
               <!--<h2 class = "paraTitle"><%= restaurant.name %></h2>-->
               <div class = "info">
                 <% if (restaurant.name != 'Welcome to the My Restaurants page!') { %>
-
+                  <% var roundedRating = Math.round(restaurant.userRating); %>
                   <p class = "cardText"><b>Star Rating:</b>
 
                   <!-- Generate the star rating -->
-                  <% var count = 0; for(var i = 0; i < restaurant.userRating; i++) { %>
+                  <% var count = 0; for(var i = 0; i < roundedRating; i++) { %>
                     <span style = 'margin-right: 4px' class = 'fa fa-star starChecked'></span>
                   <% count++; } %>
 

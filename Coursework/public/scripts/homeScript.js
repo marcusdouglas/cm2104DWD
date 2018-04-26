@@ -3,9 +3,14 @@ $(function() {
   //---------------------Gets API Data---------------------
 
   $("#searchForm").submit(function(e) {
-    // Stops the page jumping to the top on click
+
+    // Displays the page loader
     $("#cardLoader").addClass("loader");
+
+    // Stops the page jumping to the top on click
     e.preventDefault();
+
+    // Gets the API data based on user input
     getLocation();
   });
 
@@ -17,18 +22,17 @@ $(function() {
       $("#cardLoader").addClass("loader");
       getLocation();
     }
-    else {
+    else { // Otherwise continue looking through the current array of cards
       createCard();
       index++;
     }
   });
 });
 
+// Function for passing saved card details to the server
 function saveCard() {
 
-  //var test = $("#rName").text();
-  //console.log("Actual Display: " + test);
-
+  // Storing the cards details in variables
   var uname = $("#username").text();
   var name = $("#rName").text();
   var image = $("#rImage").attr("src");
@@ -39,6 +43,7 @@ function saveCard() {
   var address = globalAddress;
   var siteUrl = globalSiteUrl;
 
+  // Storing the cards details in a card object
   var card = {username: uname, name: name, image: image, rating: rating,
     cuisines: cuisines, averageCost: averageCost, userRating: userRating,
     address: address, siteUrl: siteUrl};
@@ -53,20 +58,28 @@ function saveCard() {
     });
 }
 
+// Array to store cards the user is browsing through
 var restaurantsArray = [];
+
+// References arrays index
 var index = 0;
+
+// Some global variables for saving card details
 var globalAverageCost = 0;
 var globalUserRating = 0;
+var globalAddress = "";
+var globalSiteUrl = "";
 
+// Creates a card on the page
 function createCard() {
-  // Remove current card with fade out and create new one
 
-  //$("#cardLoader").addClass("loader");
-
+  // Finished loading so remove loader
   $("#cardLoader").removeClass("loader");
 
+  // Remove current card with fade out and create new one
   $("#activeCard").fadeOut(500, function() {
 
+    // Creating variables for the values needed to format the card
     var name = restaurantsArray[index].name;
     var thumbnail = restaurantsArray[index].thumbnail;
     var userRating = restaurantsArray[index].userRating;
@@ -78,19 +91,23 @@ function createCard() {
     var address = restaurantsArray[index].address;
     var siteUrl = restaurantsArray[index].siteUrl;
 
+    // Setting the value of global variables
     gloablAverageCost = averageCost;
     globalUserRating = userRating;
     globalAddress = address;
     globalSiteUrl = siteUrl;
 
+    // Remove the current card
     $("#activeCard").remove();
 
+    // Format the new card
     formatCard(name, thumbnail, userRating, voteCount, foodType, averageCost,
       latitude, longitude, address, siteUrl);
 
     // Calls the function to create the google map
     createMap(latitude, longitude);
 
+    // Add the card class to the new card
     $("#activeCard").addClass("card");
   });
 
@@ -155,6 +172,7 @@ function getLocation() {
       var lat = res.location_suggestions[0].latitude;
       var lon = res.location_suggestions[0].longitude;
 
+      // Now we have the location so find restaurants in that area
       performSearch(entityId, entityType, lat, lon);
     }
   });
@@ -173,12 +191,13 @@ function performSearch(entityId, entityType, lat, lon) {
   // So here we randomise the point at which we start looking through the API's array
   // so that the user sees a random selection of the available results each time
   var randomStart = Math.floor((Math.random() * 80) + 1);
-  //console.log(randomStart);
 
+  // Create the url we search. We could add it so that the resutls are displayed
+  // from closest to furthest however results look best when it is random and
+  // ultimately it does not matter as the results shown will be within the users parameters
   var searchUrl = "https://developers.zomato.com/api/v2.1/search?entity_id="
     + entityId + "&entity_type=" + entityType + "&start=" + randomStart
     + "&lat=" + lat + "&lon=" + lon + "&radius=" + rad;
-  //console.log(searchUrl);
 
   $.ajax ({
     url: searchUrl,
@@ -190,9 +209,11 @@ function performSearch(entityId, entityType, lat, lon) {
       console.log(result);
       var res = JSON.parse(JSON.stringify(result));
 
+      // Resetting the index and restaurants array for a fresh set of results
       index = 0;
       restaurantsArray.length = 0;
 
+      // Creating the new restaurants array
       for (var i = 0; i < res.restaurants.length; i++) {
         var name = res.restaurants[i].restaurant.name;
         var thumbnail = res.restaurants[i].restaurant.thumb;
@@ -210,18 +231,21 @@ function performSearch(entityId, entityType, lat, lon) {
           thumbnail = "images/noImage.png";
         }
 
+        // Creating a restaurant object
         var restaurant = {name: name, thumbnail: thumbnail,
           userRating: userRating, voteCount: voteCount,
           foodType: foodType, averageCost: averageCost, siteUrl: siteUrl,
           latitude: latitude, longitude: longitude, address};
-        //console.log(restaurant);
 
+        // Adding the new restaurant to the array
         restaurantsArray[i] = restaurant;
       }
 
       // Shuffle the array. This will help stop the user having to go through
       // restaurants in the same order every time they search
       shuffle(restaurantsArray);
+
+      // Create the first card
       createCard();
     }
   });
