@@ -19,6 +19,10 @@
   #heading {
     font-size: 40px;
   }
+
+  #myResPlaceImage {
+    width: 20%;
+  }
 }
 
 /* ------------------Screens < 1200px-------------------- */
@@ -41,6 +45,10 @@
   #heading {
     font-size: 40px;
   }
+
+  #myResPlaceImage {
+    width: 20%;
+  }
 }
 
 /* ------------------Code applies to screens < 1000px */
@@ -53,6 +61,12 @@
 
   .sideImgContainer {
     margin-bottom: 12px;
+  }
+
+  #myResPlaceImage {
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -121,7 +135,6 @@
 }
 
 #myResPlaceImage {
-  width: 20%;
   margin-left: auto;
   margin-right: auto;
 }
