@@ -4,9 +4,9 @@
   <nav id = "nav">
     <ul class = "nav-tabs" id = "collapseNav">
       <!--<li <% if (page === 'index') { %> class="active" <% } %> ><a href="/index">Index</a></li>-->
-      <li><a id = "indexTab" href="/?username=<%= user.username %>" <% if (page === 'index') { %> class="active" <% } %>>Home</a></li>
+      <li><a id = "indexTab" href="/?username=<%= user.username %>" <% if (page === 'index') { %> class="active" <% } else { class = 'tabs' }%>>Home</a></li>
       <!--<li><a id = "indexTab" class = "active" href="/?username=<%= user.username %>">Home</a></li>-->
-      <li><a id = "myrestaurantsTab" href = "/myrestaurants?username=<%= user.username %>" <% if (page === 'myrestaurants') { %> class="active" <% } %>>My Restaurants</a></li>
+      <li><a id = "myrestaurantsTab" href = "/myrestaurants?username=<%= user.username %>" <% if (page === 'myrestaurants') { %> class="active" <% } else { class = 'tabs' } %>>My Restaurants</a></li>
       <!--<li><a id = "myrestaurantsTab" class = "tabs" href = "/myrestaurants?username=<%= user.username %>">My Restaurants</a></li>-->
       <!--<li><a class = "tabs" href = "/logout" >Logout</a></li>-->
       <li id = "login" <% if (logged === 'Login or Signup') { %> onclick='displayLogin()' <% } %>>
