@@ -209,5 +209,7 @@
 }
 
 #topButton:hover {
-  background-color: #686868;
+  background-color: white;
+  color: #080808;
+  transition: 0.3s;
 }
