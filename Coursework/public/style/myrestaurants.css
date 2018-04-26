@@ -116,6 +116,10 @@
   /* no padding */
 }
 
+.placeCard {
+  text-align: center;
+}
+
 .info {
   padding: 0;
   clear: left;
