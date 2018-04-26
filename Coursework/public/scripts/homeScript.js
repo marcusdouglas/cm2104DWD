@@ -172,9 +172,7 @@ function getLocation() {
       var lat = res.location_suggestions[0].latitude;
       var lon = res.location_suggestions[0].longitude;
 
-      // Now we have the location so find restaurants in that area
-      //performSearch(entityId, entityType, lat, lon);
-
+      // Now we have the location so find restaurants in that area and get a start point
       getStartPoint(entityId, entityType, lat, lon);
     }
   });
@@ -184,13 +182,9 @@ function getLocation() {
 // calculate an appropriate start point for searching through the array
 function getStartPoint(entityId, entityType, lat, lon) {
 
-  // Converting miles to metres as API works in metres
-  var rad = $("#distance").val();
-  rad = rad / 0.00062137;
-
   var searchUrl = "https://developers.zomato.com/api/v2.1/search?entity_id="
     + entityId + "&entity_type=" + entityType
-    + "&lat=" + lat + "&lon=" + lon + "&radius=" + rad;
+    + "&lat=" + lat + "&lon=" + lon;
 
   $.ajax ({
     url: searchUrl,
@@ -216,13 +210,13 @@ function getStartPoint(entityId, entityType, lat, lon) {
 // is pressed
 function performSearch(entityId, entityType, lat, lon, resultsFound) {
 
-  // Converting miles to metres as API works in metres
+  // Checking for user input
   var rad = $("#distance").val();
   if ((rad === "") || (rad == 0)) {
     rad = 50;
   }
-  console.log(rad);
 
+  // Converting miles to metres as API works in metres
   rad = rad / 0.00062137;
 
   // The API allows for a maximum of 100 restaurants per search location to be user_data
