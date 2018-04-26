@@ -67,7 +67,8 @@ app.get("/", function(req, res) {
     res.render('pages/index', {
       user: result,
       page: "index",
-      logged: "Login or Signup"
+      logged: "Login or Signup",
+      logAttempt: "accept"
     });
     return;
   } else {
@@ -81,7 +82,8 @@ app.get("/", function(req, res) {
      res.render('pages/index', {
        user: result,
        page: "index",
-       logged: "Logout"
+       logged: "Logout",
+       logAttempt: "accept"
      });
    });
   }
@@ -119,6 +121,7 @@ app.get("/myrestaurants", function(req, res) {
           cuisines: cuisines, averageCost: averageCost,
           placeText: placeText, userRating: userRating, address: address,
           siteUrl: siteUrl};
+
         restaurants[i] = restaurant;
       }
       res.render("pages/myrestaurants", {
@@ -142,7 +145,8 @@ app.post('/card', function (req, res) {
     res.render('pages/index', {
       user: result,
       page: "index",
-      logged: "Login or Signup"
+      logged: "Login or Signup",
+      logAttempt: "accept"
     });
     return;
   } else {
@@ -243,7 +247,12 @@ app.post('/login', function(req, res) {
     if (err) throw err;//if there is an error, throw the error
     //if there is no result, redirect the user back to the login system as that username must not exist
     if(!result){
-      res.redirect('/');
+      res.render('pages/index', {
+        user: result,
+        page: "index",
+        logged: "Logout",
+        logAttempt: "denied"
+      });
       return;
     }
     //if there is a result then check the password, if the password is correct set session loggedin to true and send the user to the index
@@ -299,7 +308,8 @@ app.post('/adduser', function(req, res) {
       res.render('pages/index', {
         user: result,
         page: "index",
-        logged: "Logout"
+        logged: "Logout",
+        logAttempt: "accept"
       });
     });
     req.session.loggedin = true;
