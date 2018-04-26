@@ -230,6 +230,7 @@ function performSearch(entityId, entityType, lat, lon, resultsFound) {
   } else { // If it's less than 20. Just start from 0
     var randomStart = 0;
   }
+  console.log(resultsFound);
 
   // Create the url we search. We could add it so that the resutls are displayed
   // from closest to furthest however results look best when it is random and
