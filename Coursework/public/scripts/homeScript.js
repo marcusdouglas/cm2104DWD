@@ -237,7 +237,7 @@ function performSearch(entityId, entityType, lat, lon, resultsFound) {
   // from closest to furthest however results look best when it is random and
   // ultimately it does not matter as the results shown will be within the users parameters
   var searchUrl = "https://developers.zomato.com/api/v2.1/search?entity_id="
-    + "&start=" + randomStart
+    + entityId + "&entity_type=" + entityType + "&start=" + randomStart
     + "&lat=" + lat + "&lon=" + lon + "&radius=" + rad;
 
   $.ajax ({
