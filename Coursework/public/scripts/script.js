@@ -39,10 +39,10 @@ function showDivs(n) {
 // Collapses the navigation bar for smaller screens
 function navCollapse() {
     var x = $("#collapseNav");
-    if (x.class() === "nav-tabs") {
-        x.class() += " responsive";
+    if (x.hasClass() === "nav-tabs") {
+        x.hasClass() += " responsive";
     } else {
-        x.class() = "nav-tabs";
+        x.hasClass() = "nav-tabs";
     }
 }
 
