@@ -32,10 +32,10 @@ $(document).ready(function () {
 });
 
 function scrollFunction() {
-    if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
-        document.getElementById("topButton").style.display = "block";
+    if ($(window).scrollTop() > 400 || $(window).scrollTop() > 400) {
+        $("#topButton").css({display: "block"});
     } else {
-        document.getElementById("topButton").style.display = "none";
+        $("#topButton").css({display: "none"});
     }
 }
 
