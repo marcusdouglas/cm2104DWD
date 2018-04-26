@@ -8,12 +8,16 @@ $(function() {
 });
 
 //----------------------Browse Card Images-----------------------
+
+// Index for scrolling through images
 var slideIndex = 1;
 
+// Called on click of image browsing buttons
 function plusDivs(n) {
   showDivs(slideIndex += n);
 }
 
+// Goes through the images
 function showDivs(n) {
   var imgs = $(".cardImage");
 
@@ -32,6 +36,7 @@ function showDivs(n) {
 
 //---------------------Responsive Nav Bar---------------------
 
+// Collapses the navigation bar for smaller screens
 function navCollapse() {
     var x = document.getElementById("collapseNav");
     if (x.className === "nav-tabs") {
@@ -43,6 +48,7 @@ function navCollapse() {
 
 //---------------------Sticky Nav Bar---------------------
 
+// Making the navigation bar responsive on resixing
 $(document).ready(function () {
   $(window).resize(function () {
       responsiveNav();
@@ -54,21 +60,21 @@ $(document).ready(function () {
   });
 });
 
+// Making the navigation bar responsive on scrolling
 $(document).ready(function () {
   $(window).scroll(function () {
     responsiveNav();
   });
 });
 
+// Makes the naigation bar expand in width or retract depending on screen size
 function responsiveNav() {
   if ($(window).width() > 700) {
     if ($(window).scrollTop() > 30) {
       $("#nav").css({marginLeft: "0", width: "100%", marginRight: "0", position: "fixed", top: 0});
-      //$("#MainContent").addClass("sticky");
     }
     if($(window).scrollTop() < 330) {
       $("#nav").css({marginLeft: "15%", width: "70%", marginRight: "15%", position: "static"});
-      //$("#MainContent").removeClass("sticky");
       $(".nav-tabs").css({borderRadius: "6px"});
     }
   }
@@ -88,17 +94,6 @@ function displaySignup() {
   $("#loginForm").css({display: "none"});
   $("#signupForm").css({display: "block"});
 }
-/*
-$(function() {
-  $("#PageHeader").on("click", "#login", function() {
-    var loginText = $("#logText").text();
-    console.log(loginText);
-
-    if (loginText === "Login or Signup") {
-      displayLogin();
-    }
-  });
-});*/
 
 // Will remove login form elements visibility
 function loginDisplayNone() {
@@ -132,29 +127,4 @@ function checkPasswordMatch() {
     $("#confirmSignup").prop('disabled', false);
     return true;
   }
-}
-
-function createUser() {
-
-  if (!checkPasswordMatch()) {
-    console.log("fail");
-  } else {
-    console.log("success");
-
-    var placeCard = {name: "Name", image: "images/foodImage6.jpeg", text: "Some text"};
-    var username = $("#uname").val();
-    var password = $("#repeatPassword").val();
-    var saved_cards = [placeCard];
-    //console.log(username);
-
-    $.ajax({
-         method: "POST",
-         url: "/adduser",
-         data: {"username": username, "password": password, "saved_cards": saved_cards},
-         success: function(result) {
-           console.log(result);
-         }
-      });
-  }
-
 }
