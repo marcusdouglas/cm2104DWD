@@ -225,10 +225,10 @@ function performSearch(entityId, entityType, lat, lon, resultsFound) {
 
   // Checking how many results are found to provide an appropriate result
   if (resultsFound >= 100) { // If >= 100 use a random number up to 80
-    var randomStart = Math.floor((Math.random() * 80) + 1);
+    var randomStart = Math.floor(Math.random() * 80);
   }
   else if (resultsFound > 20) { // If greater than 20 use the number of results found -20
-    var randomStart = Math.floor((Math.random() * (resultsFound - 20)) + 1);
+    var randomStart = Math.floor(Math.random() * (resultsFound - 20));
   } else { // If it's less than 20. Just start from 0
     var randomStart = 0;
   }
